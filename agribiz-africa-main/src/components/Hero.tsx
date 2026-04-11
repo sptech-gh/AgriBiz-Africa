@@ -20,12 +20,15 @@ const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url(/images/hero-ghana-farmers.webp)',
+          backgroundImage: 'url(/images/hero-ghana-farmers.webp)',
         }}
       ></div>
 
-      {/* Gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-teal-50/80 to-emerald-50/90"></div>
+      {/* Light mode: Soft gradient for readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-teal-50/80 to-emerald-50/90 dark:from-slate-900/95 dark:via-slate-900/90 dark:to-slate-800/85"></div>
+
+      {/* Dark mode: Additional overlay for text contrast (Google/Amazon standard) */}
+      <div className="absolute inset-0 hidden dark:block bg-gradient-to-r from-slate-950/80 via-slate-900/70 to-transparent"></div>
 
       {/* Subtle background pattern - static */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
@@ -37,14 +40,14 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-4">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-100 leading-tight animate-slide-in-left">
-                <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Premium Agricultural</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight animate-slide-in-left">
+                <span className="bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-400 dark:to-emerald-400 bg-clip-text text-transparent">Premium Agricultural</span>
                 <br />
-                <span className="text-gray-900 dark:text-gray-100">Solutions for Ghana</span>
+                <span className="text-gray-900 dark:text-white">Solutions for Ghana</span>
                 <br />
-                <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-600 dark:text-gray-400">Seeds, Fertilizers & Expert Farm Support</span>
+                <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-600 dark:text-gray-300">Seeds, Fertilizers & Expert Farm Support</span>
               </h1>
-              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed animate-slide-in-left max-w-2xl" style={{ animationDelay: '0.1s' }}>
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed animate-slide-in-left max-w-2xl" style={{ animationDelay: '0.1s' }}>
                 Trusted by 1,000+ farmers across Ghana for quality inputs, financing advisory, and expert guidance since 2009.
               </p>
             </div>
@@ -67,38 +70,38 @@ const Hero = () => {
               </button>
             </div>
 
-            {/* Trust Signal */}
+            {/* Trust Signal - Enhanced for dark mode visibility */}
             <div className="flex items-center gap-4 pt-2 animate-slide-in-up" style={{ animationDelay: '0.25s' }}>
               <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-900 flex items-center justify-center text-xs font-bold text-teal-600 dark:text-teal-400">1K+</div>
-                <div className="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900 flex items-center justify-center text-xs font-bold text-emerald-600 dark:text-emerald-400">⭐</div>
+                <div className="w-8 h-8 rounded-full bg-teal-100 dark:bg-teal-800 flex items-center justify-center text-xs font-bold text-teal-600 dark:text-teal-300 border-2 border-white dark:border-slate-700">1K+</div>
+                <div className="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-800 flex items-center justify-center text-xs font-bold text-emerald-600 dark:text-emerald-300 border-2 border-white dark:border-slate-700">⭐</div>
               </div>
-              <span className="text-sm text-gray-600 dark:text-gray-400">Trusted by 1,000+ farmers • 4.9/5 rating</span>
+              <span className="text-sm text-gray-600 dark:text-gray-300 font-medium">Trusted by 1,000+ farmers • 4.9/5 rating</span>
             </div>
 
-            {/* Optimized Stats */}
+            {/* Optimized Stats - Enhanced for dark mode */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
               <div className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-teal-600 animate-count-up">1000+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Farmers Served</div>
+                <div className="text-3xl font-bold text-teal-600 dark:text-teal-400 animate-count-up">1000+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">Farmers Served</div>
               </div>
               <div className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-emerald-600 animate-count-up" style={{ animationDelay: '0.1s' }}>50+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Agri Products</div>
+                <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 animate-count-up" style={{ animationDelay: '0.1s' }}>50+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">Agri Products</div>
               </div>
               <div className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-lime-600 animate-count-up" style={{ animationDelay: '0.2s' }}>15+</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+                <div className="text-3xl font-bold text-lime-600 dark:text-lime-400 animate-count-up" style={{ animationDelay: '0.2s' }}>15+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">Years Experience</div>
               </div>
               <div className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-green-600 animate-count-up" style={{ animationDelay: '0.3s' }}>24/7</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Delivery</div>
+                <div className="text-3xl font-bold text-green-600 dark:text-green-400 animate-count-up" style={{ animationDelay: '0.3s' }}>24/7</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">Delivery</div>
               </div>
             </div>
           </div>
 
           <div className="relative animate-slide-in-right">
-            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 dark:border-slate-700/50 hover:shadow-3xl transition-shadow duration-500">
+            <div className="bg-white/80 dark:bg-slate-800/90 backdrop-blur-md rounded-3xl p-8 shadow-2xl dark:shadow-slate-900/50 border border-white/20 dark:border-slate-700 hover:shadow-3xl transition-shadow duration-500">
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white dark:bg-slate-700 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                   <div className="bg-teal-100 dark:bg-teal-900/50 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
