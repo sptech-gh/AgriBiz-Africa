@@ -1,9 +1,26 @@
 import React from 'react';
-import { ArrowRight, Leaf, TrendingUp, Users, Target } from 'lucide-react';
+import { ArrowRight, Leaf, TrendingUp, Users, Target, MessageCircle, Phone, FileText } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const openWhatsApp = () => {
+    const phone = '233242544549';
+    const message = 'Hi Agribiz Africa, I want to learn more about your products and services.';
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+  };
+
+  const makeCall = () => {
+    window.open('tel:+233242544549', '_blank');
+  };
+
+  const scrollToQuote = () => {
+    const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -34,48 +51,60 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight animate-slide-in-left">
-                <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Agribiz Africa</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight animate-slide-in-left">
+                <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Helping Farmers</span>
                 <br />
-                Empowering
+                <span className="text-gray-900">& Agribusinesses in Ghana</span>
                 <br />
-                Agriculture in Ghana
+                <span className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-700">Grow Faster with Premium Seeds, Fertilizers & Expert Support</span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed animate-slide-in-left" style={{ animationDelay: '0.1s' }}>
-                Leading dealer in agricultural inputs and financing advisory services. 
-                We provide quality products and expert guidance to help farmers thrive and achieve sustainable growth.
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed animate-slide-in-left max-w-2xl" style={{ animationDelay: '0.1s' }}>
+                Trusted by farmers and agribusinesses across Ghana for quality agricultural inputs and expert advisory services.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="bg-gradient-to-r from-teal-600 to-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center group"
+            {/* Multi-Channel CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
+              <button
+                onClick={openWhatsApp}
+                className="bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 group"
               >
-                Explore Services
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <MessageCircle className="h-5 w-5" />
+                WhatsApp Chat
               </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="border-2 border-teal-600 text-teal-600 px-8 py-4 rounded-full font-semibold hover:bg-teal-600 hover:text-white transition-all duration-300 hover:shadow-lg"
+              <button
+                onClick={makeCall}
+                className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
               >
-                Contact Us
+                <Phone className="h-5 w-5" />
+                Call Now
+              </button>
+              <button
+                onClick={scrollToQuote}
+                className="bg-white border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2"
+              >
+                <FileText className="h-5 w-5" />
+                Get Quote
               </button>
             </div>
 
             {/* Optimized Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
               <div className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-teal-600 animate-count-up">500+</div>
+                <div className="text-3xl font-bold text-teal-600 animate-count-up">1000+</div>
                 <div className="text-sm text-gray-600">Farmers Served</div>
               </div>
               <div className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-emerald-600 animate-count-up" style={{ animationDelay: '0.1s' }}>10+</div>
+                <div className="text-3xl font-bold text-emerald-600 animate-count-up" style={{ animationDelay: '0.1s' }}>50+</div>
+                <div className="text-sm text-gray-600">Agri Products</div>
+              </div>
+              <div className="text-center group hover:scale-105 transition-transform duration-300">
+                <div className="text-3xl font-bold text-lime-600 animate-count-up" style={{ animationDelay: '0.2s' }}>15+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="text-3xl font-bold text-lime-600 animate-count-up" style={{ animationDelay: '0.2s' }}>100+</div>
-                <div className="text-sm text-gray-600">Products Available</div>
+                <div className="text-3xl font-bold text-green-600 animate-count-up" style={{ animationDelay: '0.3s' }}>24/7</div>
+                <div className="text-sm text-gray-600">Delivery</div>
               </div>
             </div>
           </div>
