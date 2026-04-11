@@ -5,10 +5,17 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Track scroll position for sticky header styling
+  // Track scroll position for sticky header styling with throttling
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -23,9 +30,13 @@ const Header = () => {
   };
 
   return (
-    <header className={`bg-white sticky top-0 z-50 transition-shadow duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
-      {/* Top contact bar - hide on scroll */}
-      <div className={`bg-teal-600 text-white py-2 transition-all duration-300 ${isScrolled ? 'hidden' : 'block'}`}>
+    <header className={`bg-white sticky top-0 z-50 transition-shadow duration-300 will-change-transform ${isScrolled ? 'shadow-md' : ''}`}>
+      {/* Top contact bar - smooth collapse on scroll */}
+      <div
+        className={`bg-teal-600 text-white overflow-hidden transition-all duration-300 ease-out ${
+          isScrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-12 py-2 opacity-100'
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-4">
@@ -48,11 +59,11 @@ const Header = () => {
       {/* Main navigation */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="flex items-center animate-fade-in-left">
-            <img 
-              src="/Agribiz logo.jpg" 
-              alt="Agribiz Africa" 
-              className="h-12 w-auto hover:scale-105 transition-transform duration-300"
+          <div className="flex items-center">
+            <img
+              src="/Agribiz logo.jpg"
+              alt="Agribiz Africa"
+              className="h-10 w-auto"
             />
           </div>
           
