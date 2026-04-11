@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react';
+import { Star, Play, Volume2 } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
@@ -39,6 +39,58 @@ const Testimonials = () => {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Real stories from real farmers across Ghana who have transformed their farms with our products and services
           </p>
+        </div>
+
+        {/* Featured Video Testimonial */}
+        <div className="mb-12 animate-fade-in-up">
+          <div className="bg-teal-600 rounded-2xl overflow-hidden shadow-lg">
+            <div className="grid md:grid-cols-2">
+              {/* Video Side */}
+              <div className="relative bg-gray-900 aspect-video md:aspect-auto">
+                <video
+                  poster="/images/testimonial-video-poster.webp"
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  aria-label="Video testimonial from Kwame Asante, maize farmer from Ejura"
+                >
+                  <source src="/videos/farmer-testimonial-kwame.mp4" type="video/mp4" />
+                  <p className="text-white p-4">Your browser does not support video playback.</p>
+                </video>
+                {/* Play button overlay (shown before play) */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-4">
+                    <Play className="h-12 w-12 text-white fill-current" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Content Side */}
+              <div className="p-8 text-white flex flex-col justify-center">
+                <div className="flex items-center gap-2 mb-4">
+                  <Volume2 className="h-5 w-5 text-teal-200" />
+                  <span className="text-sm text-teal-200 font-medium">Featured Story</span>
+                </div>
+                <blockquote className="text-lg md:text-xl leading-relaxed mb-6 italic">
+                  "Agribiz Africa changed my life. I went from struggling with 2 bags of maize per acre to harvesting 15 bags. Their training and quality seeds made all the difference."
+                </blockquote>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center text-lg font-bold">
+                    KA
+                  </div>
+                  <div>
+                    <div className="font-semibold">Kwame Asante</div>
+                    <div className="text-sm text-teal-200">Maize Farmer • Ejura, Ashanti Region</div>
+                  </div>
+                </div>
+                <div className="mt-4 flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Testimonials Grid */}

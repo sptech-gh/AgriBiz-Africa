@@ -15,6 +15,7 @@ import MobileStickyCTA from './components/MobileStickyCTA';
 import BlogSection from './components/BlogSection';
 import BlogArticle from './components/BlogArticle';
 import About from './components/About';
+import OurWork from './components/OurWork';
 import { SeedsPage, FertilizerPage, ConsultingPage } from './components/SEOPages';
 import { getBlogPostBySlug, BlogPost } from './data/blogData';
 
@@ -116,6 +117,7 @@ function App() {
             <LeadCapture />
             <FAQ />
             <BlogSection onArticleClick={handleArticleClick} />
+            <OurWork />
             <WhatsAppChannel />
             <Contact />
             <Footer />
