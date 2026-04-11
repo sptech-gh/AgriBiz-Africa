@@ -31,7 +31,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`bg-white dark:bg-slate-900 sticky top-0 z-50 transition-all duration-300 will-change-transform ${isScrolled ? 'shadow-md dark:shadow-slate-800' : ''}`}>
+    <header className={`bg-white dark:bg-slate-900 sticky top-0 z-50 transition-shadow duration-200 ${isScrolled ? 'shadow-md dark:shadow-slate-800' : ''}`}>
       {/* Top contact bar - smooth collapse on scroll */}
       <div
         className={`bg-teal-600 text-white overflow-hidden transition-all duration-300 ease-out ${
@@ -106,7 +106,8 @@ const Header = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-3">
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
             <a
               href="tel:+233242544549"
               className="bg-teal-600 text-white p-2 rounded-lg"
@@ -116,7 +117,7 @@ const Header = () => {
             </a>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-teal-600 p-2"
+              className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 p-2 bg-gray-100 dark:bg-slate-800 rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -126,25 +127,25 @@ const Header = () => {
 
         {/* Mobile menu - full screen overlay */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[60px] bg-white dark:bg-slate-900 z-40 animate-fade-in-up">
+          <div className="md:hidden fixed inset-0 top-[60px] bg-white dark:bg-slate-900 z-40 animate-fade-in-up shadow-2xl">
             <div className="flex flex-col p-6 space-y-1">
-              <button onClick={() => scrollToSection('home')} className="text-gray-900 dark:text-gray-100 font-medium py-3 text-left text-lg border-b border-gray-100 dark:border-gray-800">Home</button>
-              <button onClick={() => scrollToSection('services')} className="text-gray-900 dark:text-gray-100 font-medium py-3 text-left text-lg border-b border-gray-100 dark:border-gray-800">Services</button>
-              <button onClick={() => scrollToSection('products')} className="text-gray-900 dark:text-gray-100 font-medium py-3 text-left text-lg border-b border-gray-100 dark:border-gray-800">Products</button>
-              <a href="#blog" className="text-gray-900 dark:text-gray-100 font-medium py-3 text-left text-lg border-b border-gray-100 dark:border-gray-800">Blog</a>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-900 dark:text-gray-100 font-medium py-3 text-left text-lg border-b border-gray-100 dark:border-gray-800">Contact</button>
+              <button onClick={() => scrollToSection('home')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Home</button>
+              <button onClick={() => scrollToSection('services')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Services</button>
+              <button onClick={() => scrollToSection('products')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Products</button>
+              <a href="#blog" onClick={() => setIsMenuOpen(false)} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors block">Blog</a>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Contact</button>
 
-              <div className="pt-6">
+              <div className="pt-6 space-y-3">
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="bg-teal-600 text-white px-6 py-3 rounded-lg font-medium w-full"
+                  className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-4 rounded-lg font-medium w-full transition-colors"
                 >
                   Get Free Quote
                 </button>
-              </div>
-
-              <div className="pt-6 text-center">
-                <a href="tel:+233242544549" className="text-teal-600 font-medium">
+                <a
+                  href="tel:+233242544549"
+                  className="block w-full text-center border-2 border-teal-600 text-teal-600 dark:text-teal-400 dark:border-teal-400 px-6 py-3 rounded-lg font-medium hover:bg-teal-50 dark:hover:bg-slate-800 transition-colors"
+                >
                   Call: +233 24 254 4549
                 </a>
               </div>

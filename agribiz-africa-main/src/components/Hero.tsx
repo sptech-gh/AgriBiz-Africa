@@ -98,38 +98,38 @@ const Hero = () => {
           </div>
 
           <div className="relative animate-slide-in-right">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 hover:shadow-3xl transition-shadow duration-500">
+            <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20 dark:border-slate-700/50 hover:shadow-3xl transition-shadow duration-500">
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                  <div className="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
-                    <Leaf className="h-6 w-6 text-teal-600" />
+                <div className="bg-white dark:bg-slate-700 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                  <div className="bg-teal-100 dark:bg-teal-900/50 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
+                    <Leaf className="h-6 w-6 text-teal-600 dark:text-teal-400" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Quality Inputs</h3>
-                  <p className="text-sm text-gray-600">Premium agricultural products for optimal yields</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Quality Inputs</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Premium agricultural products for optimal yields</p>
                 </div>
-                
-                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                  <div className="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
-                    <TrendingUp className="h-6 w-6 text-emerald-600" />
+
+                <div className="bg-white dark:bg-slate-700 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                  <div className="bg-emerald-100 dark:bg-emerald-900/50 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
+                    <TrendingUp className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Financial Advisory</h3>
-                  <p className="text-sm text-gray-600">Expert guidance for agricultural financing</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Financial Advisory</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Expert guidance for agricultural financing</p>
                 </div>
-                
-                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                  <div className="bg-lime-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
-                    <Users className="h-6 w-6 text-lime-600" />
+
+                <div className="bg-white dark:bg-slate-700 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                  <div className="bg-lime-100 dark:bg-lime-900/50 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
+                    <Users className="h-6 w-6 text-lime-600 dark:text-lime-400" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Community Focus</h3>
-                  <p className="text-sm text-gray-600">Supporting local farming communities</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Community Focus</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Supporting local farming communities</p>
                 </div>
-                
-                <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                  <div className="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
-                    <Target className="h-6 w-6 text-yellow-600" />
+
+                <div className="bg-white dark:bg-slate-700 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                  <div className="bg-yellow-100 dark:bg-yellow-900/50 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
+                    <Target className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Sustainable Growth</h3>
-                  <p className="text-sm text-gray-600">Building long-term agricultural success</p>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Sustainable Growth</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">Building long-term agricultural success</p>
                 </div>
               </div>
             </div>

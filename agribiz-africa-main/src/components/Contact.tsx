@@ -34,7 +34,7 @@ const Contact = () => {
 
     try {
       // Submit to Netlify Forms
-      const netlifyResponse = await fetch("/", {
+      await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...formData })
@@ -58,30 +58,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-20 overflow-hidden">
-      {/* Background image with better readability */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(240, 253, 250, 0.9)), url(/images/product-seeds.webp)',
-        }}
-      ></div>
-
-      {/* Additional overlay for enhanced readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-teal-50/60 to-emerald-50/70"></div>
-
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-3">
-        <div className="absolute top-20 left-20 w-16 h-16 bg-teal-600 rounded-full"></div>
-        <div className="absolute top-60 right-32 w-12 h-12 bg-emerald-600 rounded-full"></div>
-        <div className="absolute bottom-40 left-1/4 w-20 h-20 bg-lime-600 rounded-full"></div>
-        <div className="absolute bottom-20 right-1/3 w-14 h-14 bg-teal-600 rounded-full"></div>
-      </div>
-
+    <section id="contact" className="relative py-20 overflow-hidden bg-gray-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Get In Touch</h2>
+          <p className="text-xl text-gray-700 dark:text-gray-400 max-w-3xl mx-auto">
             Ready to transform your agricultural operations? Contact us today for expert advice and quality products.
           </p>
         </div>
@@ -90,15 +71,15 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-teal-600" />
+                  <div className="bg-teal-100 dark:bg-teal-900/50 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 text-teal-600 dark:text-teal-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                    <p className="text-gray-700">
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Address</h4>
+                    <p className="text-gray-700 dark:text-gray-400">
                       Emmanuel Estate Junction<br />
                       Adjacent to the White, off the Akosombo Road<br />
                       Accra, Ghana
@@ -107,29 +88,29 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-6 w-6 text-emerald-600" />
+                  <div className="bg-emerald-100 dark:bg-emerald-900/50 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                    <p className="text-gray-700">+233 24 254 4549</p>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Phone</h4>
+                    <p className="text-gray-700 dark:text-gray-400">+233 24 254 4549</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-lime-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-lime-600" />
+                  <div className="bg-lime-100 dark:bg-lime-900/50 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-6 w-6 text-lime-600 dark:text-lime-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Email</h4>
                     <div className="space-y-1">
-                      <p className="text-gray-700">
+                      <p className="text-gray-700 dark:text-gray-400">
                         <span className="font-medium">General:</span> info@agribiz.africa
                       </p>
-                      <p className="text-gray-700">
+                      <p className="text-gray-700 dark:text-gray-400">
                         <span className="font-medium">Sales:</span> sales@agribiz.africa
                       </p>
-                      <p className="text-gray-700">
+                      <p className="text-gray-700 dark:text-gray-400">
                         <span className="font-medium">Support:</span> support@agribiz.africa
                       </p>
                     </div>
@@ -137,12 +118,12 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-6 w-6 text-yellow-600" />
+                  <div className="bg-yellow-100 dark:bg-yellow-900/50 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Clock className="h-6 w-6 text-yellow-600 dark:text-yellow-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Business Hours</h4>
-                    <p className="text-gray-700">
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Business Hours</h4>
+                    <p className="text-gray-700 dark:text-gray-400">
                       Monday - Friday: 8:00 AM - 6:00 PM<br />
                       Saturday: 8:00 AM - 4:00 PM<br />
                       Sunday: Closed
@@ -151,16 +132,16 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Facebook className="h-6 w-6 text-blue-600" />
+                  <div className="bg-blue-100 dark:bg-blue-900/50 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Facebook className="h-6 w-6 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Follow Us</h4>
-                    <a 
-                      href="https://www.facebook.com/agribizafricaltd/" 
-                      target="_blank" 
+                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Follow Us</h4>
+                    <a
+                      href="https://www.facebook.com/agribizafricaltd/"
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-700 transition-colors"
+                      className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                     >
                       @agribizafricaltd
                     </a>
@@ -171,17 +152,17 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/30">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+          <div className="bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/30 dark:border-slate-700">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Send us a Message</h3>
             
             {submitStatus === 'success' && (
-              <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+              <div className="mb-6 p-4 bg-green-100 dark:bg-green-900/30 border border-green-400 dark:border-green-700 text-green-700 dark:text-green-400 rounded-lg">
                 Thank you! Your message has been sent successfully. We'll get back to you soon.
               </div>
             )}
-            
+
             {submitStatus === 'error' && (
-              <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+              <div className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-400 rounded-lg">
                 Sorry, there was an error sending your message. Please try again or contact us directly at +233 24 254 4549.
               </div>
             )}
@@ -199,7 +180,7 @@ const Contact = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     First Name
                   </label>
                   <input
@@ -209,12 +190,12 @@ const Contact = () => {
                     value={formData.firstName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
                     placeholder="Your first name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Last Name
                   </label>
                   <input
@@ -224,14 +205,14 @@ const Contact = () => {
                     value={formData.lastName}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
                     placeholder="Your last name"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Email Address
                 </label>
                 <input
@@ -241,13 +222,13 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Phone Number
                 </label>
                 <input
@@ -256,13 +237,13 @@ const Contact = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
                   placeholder="+233 XX XXX XXXX"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Subject
                 </label>
                 <select
@@ -271,7 +252,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
                 >
                   <option value="">Select a subject</option>
                   <option value="products">Product Inquiry</option>
@@ -283,7 +264,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Message
                 </label>
                 <textarea
@@ -293,7 +274,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors resize-none bg-white"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors resize-none bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100"
                   placeholder="Tell us about your agricultural needs..."
                 ></textarea>
               </div>
@@ -312,8 +293,8 @@ const Contact = () => {
 
         {/* Interactive Map */}
         <div className="mt-16">
-          <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/30">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Visit Our Location</h3>
+          <div className="bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/30 dark:border-slate-700">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 text-center">Visit Our Location</h3>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7267890234567!2d-0.1234567890123456!3d5.6234567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzcnMjQuNCJOIDDCsDA3JzI0LjQiVw!5e0!3m2!1sen!2sgh!4v1234567890123"
@@ -328,8 +309,8 @@ const Contact = () => {
               ></iframe>
             </div>
             <div className="mt-6 text-center">
-              <div className="inline-flex items-center space-x-2 text-gray-700">
-                <MapPin className="h-5 w-5 text-teal-600" />
+              <div className="inline-flex items-center space-x-2 text-gray-700 dark:text-gray-400">
+                <MapPin className="h-5 w-5 text-teal-600 dark:text-teal-400" />
                 <span>Emmanuel Estate Junction, Adjacent to the White, off the Akosombo Road, Accra, Ghana</span>
               </div>
             </div>
