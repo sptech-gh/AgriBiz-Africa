@@ -63,7 +63,7 @@ const Contact = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(240, 253, 250, 0.9)), url(/images/product-seeds.jpg)',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(240, 253, 250, 0.9)), url(/images/product-seeds.webp)',
         }}
       ></div>
 

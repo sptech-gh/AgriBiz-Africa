@@ -14,28 +14,28 @@ const Products = () => {
       title: "Seeds & Planting Materials",
       description: "High-quality seeds for various crops including maize, rice, vegetables, and cash crops.",
       products: ["Hybrid Maize Seeds", "Rice Varieties", "Vegetable Seeds", "Legume Seeds", "Tree Seedlings"],
-      image: "/images/product-seeds.jpg"
+      image: "/images/product-seeds.webp"
     },
     {
       icon: Droplets,
       title: "Fertilizers & Nutrients",
       description: "Complete range of organic and inorganic fertilizers to boost soil fertility and crop yields.",
       products: ["NPK Fertilizers", "Organic Compost", "Liquid Fertilizers", "Micronutrients", "Soil Conditioners"],
-      image: "/images/product-fertilizer.jpg"
+      image: "/images/product-fertilizer.webp"
     },
     {
       icon: Shield,
       title: "Crop Protection",
       description: "Effective and safe pesticides, herbicides, and fungicides for comprehensive crop protection.",
       products: ["Insecticides", "Herbicides", "Fungicides", "Biological Control", "Protective Equipment"],
-      image: "/images/product-pesticide.jpg"
+      image: "/images/product-pesticide.webp"
     },
     {
       icon: Wrench,
       title: "Farm Equipment",
       description: "Modern farming tools and equipment to improve efficiency and productivity.",
       products: ["Hand Tools", "Irrigation Systems", "Spraying Equipment", "Harvesting Tools", "Storage Solutions"],
-      image: "/images/product-equipment.jpg"
+      image: "/images/product-equipment.webp"
     }
   ];
 
