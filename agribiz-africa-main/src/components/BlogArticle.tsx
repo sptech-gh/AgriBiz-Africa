@@ -133,14 +133,17 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
           return (
             <div key={index} className="overflow-x-auto my-4">
               <div className="grid gap-2" style={{ gridTemplateColumns: `repeat(${cells.length}, 1fr)` }}>
-                {cells.map((cell, cellIndex) => (
-                  <div
-                    key={cellIndex}
-                    className={`px-4 py-2 text-sm ${cellIndex === 0 ? 'font-semibold bg-teal-50' : 'bg-gray-50'} rounded`}
-                  >
-                    {cell.trim()}
-                  </div>
-                ))}
+                {cells.map((cell, cellIndex) => {
+                  // Process bold text in table cells
+                  const formattedCell = cell.trim().replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                  return (
+                    <div
+                      key={cellIndex}
+                      className={`px-4 py-2 text-sm ${cellIndex === 0 ? 'font-semibold bg-teal-50' : 'bg-gray-50'} rounded`}
+                      dangerouslySetInnerHTML={{ __html: formattedCell }}
+                    />
+                  );
+                })}
               </div>
             </div>
           );
