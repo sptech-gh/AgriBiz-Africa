@@ -88,18 +88,28 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
 
       // Lists
       if (paragraph.startsWith('- ')) {
+        const formattedListItem = paragraph
+          .replace('- ', '')
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         return (
-          <li key={index} className="ml-6 text-gray-700 mb-2 list-disc">
-            {paragraph.replace('- ', '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}
-          </li>
+          <li
+            key={index}
+            className="ml-6 text-gray-700 mb-2 list-disc"
+            dangerouslySetInnerHTML={{ __html: formattedListItem }}
+          />
         );
       }
 
       if (paragraph.match(/^\d+\./)) {
+        const formattedListItem = paragraph
+          .replace(/^\d+\.\s*/, '')
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         return (
-          <li key={index} className="ml-6 text-gray-700 mb-2 list-decimal">
-            {paragraph.replace(/^\d+\.\s*/, '').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}
-          </li>
+          <li
+            key={index}
+            className="ml-6 text-gray-700 mb-2 list-decimal"
+            dangerouslySetInnerHTML={{ __html: formattedListItem }}
+          />
         );
       }
 
