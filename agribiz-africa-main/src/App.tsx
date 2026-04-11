@@ -11,12 +11,15 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import WhatsAppChannel from './components/WhatsAppChannel';
+import LeadCapture from './components/LeadCapture';
+import MobileStickyCTA from './components/MobileStickyCTA';
 
 function App() {
   return (
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <LeadCapture />
       <TrustSection />
       <About />
       <Services />
@@ -26,6 +29,7 @@ function App() {
       <WhatsAppChannel />
       <Contact />
       <Footer />
+      <MobileStickyCTA />
       <WhatsAppFloat />
     </div>
   );
