@@ -12,13 +12,21 @@ interface BlogArticleProps {
 const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother }) => {
   const relatedPosts = getRelatedPosts(post.slug, 2);
 
+  console.log('BlogArticle: Component mounted for:', post.title);
+
   // Track blog view
   useEffect(() => {
+    console.log('BlogArticle: useEffect running, tracking view for:', post.title);
     // @ts-ignore - Analytics tracking
     if (trackConversion.blogView) {
       // @ts-ignore
       trackConversion.blogView(post.title);
     }
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [post.title]);
 
   const openWhatsApp = () => {
@@ -184,10 +192,23 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
     });
   };
 
+  // Handle click outside to close
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      console.log('BlogArticle: Backdrop clicked, closing modal');
+      onClose();
+    }
+  };
+
+  console.log('BlogArticle: Rendering modal UI');
+
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm">
-      <div className="min-h-screen px-4 py-8">
-        <div className="max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden">
+    <div 
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm"
+      onClick={handleBackdropClick}
+    >
+      <div className="min-h-screen px-4 py-8 flex items-start justify-center">
+        <div className="max-w-4xl w-full mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden">
           {/* Header */}
           <div className="sticky top-0 bg-white dark:bg-slate-800 border-b border-gray-100 dark:border-slate-700 px-6 py-4 flex items-center justify-between z-10">
             <button
