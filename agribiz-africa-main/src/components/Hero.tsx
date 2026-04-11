@@ -12,10 +12,10 @@ const Hero = () => {
   return (
     <section id="home" className="relative py-20 overflow-hidden">
       {/* Full farming background image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'linear-gradient(rgba(20, 184, 166, 0.1), rgba(16, 185, 129, 0.1)), url(https://images.pexels.com/photos/2132250/pexels-photo-2132250.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+          backgroundImage: 'linear-gradient(rgba(20, 184, 166, 0.1), rgba(16, 185, 129, 0.1)), url(/images/hero-bg.jpg)',
         }}
       ></div>
 

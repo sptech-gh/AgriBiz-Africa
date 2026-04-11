@@ -14,28 +14,28 @@ const Products = () => {
       title: "Seeds & Planting Materials",
       description: "High-quality seeds for various crops including maize, rice, vegetables, and cash crops.",
       products: ["Hybrid Maize Seeds", "Rice Varieties", "Vegetable Seeds", "Legume Seeds", "Tree Seedlings"],
-      image: "https://images.pexels.com/photos/1459339/pexels-photo-1459339.jpeg?auto=compress&cs=tinysrgb&w=500"
+      image: "/images/product-seeds.jpg"
     },
     {
       icon: Droplets,
       title: "Fertilizers & Nutrients",
       description: "Complete range of organic and inorganic fertilizers to boost soil fertility and crop yields.",
       products: ["NPK Fertilizers", "Organic Compost", "Liquid Fertilizers", "Micronutrients", "Soil Conditioners"],
-      image: "https://images.pexels.com/photos/1595104/pexels-photo-1595104.jpeg?auto=compress&cs=tinysrgb&w=500"
+      image: "/images/product-fertilizer.jpg"
     },
     {
       icon: Shield,
       title: "Crop Protection",
       description: "Effective and safe pesticides, herbicides, and fungicides for comprehensive crop protection.",
       products: ["Insecticides", "Herbicides", "Fungicides", "Biological Control", "Protective Equipment"],
-      image: "https://images.pexels.com/photos/1459331/pexels-photo-1459331.jpeg?auto=compress&cs=tinysrgb&w=500"
+      image: "/images/product-pesticide.jpg"
     },
     {
       icon: Wrench,
       title: "Farm Equipment",
       description: "Modern farming tools and equipment to improve efficiency and productivity.",
       products: ["Hand Tools", "Irrigation Systems", "Spraying Equipment", "Harvesting Tools", "Storage Solutions"],
-      image: "https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg?auto=compress&cs=tinysrgb&w=500"
+      image: "/images/product-equipment.jpg"
     }
   ];
 

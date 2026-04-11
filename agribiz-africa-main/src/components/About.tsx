@@ -72,7 +72,7 @@ const About = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-3xl"
             style={{
-              backgroundImage: 'linear-gradient(rgba(20, 184, 166, 0.9), rgba(16, 185, 129, 0.9)), url(https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+              backgroundImage: 'linear-gradient(rgba(20, 184, 166, 0.9), rgba(16, 185, 129, 0.9)), url(/images/about-bg.jpg)',
             }}
           ></div>
           

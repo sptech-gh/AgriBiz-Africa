@@ -60,10 +60,10 @@ const Contact = () => {
   return (
     <section id="contact" className="relative py-20 overflow-hidden">
       {/* Background image with better readability */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(240, 253, 250, 0.9)), url(https://images.pexels.com/photos/1459339/pexels-photo-1459339.jpeg?auto=compress&cs=tinysrgb&w=1600)',
+          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.85), rgba(240, 253, 250, 0.9)), url(/images/product-seeds.jpg)',
         }}
       ></div>
 
