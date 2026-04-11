@@ -211,13 +211,25 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
             </div>
           </div>
 
-          {/* Article Content */}
-          <article className="px-6 md:px-12 py-8">
-            {/* Category & Meta */}
-            <div className="flex flex-wrap items-center gap-4 mb-6">
-              <span className="bg-teal-100 text-teal-700 text-sm font-medium px-4 py-1 rounded-full">
+          {/* Hero Image */}
+          <div className="relative h-64 md:h-80 overflow-hidden">
+            <img
+              src={post.image}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
+              <span className="bg-teal-600 text-white text-sm font-medium px-4 py-1 rounded-full">
                 {post.category}
               </span>
+            </div>
+          </div>
+
+          {/* Article Content */}
+          <article className="px-6 md:px-12 py-8">
+            {/* Meta */}
+            <div className="flex flex-wrap items-center gap-4 mb-6">
               <span className="flex items-center gap-1 text-sm text-gray-500">
                 <Calendar className="h-4 w-4" />
                 {new Date(post.publishedDate).toLocaleDateString('en-GH', {

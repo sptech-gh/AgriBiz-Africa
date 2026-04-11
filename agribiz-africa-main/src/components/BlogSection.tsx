@@ -48,11 +48,17 @@ const BlogSection: React.FC<BlogSectionProps> = ({ onArticleClick }) => {
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {/* Image Placeholder */}
-              <div className="relative h-48 bg-gradient-to-br from-teal-100 to-emerald-100 flex items-center justify-center group-hover:from-teal-200 group-hover:to-emerald-200 transition-all duration-300">
-                <BookOpen className="h-16 w-16 text-teal-300" />
+              {/* Featured Image with Lazy Loading */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 <div className="absolute top-4 left-4">
-                  <span className="bg-teal-600 text-white text-xs font-medium px-3 py-1 rounded-full">
+                  <span className="bg-teal-600 text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg">
                     {post.category}
                   </span>
                 </div>

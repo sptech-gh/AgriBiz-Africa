@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Seeds & Planting',
     readTime: '5 min read',
     publishedDate: '2026-04-10',
-    image: '/images/maize-farming.webp',
+    image: '/images/product-seeds.webp',
     author: 'Agribiz Africa Agronomy Team',
     content: [
       '## Why Maize Seed Selection Matters in Ghana',
@@ -142,7 +142,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Fertilizers & Nutrients',
     readTime: '6 min read',
     publishedDate: '2026-04-09',
-    image: '/images/fertilizer-application.webp',
+    image: '/images/product-fertilizer.webp',
     author: 'Agribiz Africa Agronomy Team',
     content: [
       '## Understanding Soil Nutrition in Ghana',
@@ -336,7 +336,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Farming Techniques',
     readTime: '7 min read',
     publishedDate: '2026-04-08',
-    image: '/images/high-yield-farming.webp',
+    image: '/images/product-equipment.webp',
     author: 'Agribiz Africa Agronomy Team',
     content: [
       '## The Yield Gap in Ghanaian Agriculture',
