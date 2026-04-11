@@ -29,6 +29,7 @@ function App() {
   // Handle URL hash changes for SEO pages and blog articles
   useEffect(() => {
     const handleHashChange = () => {
+      console.log('Hash changed to:', window.location.hash);
       const hash = window.location.hash.replace('#', '');
 
       if (hash === 'seeds-ghana' || hash === 'seeds') {
@@ -60,12 +61,22 @@ function App() {
       }
     };
 
+    // Handle popstate (back/forward buttons) since we use pushState
+    const handlePopState = () => {
+      console.log('PopState triggered, hash:', window.location.hash);
+      handleHashChange();
+    };
+
     // Check hash on mount
     handleHashChange();
 
-    // Listen for hash changes
+    // Listen for hash changes and popstate
     window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('popstate', handlePopState);
+    };
   }, []);
 
   // Update document title based on current view
@@ -81,20 +92,26 @@ function App() {
   }, [currentView]);
 
   const handleArticleClick = (slug: string) => {
+    console.log('Opening article:', slug);
     const article = getBlogPostBySlug(slug);
     if (article) {
       setSelectedArticle(article);
-      // Update URL without page reload
+      // Update URL without triggering hashchange
       window.history.pushState(null, '', `#blog/${slug}`);
+      console.log('Article modal should open for:', article.title);
+    } else {
+      console.error('Article not found:', slug);
     }
   };
 
   const handleCloseArticle = () => {
+    console.log('Closing article modal');
     setSelectedArticle(null);
     window.history.pushState(null, '', '#blog');
   };
 
   const handleReadAnother = (slug: string) => {
+    console.log('Reading another article:', slug);
     const article = getBlogPostBySlug(slug);
     if (article) {
       setSelectedArticle(article);
@@ -153,11 +170,14 @@ function App() {
         
         {/* Blog Article Modal */}
         {selectedArticle && (
-          <BlogArticle
-            post={selectedArticle}
-            onClose={handleCloseArticle}
-            onReadAnother={handleReadAnother}
-          />
+          <>
+            {console.log('Rendering BlogArticle modal for:', selectedArticle.title)}
+            <BlogArticle
+              post={selectedArticle}
+              onClose={handleCloseArticle}
+              onReadAnother={handleReadAnother}
+            />
+          </>
         )}
       </div>
     </ThemeProvider>
