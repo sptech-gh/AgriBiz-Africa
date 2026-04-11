@@ -1,23 +1,29 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X, Phone, MapPin } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [showContactBar, setShowContactBar] = useState(true);
+  const headerRef = useRef<HTMLElement>(null);
+  const lastScrollY = useRef(0);
 
-  // Track scroll position for sticky header styling with throttling
+  // Stable scroll handler using CSS classes instead of state where possible
   useEffect(() => {
-    let ticking = false;
+    // Set initial state based on scroll position
+    setShowContactBar(window.scrollY <= 50);
+
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setIsScrolled(window.scrollY > 50);
-          ticking = false;
-        });
-        ticking = true;
+      const currentScrollY = window.scrollY;
+      // Only update state when crossing threshold to minimize re-renders
+      if (currentScrollY > 50 && lastScrollY.current <= 50) {
+        setShowContactBar(false);
+      } else if (currentScrollY <= 50 && lastScrollY.current > 50) {
+        setShowContactBar(true);
       }
+      lastScrollY.current = currentScrollY;
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -31,11 +37,20 @@ const Header = () => {
   };
 
   return (
-    <header className={`bg-white dark:bg-slate-900 sticky top-0 z-50 transition-shadow duration-200 ${isScrolled ? 'shadow-md dark:shadow-slate-800' : ''}`}>
-      {/* Top contact bar - smooth collapse on scroll */}
+    <header
+      ref={headerRef}
+      className="bg-white dark:bg-slate-900 sticky top-0 z-50"
+      style={{
+        // CSS containment to isolate rendering
+        contain: 'layout style paint',
+        // Stable height to prevent layout shifts
+        boxShadow: showContactBar ? 'none' : '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+      }}
+    >
+      {/* Top contact bar - no animation, instant toggle to prevent reflow */}
       <div
-        className={`bg-teal-600 text-white overflow-hidden transition-all duration-300 ease-out ${
-          isScrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-12 py-2 opacity-100'
+        className={`bg-teal-600 text-white ${
+          showContactBar ? 'block py-2' : 'hidden'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,12 +75,7 @@ const Header = () => {
       {/* Main navigation */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Dark mode: logo brightness adjustment */}
-          <style>{`
-            .dark header img {
-              filter: brightness(1.1);
-            }
-          `}</style>
+          {/* Logo with stable sizing - no filter animations */}
           <a
             href="#home"
             onClick={(e) => {

@@ -160,6 +160,39 @@ html {
   animation-play-state: paused;
 }
 
+/* Header stability - prevent vibration/shaking */
+header {
+  /* Promote to composite layer for smoother rendering */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Ensure header children don't cause reflows */
+header * {
+  transform-style: preserve-3d;
+}
+
+/* Disable animations on header elements that could cause shaking */
+header,
+header nav,
+header div {
+  transition-property: background-color, color, border-color;
+  transition-duration: 200ms;
+}
+
+/* Logo stability - prevent filter-induced repaints */
+header img {
+  will-change: auto;
+  transform: translateZ(0);
+}
+
+/* Stable contact bar - no animations */
+header > div:first-child {
+  transition: none !important;
+  will-change: auto !important;
+}
+
 /* Respect user motion preferences for accessibility */
 @media (prefers-reduced-motion: reduce) {
   *,
