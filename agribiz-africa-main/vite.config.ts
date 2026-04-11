@@ -29,7 +29,6 @@ export default defineConfig({
     },
     cssCodeSplit: true,
     sourcemap: false,
-    minify: 'terser',
   },
   optimizeDeps: {
     exclude: ['lucide-react'],
