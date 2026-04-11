@@ -26,21 +26,37 @@ function App() {
   const [currentView, setCurrentView] = useState<PageView>('home');
   const [selectedArticle, setSelectedArticle] = useState<BlogPost | null>(null);
 
-  // Handle URL hash changes for SEO pages
+  // Handle URL hash changes for SEO pages and blog articles
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      
+
       if (hash === 'seeds-ghana' || hash === 'seeds') {
         setCurrentView('seeds');
+        setSelectedArticle(null);
       } else if (hash === 'fertilizer-ghana' || hash === 'fertilizer') {
         setCurrentView('fertilizer');
+        setSelectedArticle(null);
       } else if (hash === 'farm-consulting-ghana' || hash === 'consulting') {
         setCurrentView('consulting');
+        setSelectedArticle(null);
       } else if (hash === 'blog') {
         setCurrentView('blog');
+        setSelectedArticle(null);
+      } else if (hash.startsWith('blog/')) {
+        // Handle blog article URLs like #blog/slug
+        const slug = hash.replace('blog/', '');
+        const article = getBlogPostBySlug(slug);
+        if (article) {
+          setCurrentView('blog');
+          setSelectedArticle(article);
+        } else {
+          setCurrentView('blog');
+          setSelectedArticle(null);
+        }
       } else if (hash === '' || hash === 'home') {
         setCurrentView('home');
+        setSelectedArticle(null);
       }
     };
 

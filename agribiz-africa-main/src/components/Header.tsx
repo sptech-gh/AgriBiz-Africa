@@ -93,7 +93,14 @@ const Header = () => {
             <button onClick={() => scrollToSection('products')} className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">
               Products
             </button>
-            <a href="#blog" className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">
+            <a
+              href="#blog"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = 'blog';
+              }}
+              className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors"
+            >
               Blog
             </a>
             <ThemeToggle />
@@ -132,7 +139,17 @@ const Header = () => {
               <button onClick={() => scrollToSection('home')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Home</button>
               <button onClick={() => scrollToSection('services')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Services</button>
               <button onClick={() => scrollToSection('products')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Products</button>
-              <a href="#blog" onClick={() => setIsMenuOpen(false)} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors block">Blog</a>
+              <a
+                href="#blog"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.hash = 'blog';
+                  setIsMenuOpen(false);
+                }}
+                className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors block"
+              >
+                Blog
+              </a>
               <button onClick={() => scrollToSection('contact')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Contact</button>
 
               <div className="pt-6 space-y-3">

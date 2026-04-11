@@ -47,7 +47,7 @@ const Footer = () => {
               <li><button onClick={() => navigateToSection('about')} className="text-gray-300 hover:text-teal-400 transition-colors">About Us</button></li>
               <li><button onClick={() => navigateToSection('services')} className="text-gray-300 hover:text-teal-400 transition-colors">Services</button></li>
               <li><button onClick={() => navigateToSection('products')} className="text-gray-300 hover:text-teal-400 transition-colors">Products</button></li>
-              <li><a href="#blog" className="text-gray-300 hover:text-teal-400 transition-colors">Farming Blog</a></li>
+              <li><a href="#blog" onClick={(e) => { e.preventDefault(); window.location.hash = 'blog'; }} className="text-gray-300 hover:text-teal-400 transition-colors">Farming Blog</a></li>
               <li><button onClick={() => navigateToSection('contact')} className="text-gray-300 hover:text-teal-400 transition-colors">Contact</button></li>
             </ul>
           </div>

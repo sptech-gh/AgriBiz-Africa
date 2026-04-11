@@ -99,6 +99,10 @@ const Services = () => {
           <div className="grid md:grid-cols-3 gap-4">
             <a
               href="#blog/best-maize-seeds-high-yield-ghana"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = 'blog/best-maize-seeds-high-yield-ghana';
+              }}
               className="flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
             >
               <span className="text-lg">→</span>
@@ -106,6 +110,10 @@ const Services = () => {
             </a>
             <a
               href="#blog/top-fertilizers-maximum-crop-yield-ghana"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = 'blog/top-fertilizers-maximum-crop-yield-ghana';
+              }}
               className="flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
             >
               <span className="text-lg">→</span>
@@ -113,6 +121,10 @@ const Services = () => {
             </a>
             <a
               href="#blog/how-farmers-ghana-increase-yield-2x"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = 'blog/how-farmers-ghana-increase-yield-2x';
+              }}
               className="flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
             >
               <span className="text-lg">→</span>
@@ -134,8 +146,12 @@ const Services = () => {
             >
               Schedule Consultation
             </button>
-            <a 
+            <a
               href="#blog"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = 'blog';
+              }}
               className="bg-teal-700 text-white px-8 py-4 rounded-full font-semibold hover:bg-teal-800 transition-all duration-300"
             >
               Read Farming Tips
