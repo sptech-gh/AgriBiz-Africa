@@ -1,4 +1,3 @@
-import React from 'react';
 import { Target, Eye, Award, Users, Shield, Lightbulb, Heart } from 'lucide-react';
 
 const About = () => {
@@ -7,8 +6,8 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Agribiz Africa</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Dedicated to transforming agriculture in Ghana through quality inputs, 
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Dedicated to transforming agriculture in Ghana through quality inputs,
             expert advisory services, and unwavering commitment to farmer success.
           </p>
         </div>
@@ -29,101 +28,91 @@ const About = () => {
             </p>
           </div>
           
-          <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-3xl p-8 animate-slide-in-right">
+          <div className="bg-gray-50 rounded-2xl p-8 animate-fade-in-up">
             <div className="grid grid-cols-2 gap-6">
-              <div className="text-center group hover:scale-105 transition-transform duration-300 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                <div className="bg-teal-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform duration-300">
-                  <Target className="h-8 w-8 text-teal-600" />
+              <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                <div className="bg-teal-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Target className="h-7 w-7 text-teal-600" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Our Mission</h4>
-                <p className="text-sm text-gray-600">Empowering farmers with quality inputs and expert guidance</p>
+                <h4 className="font-semibold text-gray-900 mb-1 text-sm">Our Mission</h4>
+                <p className="text-xs text-gray-600">Empowering farmers with quality inputs</p>
               </div>
-              
-              <div className="text-center group hover:scale-105 transition-transform duration-300 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                <div className="bg-emerald-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform duration-300">
-                  <Eye className="h-8 w-8 text-emerald-600" />
+
+              <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <div className="bg-emerald-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Eye className="h-7 w-7 text-emerald-600" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Our Vision</h4>
-                <p className="text-sm text-gray-600">Leading agricultural transformation across West Africa</p>
+                <h4 className="font-semibold text-gray-900 mb-1 text-sm">Our Vision</h4>
+                <p className="text-xs text-gray-600">Leading agricultural transformation</p>
               </div>
-              
-              <div className="text-center group hover:scale-105 transition-transform duration-300 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                <div className="bg-lime-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform duration-300">
-                  <Award className="h-8 w-8 text-lime-600" />
+
+              <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                <div className="bg-lime-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Award className="h-7 w-7 text-lime-600" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Quality Assured</h4>
-                <p className="text-sm text-gray-600">Premium products from trusted global suppliers</p>
+                <h4 className="font-semibold text-gray-900 mb-1 text-sm">Quality Assured</h4>
+                <p className="text-xs text-gray-600">Premium products from trusted suppliers</p>
               </div>
-              
-              <div className="text-center group hover:scale-105 transition-transform duration-300 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                <div className="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-transform duration-300">
-                  <Users className="h-8 w-8 text-yellow-600" />
+
+              <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+                <div className="bg-yellow-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Users className="h-7 w-7 text-yellow-600" />
                 </div>
-                <h4 className="font-semibold text-gray-900 mb-2">Community First</h4>
-                <p className="text-sm text-gray-600">Supporting local farming communities to thrive</p>
+                <h4 className="font-semibold text-gray-900 mb-1 text-sm">Community First</h4>
+                <p className="text-xs text-gray-600">Supporting local farming communities</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Optimized Values section */}
-        <div className="relative overflow-hidden animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          {/* Background image with overlay */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-3xl"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(20, 184, 166, 0.9), rgba(16, 185, 129, 0.9)), url(/images/about-bg.webp)',
-            }}
-          ></div>
-          
-          <div className="relative bg-gradient-to-r from-teal-600/95 to-emerald-600/95 rounded-3xl p-12 text-white">
-            <div className="text-center mb-12 animate-slide-in-up">
-              <h3 className="text-3xl font-bold mb-4">Our Core Values</h3>
-              <p className="text-teal-100 text-lg max-w-2xl mx-auto">
-                The fundamental principles that guide our mission and shape every interaction with our farming community
+        {/* Core Values */}
+        <div className="bg-teal-600 rounded-2xl p-8 md:p-12 text-white animate-fade-in-up">
+          <div className="text-center mb-10">
+            <h3 className="text-3xl font-bold mb-3">Our Core Values</h3>
+            <p className="text-teal-100 max-w-2xl mx-auto">
+              The fundamental principles that guide our mission and shape every interaction
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <div className="bg-white/10 w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Shield className="h-7 w-7 text-white" />
+              </div>
+              <h4 className="font-semibold mb-1">Integrity</h4>
+              <p className="text-sm text-teal-100">
+                Honest and ethical business practices
               </p>
             </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center group animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                <div className="bg-white/20 backdrop-blur-sm w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                  <Shield className="h-10 w-10 text-white" />
-                </div>
-                <h4 className="text-xl font-bold mb-3">Integrity</h4>
-                <p className="text-sm text-teal-100 leading-relaxed">
-                  Building trust through honest, transparent, and ethical business practices in every interaction
-                </p>
+
+            <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <div className="bg-white/10 w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Award className="h-7 w-7 text-white" />
               </div>
-              
-              <div className="text-center group animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                <div className="bg-white/20 backdrop-blur-sm w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                  <Award className="h-10 w-10 text-white" />
-                </div>
-                <h4 className="text-xl font-bold mb-3">Excellence</h4>
-                <p className="text-sm text-teal-100 leading-relaxed">
-                  Committed to delivering superior quality products and services that exceed expectations
-                </p>
+              <h4 className="font-semibold mb-1">Excellence</h4>
+              <p className="text-sm text-teal-100">
+                Quality products and services
+              </p>
+            </div>
+
+            <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <div className="bg-white/10 w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Lightbulb className="h-7 w-7 text-white" />
               </div>
-              
-              <div className="text-center group animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                <div className="bg-white/20 backdrop-blur-sm w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                  <Lightbulb className="h-10 w-10 text-white" />
-                </div>
-                <h4 className="text-xl font-bold mb-3">Innovation</h4>
-                <p className="text-sm text-teal-100 leading-relaxed">
-                  Embracing cutting-edge technologies and progressive methods to advance agriculture
-                </p>
+              <h4 className="font-semibold mb-1">Innovation</h4>
+              <p className="text-sm text-teal-100">
+                Embracing new technologies
+              </p>
+            </div>
+
+            <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-white/10 w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Heart className="h-7 w-7 text-white" />
               </div>
-              
-              <div className="text-center group animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                <div className="bg-white/20 backdrop-blur-sm w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                  <Heart className="h-10 w-10 text-white" />
-                </div>
-                <h4 className="text-xl font-bold mb-3">Community</h4>
-                <p className="text-sm text-teal-100 leading-relaxed">
-                  Fostering strong relationships and supporting the growth of farming communities
-                </p>
-              </div>
+              <h4 className="font-semibold mb-1">Community</h4>
+              <p className="text-sm text-teal-100">
+                Supporting farmer growth
+              </p>
             </div>
           </div>
         </div>

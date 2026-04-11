@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Send, User, Phone, Mail, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
+import { Send, User, Phone, Mail, ChevronDown, Loader2, CheckCircle } from 'lucide-react';
 
 const LeadCapture = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,7 @@ const LeadCapture = () => {
     farmingInterest: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const farmingOptions = [
     { value: '', label: 'Select your farming interest' },
@@ -38,23 +39,27 @@ Email: ${formData.email || 'Not provided'}`;
     // Open WhatsApp with pre-filled message
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
 
-    // Reset form
+    // Show success state
+    setIsSubmitted(true);
+
+    // Reset form after delay
     setTimeout(() => {
       setFormData({ fullName: '', phone: '', email: '', farmingInterest: '' });
       setIsSubmitting(false);
-    }, 500);
+      setIsSubmitted(false);
+    }, 3000);
   };
 
   return (
-    <section className="py-12 bg-gradient-to-r from-teal-600 to-emerald-600">
+    <section className="py-20 bg-teal-600">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 animate-fade-in-up">
+        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 animate-fade-in-up">
           {/* Header */}
-          <div className="text-center mb-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
               Request a Free Consultation
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-lg">
               Fill in your details and our team will contact you via WhatsApp within 24 hours
             </p>
           </div>
@@ -147,14 +152,32 @@ Email: ${formData.email || 'Not provided'}`;
             {/* Submit Button */}
             <button
               type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white font-semibold py-4 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
+              disabled={isSubmitting || isSubmitted}
+              className={`w-full font-semibold py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed ${
+                isSubmitted
+                  ? 'bg-green-500 text-white'
+                  : 'bg-teal-600 hover:bg-teal-700 text-white'
+              }`}
             >
-              <Send className="h-5 w-5" />
-              {isSubmitting ? 'Opening WhatsApp...' : 'Request Consultation'}
+              {isSubmitted ? (
+                <>
+                  <CheckCircle className="h-5 w-5" />
+                  Message Sent!
+                </>
+              ) : isSubmitting ? (
+                <>
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send className="h-5 w-5" />
+                  Request Consultation
+                </>
+              )}
             </button>
 
-            <p className="text-xs text-gray-500 text-center">
+            <p className="text-sm text-gray-500 text-center">
               By submitting, you agree to be contacted via WhatsApp. We respect your privacy.
             </p>
           </form>
