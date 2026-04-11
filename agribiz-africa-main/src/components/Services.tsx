@@ -95,19 +95,53 @@ const Services = () => {
           })}
         </div>
 
+        {/* Internal Linking - Related Resources */}
+        <div className="mt-12 bg-teal-50 rounded-2xl p-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Related Farming Resources</h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            <a 
+              href="#blog/best-maize-seeds-high-yield-ghana" 
+              className="flex items-center gap-2 text-teal-600 hover:text-teal-700 transition-colors"
+            >
+              <span className="text-lg">→</span>
+              <span>Best Maize Seeds Guide</span>
+            </a>
+            <a 
+              href="#blog/top-fertilizers-maximum-crop-yield-ghana" 
+              className="flex items-center gap-2 text-teal-600 hover:text-teal-700 transition-colors"
+            >
+              <span className="text-lg">→</span>
+              <span>Fertilizer Selection Guide</span>
+            </a>
+            <a 
+              href="#blog/how-farmers-ghana-increase-yield-2x" 
+              className="flex items-center gap-2 text-teal-600 hover:text-teal-700 transition-colors"
+            >
+              <span className="text-lg">→</span>
+              <span>Double Your Yield Tips</span>
+            </a>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="mt-16 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-3xl p-12 text-center text-white animate-fade-in-up hover:shadow-2xl transition-shadow duration-500" style={{ animationDelay: '0.3s' }}>
           <h3 className="text-3xl font-bold mb-4 animate-slide-in-up">Ready to Transform Your Farm?</h3>
           <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto animate-slide-in-up" style={{ animationDelay: '0.1s' }}>
             Join hundreds of successful farmers who trust Agribiz Africa for their agricultural needs
           </p>
-          <div className="flex justify-center animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="flex flex-wrap justify-center gap-4 animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
             <button 
               onClick={() => scrollToSection('contact')}
               className="bg-white text-teal-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             >
               Schedule Consultation
             </button>
+            <a 
+              href="#blog"
+              className="bg-teal-700 text-white px-8 py-4 rounded-full font-semibold hover:bg-teal-800 transition-all duration-300"
+            >
+              Read Farming Tips
+            </a>
           </div>
         </div>
       </div>

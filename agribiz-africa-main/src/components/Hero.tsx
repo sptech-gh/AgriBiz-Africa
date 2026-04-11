@@ -88,6 +88,16 @@ const Hero = () => {
               </button>
             </div>
 
+            {/* Blog Link */}
+            <div className="pt-4 animate-slide-in-up" style={{ animationDelay: '0.25s' }}>
+              <a
+                href="#blog"
+                className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 transition-all duration-300 font-semibold"
+              >
+                Read Farming Tips →
+              </a>
+            </div>
+
             {/* Optimized Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
               <div className="text-center group hover:scale-105 transition-transform duration-300">

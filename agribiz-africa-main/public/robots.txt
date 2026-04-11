@@ -4,9 +4,30 @@ Allow: /
 # Sitemap location
 Sitemap: https://agribiz.africa/sitemap.xml
 
+# Allow all important pages
+Allow: /#seeds-ghana
+Allow: /#fertilizer-ghana
+Allow: /#farm-consulting-ghana
+Allow: /#blog
+Allow: /#products
+Allow: /#services
+Allow: /#contact
+
 # Disallow admin and private paths (if any in future)
 # Disallow: /admin/
 # Disallow: /private/
+# Disallow: /api/
 
-# Crawl rate for search engines
-Crawl-delay: 10
+# Crawl rate optimization
+# Note: Major search engines may ignore Crawl-delay
+Crawl-delay: 5
+
+# Googlebot specific (optional directives for Google)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bingbot specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 3

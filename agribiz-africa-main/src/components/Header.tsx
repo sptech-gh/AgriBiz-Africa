@@ -61,6 +61,10 @@ const Header = () => {
               Products
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
             </button>
+            <a href="#blog" className="text-gray-700 hover:text-teal-600 font-medium transition-all duration-300 hover:scale-105 relative group">
+              Blog
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
+            </a>
             <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-teal-600 font-medium transition-all duration-300 hover:scale-105 relative group">
               Contact
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
@@ -92,6 +96,7 @@ const Header = () => {
               <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">About</button>
               <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">Services</button>
               <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">Products</button>
+              <a href="#blog" className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">Blog</a>
               <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">Contact</button>
               <button 
                 onClick={() => scrollToSection('contact')}

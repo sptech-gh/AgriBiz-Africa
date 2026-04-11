@@ -1,33 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://agribiz.africa/</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- SEO Landing Pages -->
   <url>
-    <loc>https://agribiz.africa/#about</loc>
-    <lastmod>2026-04-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://agribiz.africa/#services</loc>
-    <lastmod>2026-04-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://agribiz.africa/#products</loc>
+    <loc>https://agribiz.africa/#seeds-ghana</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://agribiz.africa/#fertilizer-ghana</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://agribiz.africa/#farm-consulting-ghana</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Blog Section -->
+  <url>
+    <loc>https://agribiz.africa/#blog</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://agribiz.africa/#blog/best-maize-seeds-high-yield-ghana</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agribiz.africa/#blog/top-fertilizers-maximum-crop-yield-ghana</loc>
+    <lastmod>2026-04-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://agribiz.africa/#blog/how-farmers-ghana-increase-yield-2x</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Section Anchors -->
+  <url>
+    <loc>https://agribiz.africa/#about</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://agribiz.africa/#services</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://agribiz.africa/#products</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://agribiz.africa/#testimonials</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://agribiz.africa/#faq</loc>
+    <lastmod>2026-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://agribiz.africa/#contact</loc>
     <lastmod>2026-04-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -40,19 +40,21 @@ const Footer = () => {
               <li><button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-teal-400 transition-colors">About Us</button></li>
               <li><button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-400 transition-colors">Services</button></li>
               <li><button onClick={() => scrollToSection('products')} className="text-gray-300 hover:text-teal-400 transition-colors">Products</button></li>
+              <li><a href="#blog" className="text-gray-300 hover:text-teal-400 transition-colors">Farming Blog</a></li>
               <li><button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-400 transition-colors">Contact</button></li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Products & Resources */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Our Services</h3>
+            <h3 className="text-xl font-bold mb-6">Products & Resources</h3>
             <ul className="space-y-3">
-              <li><span className="text-gray-300">Agricultural Inputs</span></li>
-              <li><span className="text-gray-300">Financing Advisory</span></li>
-              <li><span className="text-gray-300">Technical Training</span></li>
-              <li><span className="text-gray-300">Market Intelligence</span></li>
-              <li><span className="text-gray-300">Farmer Support</span></li>
+              <li><a href="#seeds-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Seeds Ghana</a></li>
+              <li><a href="#fertilizer-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Fertilizer Ghana</a></li>
+              <li><a href="#farm-consulting-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Farm Consulting</a></li>
+              <li><a href="#blog/best-maize-seeds-high-yield-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Maize Seeds Guide</a></li>
+              <li><a href="#blog/top-fertilizers-maximum-crop-yield-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Fertilizer Guide</a></li>
+              <li><a href="#blog/how-farmers-ghana-increase-yield-2x" className="text-gray-300 hover:text-teal-400 transition-colors">Yield Tips</a></li>
             </ul>
           </div>
 

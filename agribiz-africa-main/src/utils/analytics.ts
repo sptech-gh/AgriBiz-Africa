@@ -117,6 +117,11 @@ export const trackConversion = {
   phoneCall: () => trackEvent('phone_call'),
   quoteRequest: () => trackEvent('quote_request'),
   
+  // Blog engagement events
+  blogView: (title: string) => trackEvent('blog_view', { article_title: title }),
+  blogClick: (title: string) => trackEvent('blog_click', { article_title: title }),
+  blogShare: (title: string) => trackEvent('blog_share', { article_title: title }),
+  
   // E-commerce events
   productView: (productName: string) => trackEvent('product_view', { product_name: productName }),
   orderIntent: (productName: string) => trackEvent('order_intent', { product_name: productName }),
