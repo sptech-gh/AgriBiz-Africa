@@ -1,11 +1,19 @@
 import { Facebook, Phone, Mail, MapPin, Leaf } from 'lucide-react';
 
 const Footer = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const navigateToSection = (sectionId: string) => {
+    // Navigate to home and scroll to section
+    window.location.hash = '';
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
+  const navigateToBlogArticle = (slug: string) => {
+    window.location.hash = `blog/${slug}`;
   };
 
   return (
@@ -35,12 +43,12 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              <li><button onClick={() => scrollToSection('home')} className="text-gray-300 hover:text-teal-400 transition-colors">Home</button></li>
-              <li><button onClick={() => scrollToSection('about')} className="text-gray-300 hover:text-teal-400 transition-colors">About Us</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="text-gray-300 hover:text-teal-400 transition-colors">Services</button></li>
-              <li><button onClick={() => scrollToSection('products')} className="text-gray-300 hover:text-teal-400 transition-colors">Products</button></li>
+              <li><a href="#home" onClick={() => navigateToSection('home')} className="text-gray-300 hover:text-teal-400 transition-colors">Home</a></li>
+              <li><button onClick={() => navigateToSection('about')} className="text-gray-300 hover:text-teal-400 transition-colors">About Us</button></li>
+              <li><button onClick={() => navigateToSection('services')} className="text-gray-300 hover:text-teal-400 transition-colors">Services</button></li>
+              <li><button onClick={() => navigateToSection('products')} className="text-gray-300 hover:text-teal-400 transition-colors">Products</button></li>
               <li><a href="#blog" className="text-gray-300 hover:text-teal-400 transition-colors">Farming Blog</a></li>
-              <li><button onClick={() => scrollToSection('contact')} className="text-gray-300 hover:text-teal-400 transition-colors">Contact</button></li>
+              <li><button onClick={() => navigateToSection('contact')} className="text-gray-300 hover:text-teal-400 transition-colors">Contact</button></li>
             </ul>
           </div>
 
@@ -51,9 +59,9 @@ const Footer = () => {
               <li><a href="#seeds-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Seeds Ghana</a></li>
               <li><a href="#fertilizer-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Fertilizer Ghana</a></li>
               <li><a href="#farm-consulting-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Farm Consulting</a></li>
-              <li><a href="#blog/best-maize-seeds-high-yield-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Maize Seeds Guide</a></li>
-              <li><a href="#blog/top-fertilizers-maximum-crop-yield-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Fertilizer Guide</a></li>
-              <li><a href="#blog/how-farmers-ghana-increase-yield-2x" className="text-gray-300 hover:text-teal-400 transition-colors">Yield Tips</a></li>
+              <li><button onClick={() => navigateToBlogArticle('best-maize-seeds-high-yield-ghana')} className="text-gray-300 hover:text-teal-400 transition-colors">Maize Seeds Guide</button></li>
+              <li><button onClick={() => navigateToBlogArticle('top-fertilizers-maximum-crop-yield-ghana')} className="text-gray-300 hover:text-teal-400 transition-colors">Fertilizer Guide</button></li>
+              <li><button onClick={() => navigateToBlogArticle('how-farmers-ghana-increase-yield-2x')} className="text-gray-300 hover:text-teal-400 transition-colors">Yield Tips</button></li>
             </ul>
           </div>
 

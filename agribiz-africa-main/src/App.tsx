@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TrustSection from './components/TrustSection';
@@ -14,6 +14,7 @@ import LeadCapture from './components/LeadCapture';
 import MobileStickyCTA from './components/MobileStickyCTA';
 import BlogSection from './components/BlogSection';
 import BlogArticle from './components/BlogArticle';
+import About from './components/About';
 import { SeedsPage, FertilizerPage, ConsultingPage } from './components/SEOPages';
 import { getBlogPostBySlug, BlogPost } from './data/blogData';
 
@@ -108,6 +109,7 @@ function App() {
           <>
             <Hero />
             <TrustSection />
+            <About />
             <Services />
             <Products />
             <Testimonials />
