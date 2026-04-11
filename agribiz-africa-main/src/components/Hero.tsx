@@ -1,22 +1,10 @@
-import React from 'react';
-import { ArrowRight, Leaf, TrendingUp, Users, Target, MessageCircle, Phone, FileText } from 'lucide-react';
+import { Leaf, TrendingUp, Users, Target, MessageCircle, FileText } from 'lucide-react';
 
 const Hero = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const openWhatsApp = () => {
     const phone = '233242544549';
     const message = 'Hi Agribiz Africa, I want to learn more about your products and services.';
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
-  };
-
-  const makeCall = () => {
-    window.open('tel:+233242544549', '_blank');
   };
 
   const scrollToQuote = () => {
@@ -39,63 +27,53 @@ const Hero = () => {
       {/* Gradient overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-teal-50/80 to-emerald-50/90"></div>
 
-      {/* Simplified background pattern overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-20 h-20 bg-teal-600 rounded-full animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-16 h-16 bg-emerald-600 rounded-full animate-bounce"></div>
-        <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-lime-600 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-40 right-1/3 w-24 h-24 bg-teal-600 rounded-full animate-bounce"></div>
+      {/* Subtle background pattern - static */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute top-20 left-20 w-32 h-32 bg-teal-600 rounded-full"></div>
+        <div className="absolute bottom-32 right-20 w-24 h-24 bg-emerald-600 rounded-full"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in-up">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight animate-slide-in-left">
-                <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Helping Farmers</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight animate-slide-in-left">
+                <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">Premium Agricultural</span>
                 <br />
-                <span className="text-gray-900">& Agribusinesses in Ghana</span>
+                <span className="text-gray-900">Solutions for Ghana</span>
                 <br />
-                <span className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-700">Grow Faster with Premium Seeds, Fertilizers & Expert Support</span>
+                <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-600">Seeds, Fertilizers & Expert Farm Support</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed animate-slide-in-left max-w-2xl" style={{ animationDelay: '0.1s' }}>
-                Trusted by farmers and agribusinesses across Ghana for quality agricultural inputs and expert advisory services.
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed animate-slide-in-left max-w-2xl" style={{ animationDelay: '0.1s' }}>
+                Trusted by 1,000+ farmers across Ghana for quality inputs, financing advisory, and expert guidance since 2009.
               </p>
             </div>
 
-            {/* Multi-Channel CTA Buttons */}
+            {/* Primary CTAs - Simplified to 2 */}
             <div className="flex flex-col sm:flex-row gap-3 animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
               <button
                 onClick={openWhatsApp}
-                className="bg-green-500 hover:bg-green-600 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 group"
+                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 group text-base"
               >
                 <MessageCircle className="h-5 w-5" />
-                WhatsApp Chat
-              </button>
-              <button
-                onClick={makeCall}
-                className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2"
-              >
-                <Phone className="h-5 w-5" />
-                Call Now
+                Chat on WhatsApp
               </button>
               <button
                 onClick={scrollToQuote}
-                className="bg-white border-2 border-gray-300 hover:border-teal-600 text-gray-700 hover:text-teal-600 px-6 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2"
+                className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 text-base"
               >
                 <FileText className="h-5 w-5" />
-                Get Quote
+                Request Quote
               </button>
             </div>
 
-            {/* Blog Link */}
-            <div className="pt-4 animate-slide-in-up" style={{ animationDelay: '0.25s' }}>
-              <a
-                href="#blog"
-                className="inline-flex items-center gap-2 text-teal-600 hover:text-teal-700 transition-all duration-300 font-semibold"
-              >
-                Read Farming Tips →
-              </a>
+            {/* Trust Signal */}
+            <div className="flex items-center gap-4 pt-2 animate-slide-in-up" style={{ animationDelay: '0.25s' }}>
+              <div className="flex -space-x-2">
+                <div className="w-8 h-8 rounded-full bg-teal-100 flex items-center justify-center text-xs font-bold text-teal-600">1K+</div>
+                <div className="w-8 h-8 rounded-full bg-emerald-100 flex items-center justify-center text-xs font-bold text-emerald-600">⭐</div>
+              </div>
+              <span className="text-sm text-gray-600">Trusted by 1,000+ farmers • 4.9/5 rating</span>
             </div>
 
             {/* Optimized Stats */}

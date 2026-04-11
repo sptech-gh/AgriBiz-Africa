@@ -32,7 +32,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-teal-50/50 to-emerald-50/30">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">

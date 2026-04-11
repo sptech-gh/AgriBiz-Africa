@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TrustSection from './components/TrustSection';
-import About from './components/About';
 import Services from './components/Services';
 import Products from './components/Products';
 import Testimonials from './components/Testimonials';
@@ -108,12 +107,11 @@ function App() {
         return (
           <>
             <Hero />
-            <LeadCapture />
             <TrustSection />
-            <About />
             <Services />
             <Products />
             <Testimonials />
+            <LeadCapture />
             <FAQ />
             <BlogSection onArticleClick={handleArticleClick} />
             <WhatsAppChannel />
