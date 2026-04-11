@@ -88,9 +88,14 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
 
       // Lists
       if (paragraph.startsWith('- ')) {
-        const formattedListItem = paragraph
+        let formattedListItem = paragraph
           .replace('- ', '')
           .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // Parse markdown links in list items
+        formattedListItem = formattedListItem.replace(
+          /\[([^\]]+)\]\(([^)]+)\)/g,
+          '<a href="$2" class="text-teal-600 hover:text-teal-700 underline font-medium">$1</a>'
+        );
         return (
           <li
             key={index}
@@ -101,9 +106,14 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
       }
 
       if (paragraph.match(/^\d+\./)) {
-        const formattedListItem = paragraph
+        let formattedListItem = paragraph
           .replace(/^\d+\.\s*/, '')
           .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // Parse markdown links in list items
+        formattedListItem = formattedListItem.replace(
+          /\[([^\]]+)\]\(([^)]+)\)/g,
+          '<a href="$2" class="text-teal-600 hover:text-teal-700 underline font-medium">$1</a>'
+        );
         return (
           <li
             key={index}
@@ -152,7 +162,13 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
       }
 
       // Bold text (markdown style)
-      const formattedText = paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      let formattedText = paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+      // Markdown links [text](#url) -> HTML <a> tags
+      formattedText = formattedText.replace(
+        /\[([^\]]+)\]\(([^)]+)\)/g,
+        '<a href="$2" class="text-teal-600 hover:text-teal-700 underline font-medium">$1</a>'
+      );
 
       // Regular paragraph
       return (
