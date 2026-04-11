@@ -5,8 +5,20 @@ import ThemeToggle from './ThemeToggle';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showContactBar, setShowContactBar] = useState(true);
+  const [isBlogPage, setIsBlogPage] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const lastScrollY = useRef(0);
+
+  // Check if we're on the blog page
+  useEffect(() => {
+    const checkBlogPage = () => {
+      const hash = window.location.hash;
+      setIsBlogPage(hash === '#blog' || hash.startsWith('#blog/'));
+    };
+    checkBlogPage();
+    window.addEventListener('hashchange', checkBlogPage);
+    return () => window.removeEventListener('hashchange', checkBlogPage);
+  }, []);
 
   // Stable scroll handler using CSS classes instead of state where possible
   useEffect(() => {
@@ -29,10 +41,20 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (isBlogPage && sectionId !== 'blog') {
+      // Navigate to home page with section hash
+      window.location.hash = sectionId === 'home' ? '' : sectionId;
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    setIsMenuOpen(false);
+  };
+
+  const navigateToHome = () => {
+    window.location.hash = '';
     setIsMenuOpen(false);
   };
 
@@ -146,20 +168,20 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden fixed inset-0 top-[60px] bg-white dark:bg-slate-900 z-40 animate-fade-in-up shadow-2xl">
             <div className="flex flex-col p-6 space-y-1">
-              <button onClick={() => scrollToSection('home')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Home</button>
+              <button onClick={() => isBlogPage ? navigateToHome() : scrollToSection('home')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Home</button>
               <button onClick={() => scrollToSection('services')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Services</button>
               <button onClick={() => scrollToSection('products')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Products</button>
-              <a
-                href="#blog"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.location.hash = 'blog';
+              <button
+                onClick={() => {
+                  if (!isBlogPage) {
+                    window.location.hash = 'blog';
+                  }
                   setIsMenuOpen(false);
                 }}
-                className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors block"
+                className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors w-full text-left"
               >
                 Blog
-              </a>
+              </button>
               <button onClick={() => scrollToSection('contact')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Contact</button>
 
               <div className="pt-6 space-y-3">
