@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, MapPin } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +31,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`bg-white sticky top-0 z-50 transition-shadow duration-300 will-change-transform ${isScrolled ? 'shadow-md' : ''}`}>
+    <header className={`bg-white dark:bg-slate-900 sticky top-0 z-50 transition-all duration-300 will-change-transform ${isScrolled ? 'shadow-md dark:shadow-slate-800' : ''}`}>
       {/* Top contact bar - smooth collapse on scroll */}
       <div
         className={`bg-teal-600 text-white overflow-hidden transition-all duration-300 ease-out ${
@@ -59,6 +60,12 @@ const Header = () => {
       {/* Main navigation */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
+          {/* Dark mode: logo brightness adjustment */}
+          <style>{`
+            .dark header img {
+              filter: brightness(1.1);
+            }
+          `}</style>
           <a
             href="#home"
             onClick={(e) => {
@@ -77,18 +84,19 @@ const Header = () => {
           
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-6">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-teal-600 font-medium transition-colors">
+            <button onClick={() => scrollToSection('home')} className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">
               Home
             </button>
-            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-teal-600 font-medium transition-colors">
+            <button onClick={() => scrollToSection('services')} className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">
               Services
             </button>
-            <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-teal-600 font-medium transition-colors">
+            <button onClick={() => scrollToSection('products')} className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">
               Products
             </button>
-            <a href="#blog" className="text-gray-700 hover:text-teal-600 font-medium transition-colors">
+            <a href="#blog" className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 font-medium transition-colors">
               Blog
             </a>
+            <ThemeToggle />
             <button
               onClick={() => scrollToSection('contact')}
               className="bg-teal-600 hover:bg-teal-700 text-white px-5 py-2 rounded-lg font-medium transition-colors"
@@ -118,13 +126,13 @@ const Header = () => {
 
         {/* Mobile menu - full screen overlay */}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[60px] bg-white z-40 animate-fade-in-up">
+          <div className="md:hidden fixed inset-0 top-[60px] bg-white dark:bg-slate-900 z-40 animate-fade-in-up">
             <div className="flex flex-col p-6 space-y-1">
-              <button onClick={() => scrollToSection('home')} className="text-gray-900 font-medium py-3 text-left text-lg border-b border-gray-100">Home</button>
-              <button onClick={() => scrollToSection('services')} className="text-gray-900 font-medium py-3 text-left text-lg border-b border-gray-100">Services</button>
-              <button onClick={() => scrollToSection('products')} className="text-gray-900 font-medium py-3 text-left text-lg border-b border-gray-100">Products</button>
-              <a href="#blog" className="text-gray-900 font-medium py-3 text-left text-lg border-b border-gray-100">Blog</a>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-900 font-medium py-3 text-left text-lg border-b border-gray-100">Contact</button>
+              <button onClick={() => scrollToSection('home')} className="text-gray-900 dark:text-gray-100 font-medium py-3 text-left text-lg border-b border-gray-100 dark:border-gray-800">Home</button>
+              <button onClick={() => scrollToSection('services')} className="text-gray-900 dark:text-gray-100 font-medium py-3 text-left text-lg border-b border-gray-100 dark:border-gray-800">Services</button>
+              <button onClick={() => scrollToSection('products')} className="text-gray-900 dark:text-gray-100 font-medium py-3 text-left text-lg border-b border-gray-100 dark:border-gray-800">Products</button>
+              <a href="#blog" className="text-gray-900 dark:text-gray-100 font-medium py-3 text-left text-lg border-b border-gray-100 dark:border-gray-800">Blog</a>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-900 dark:text-gray-100 font-medium py-3 text-left text-lg border-b border-gray-100 dark:border-gray-800">Contact</button>
 
               <div className="pt-6">
                 <button

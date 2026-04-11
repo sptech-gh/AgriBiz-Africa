@@ -18,6 +18,7 @@ import About from './components/About';
 import OurWork from './components/OurWork';
 import { SeedsPage, FertilizerPage, ConsultingPage } from './components/SEOPages';
 import { getBlogPostBySlug, BlogPost } from './data/blogData';
+import { ThemeProvider } from './context/ThemeContext';
 
 type PageView = 'home' | 'seeds' | 'fertilizer' | 'consulting' | 'blog';
 
@@ -127,21 +128,23 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen">
-      <Header />
-      {renderContent()}
-      <MobileStickyCTA />
-      <WhatsAppFloat />
-      
-      {/* Blog Article Modal */}
-      {selectedArticle && (
-        <BlogArticle
-          post={selectedArticle}
-          onClose={handleCloseArticle}
-          onReadAnother={handleReadAnother}
-        />
-      )}
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <Header />
+        {renderContent()}
+        <MobileStickyCTA />
+        <WhatsAppFloat />
+        
+        {/* Blog Article Modal */}
+        {selectedArticle && (
+          <BlogArticle
+            post={selectedArticle}
+            onClose={handleCloseArticle}
+            onReadAnother={handleReadAnother}
+          />
+        )}
+      </div>
+    </ThemeProvider>
   );
 }
 

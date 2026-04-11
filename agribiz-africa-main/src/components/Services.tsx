@@ -48,11 +48,11 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gray-50 dark:bg-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Our Services</h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Comprehensive agricultural solutions designed to support farmers at every stage of their journey
           </p>
         </div>
@@ -61,30 +61,30 @@ const Services = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div 
+              <div
                 key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group animate-fade-in-up"
+                className="bg-white dark:bg-slate-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="bg-gradient-to-br from-teal-100 to-emerald-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                  <IconComponent className="h-8 w-8 text-teal-600" />
+                <div className="bg-gradient-to-br from-teal-100 to-emerald-100 dark:from-teal-900/50 dark:to-emerald-900/50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                  <IconComponent className="h-8 w-8 text-teal-600 dark:text-teal-400" />
                 </div>
-                
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">{service.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">{service.description}</p>
 
                 <ul className="space-y-2 mb-4">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                    <li key={featureIndex} className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                       <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
-                
+
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="text-teal-600 font-medium hover:text-teal-700 transition-colors inline-flex items-center gap-1"
+                  className="text-teal-600 dark:text-teal-400 font-medium hover:text-teal-700 dark:hover:text-teal-300 transition-colors inline-flex items-center gap-1"
                 >
                   Learn More →
                 </button>
@@ -94,26 +94,26 @@ const Services = () => {
         </div>
 
         {/* Internal Linking - Related Resources */}
-        <div className="mt-12 bg-teal-50 rounded-2xl p-8">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">Related Farming Resources</h3>
+        <div className="mt-12 bg-teal-50 dark:bg-slate-700/50 rounded-2xl p-8">
+          <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Related Farming Resources</h3>
           <div className="grid md:grid-cols-3 gap-4">
-            <a 
-              href="#blog/best-maize-seeds-high-yield-ghana" 
-              className="flex items-center gap-2 text-teal-600 hover:text-teal-700 transition-colors"
+            <a
+              href="#blog/best-maize-seeds-high-yield-ghana"
+              className="flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
             >
               <span className="text-lg">→</span>
               <span>Best Maize Seeds Guide</span>
             </a>
-            <a 
-              href="#blog/top-fertilizers-maximum-crop-yield-ghana" 
-              className="flex items-center gap-2 text-teal-600 hover:text-teal-700 transition-colors"
+            <a
+              href="#blog/top-fertilizers-maximum-crop-yield-ghana"
+              className="flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
             >
               <span className="text-lg">→</span>
               <span>Fertilizer Selection Guide</span>
             </a>
-            <a 
-              href="#blog/how-farmers-ghana-increase-yield-2x" 
-              className="flex items-center gap-2 text-teal-600 hover:text-teal-700 transition-colors"
+            <a
+              href="#blog/how-farmers-ghana-increase-yield-2x"
+              className="flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
             >
               <span className="text-lg">→</span>
               <span>Double Your Yield Tips</span>

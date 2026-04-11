@@ -32,14 +32,14 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-slate-800">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             Everything you need to know about our products and services
           </p>
         </div>
@@ -49,8 +49,8 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border ${
-                openIndex === index ? 'border-teal-200' : 'border-gray-200'
+              className={`bg-white dark:bg-slate-700 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border ${
+                openIndex === index ? 'border-teal-200 dark:border-teal-800' : 'border-gray-200 dark:border-slate-600'
               }`}
             >
               <button
@@ -58,7 +58,7 @@ const FAQ = () => {
                 className="w-full px-5 py-4 text-left flex items-center justify-between focus:outline-none"
                 aria-expanded={openIndex === index}
               >
-                <span className="font-medium text-gray-900 pr-4">{faq.question}</span>
+                <span className="font-medium text-gray-900 dark:text-gray-100 pr-4">{faq.question}</span>
                 <ChevronDown
                   className={`h-5 w-5 text-teal-600 flex-shrink-0 transition-transform duration-300 ${
                     openIndex === index ? 'transform rotate-180' : ''
@@ -71,7 +71,7 @@ const FAQ = () => {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="px-5 pb-4 text-gray-600 leading-relaxed border-t border-gray-100 pt-3 text-sm">
+                <div className="px-5 pb-4 text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-slate-600 pt-3 text-sm">
                   {faq.answer}
                 </div>
               </div>
@@ -81,13 +81,13 @@ const FAQ = () => {
 
         {/* Contact CTA */}
         <div className="mt-10 text-center">
-          <p className="text-gray-600 mb-3">Still have questions?</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-3">Still have questions?</p>
           <button
             onClick={() => {
               const element = document.getElementById('contact');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="text-teal-600 font-medium hover:text-teal-700 transition-colors"
+            className="text-teal-600 dark:text-teal-400 font-medium hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
           >
             Contact Us →
           </button>
