@@ -29,14 +29,14 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             What Farmers Say
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Real stories from real farmers across Ghana who have transformed their farms with our products and services
           </p>
         </div>
@@ -98,7 +98,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 animate-fade-in-up"
+              className="bg-gray-50 dark:bg-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-md dark:shadow-slate-900/50 transition-all duration-300 border border-gray-100 dark:border-slate-700 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Star Rating */}
@@ -109,15 +109,15 @@ const Testimonials = () => {
               </div>
 
               {/* Quote Text */}
-              <p className="text-gray-700 leading-relaxed mb-4 text-sm">
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-sm">
                 "{testimonial.quote}"
               </p>
 
               {/* Author Info */}
-              <div className="pt-3 border-t border-gray-200">
-                <div className="font-medium text-gray-900 text-sm">{testimonial.name}</div>
-                <div className="text-xs text-teal-600">{testimonial.role} • {testimonial.crop}</div>
-                <div className="text-xs text-gray-500">{testimonial.location}</div>
+              <div className="pt-3 border-t border-gray-200 dark:border-slate-700">
+                <div className="font-medium text-gray-900 dark:text-gray-100 text-sm">{testimonial.name}</div>
+                <div className="text-xs text-teal-600 dark:text-teal-400">{testimonial.role} • {testimonial.crop}</div>
+                <div className="text-xs text-gray-500 dark:text-gray-500">{testimonial.location}</div>
               </div>
             </div>
           ))}
@@ -125,7 +125,7 @@ const Testimonials = () => {
 
         {/* Trust Indicators */}
         <div className="mt-12 text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 dark:text-gray-400 text-sm">
             Join 1,000+ satisfied farmers across Ghana • Average rating 4.9/5
           </p>
         </div>

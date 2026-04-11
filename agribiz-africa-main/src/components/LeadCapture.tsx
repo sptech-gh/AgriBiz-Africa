@@ -51,15 +51,15 @@ Email: ${formData.email || 'Not provided'}`;
   };
 
   return (
-    <section className="py-20 bg-teal-600">
+    <section className="py-20 bg-teal-600 dark:bg-slate-800">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 animate-fade-in-up">
+        <div className="bg-white dark:bg-slate-700 rounded-2xl shadow-lg p-6 md:p-10 animate-fade-in-up">
           {/* Header */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-3">
               Request a Free Consultation
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Fill in your details and our team will contact you via WhatsApp within 24 hours
             </p>
           </div>
@@ -69,11 +69,11 @@ Email: ${formData.email || 'Not provided'}`;
             <div className="grid md:grid-cols-2 gap-4">
               {/* Full Name */}
               <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Full Name <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-500" />
                   <input
                     type="text"
                     name="fullName"
@@ -81,18 +81,18 @@ Email: ${formData.email || 'Not provided'}`;
                     onChange={handleChange}
                     required
                     placeholder="John Doe"
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100"
                   />
                 </div>
               </div>
 
               {/* Phone Number */}
               <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Phone Number <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
-                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-500" />
                   <input
                     type="tel"
                     name="phone"
@@ -100,7 +100,7 @@ Email: ${formData.email || 'Not provided'}`;
                     onChange={handleChange}
                     required
                     placeholder="+233 XX XXX XXXX"
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100"
                   />
                 </div>
               </div>
@@ -109,35 +109,35 @@ Email: ${formData.email || 'Not provided'}`;
             <div className="grid md:grid-cols-2 gap-4">
               {/* Email (Optional) */}
               <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Email <span className="text-gray-400">(Optional)</span>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Email <span className="text-gray-400 dark:text-gray-500">(Optional)</span>
                 </label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-500" />
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com"
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100"
                   />
                 </div>
               </div>
 
               {/* Farming Interest Dropdown */}
               <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Farming Interest <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
-                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
+                  <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-500 pointer-events-none" />
                   <select
                     name="farmingInterest"
                     value={formData.farmingInterest}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all appearance-none bg-white"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all appearance-none bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100"
                   >
                     {farmingOptions.map((option) => (
                       <option key={option.value} value={option.value}>
@@ -177,7 +177,7 @@ Email: ${formData.email || 'Not provided'}`;
               )}
             </button>
 
-            <p className="text-sm text-gray-500 text-center">
+            <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
               By submitting, you agree to be contacted via WhatsApp. We respect your privacy.
             </p>
           </form>

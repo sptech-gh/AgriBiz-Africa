@@ -19,14 +19,14 @@ const BlogSection = ({ onArticleClick }: BlogSectionProps) => {
   };
 
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section id="blog" className="py-20 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Farming Insights
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Expert farming tips, crop recommendations, and proven strategies to maximize your yields in Ghana
           </p>
         </div>
@@ -37,7 +37,7 @@ const BlogSection = ({ onArticleClick }: BlogSectionProps) => {
             <article
               key={post.id}
               id={`blog-${post.slug}`}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group animate-fade-in-up"
+              className="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md dark:shadow-slate-900/50 transition-all duration-300 overflow-hidden group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {/* Featured Image with Lazy Loading */}
@@ -59,7 +59,7 @@ const BlogSection = ({ onArticleClick }: BlogSectionProps) => {
               {/* Content */}
               <div className="p-6">
                 {/* Meta */}
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
                   <span className="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />
                     {new Date(post.publishedDate).toLocaleDateString('en-GH', {
@@ -75,19 +75,19 @@ const BlogSection = ({ onArticleClick }: BlogSectionProps) => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 line-clamp-2">
                   {post.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-gray-600 mb-3 line-clamp-2 text-sm leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 mb-3 line-clamp-2 text-sm leading-relaxed">
                   {post.excerpt}
                 </p>
 
                 {/* Read More Button */}
                 <button
                   onClick={() => handleReadMore(post.slug)}
-                  className="text-teal-600 font-medium hover:text-teal-700 transition-colors inline-flex items-center gap-1"
+                  className="text-teal-600 dark:text-teal-400 font-medium hover:text-teal-700 dark:hover:text-teal-300 transition-colors inline-flex items-center gap-1"
                 >
                   Read Article →
                 </button>
@@ -98,7 +98,7 @@ const BlogSection = ({ onArticleClick }: BlogSectionProps) => {
 
         {/* View All CTA */}
         <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-3">
+          <p className="text-gray-600 dark:text-gray-400 mb-3">
             Want more farming tips? Join our QUALISEED community
           </p>
           <button
@@ -106,7 +106,7 @@ const BlogSection = ({ onArticleClick }: BlogSectionProps) => {
               const element = document.getElementById('whatsapp-channel');
               if (element) element.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="text-teal-600 font-medium hover:text-teal-700 transition-colors"
+            className="text-teal-600 dark:text-teal-400 font-medium hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
           >
             Get Weekly Farming Tips →
           </button>

@@ -64,7 +64,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
       // Headers
       if (paragraph.startsWith('## ')) {
         return (
-          <h2 key={index} className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+          <h2 key={index} className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-8 mb-4">
             {paragraph.replace('## ', '')}
           </h2>
         );
@@ -72,7 +72,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
 
       if (paragraph.startsWith('### ')) {
         return (
-          <h3 key={index} className="text-xl font-bold text-gray-800 mt-6 mb-3">
+          <h3 key={index} className="text-xl font-bold text-gray-800 dark:text-gray-200 mt-6 mb-3">
             {paragraph.replace('### ', '')}
           </h3>
         );
@@ -80,7 +80,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
 
       if (paragraph.startsWith('#### ')) {
         return (
-          <h4 key={index} className="text-lg font-semibold text-gray-800 mt-4 mb-2">
+          <h4 key={index} className="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-2">
             {paragraph.replace('#### ', '')}
           </h4>
         );
@@ -94,12 +94,12 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
         // Parse markdown links in list items
         formattedListItem = formattedListItem.replace(
           /\[([^\]]+)\]\(([^)]+)\)/g,
-          '<a href="$2" class="text-teal-600 hover:text-teal-700 underline font-medium">$1</a>'
+          '<a href="$2" class="text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 underline font-medium">$1</a>'
         );
         return (
           <li
             key={index}
-            className="ml-6 text-gray-700 mb-2 list-disc"
+            className="ml-6 text-gray-700 dark:text-gray-300 mb-2 list-disc"
             dangerouslySetInnerHTML={{ __html: formattedListItem }}
           />
         );
@@ -112,12 +112,12 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
         // Parse markdown links in list items
         formattedListItem = formattedListItem.replace(
           /\[([^\]]+)\]\(([^)]+)\)/g,
-          '<a href="$2" class="text-teal-600 hover:text-teal-700 underline font-medium">$1</a>'
+          '<a href="$2" class="text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 underline font-medium">$1</a>'
         );
         return (
           <li
             key={index}
-            className="ml-6 text-gray-700 mb-2 list-decimal"
+            className="ml-6 text-gray-700 dark:text-gray-300 mb-2 list-decimal"
             dangerouslySetInnerHTML={{ __html: formattedListItem }}
           />
         );
@@ -127,7 +127,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
       if (paragraph.startsWith('|')) {
         // Skip table separator lines
         if (paragraph.includes('---')) return null;
-        
+
         const cells = paragraph.split('|').filter(cell => cell.trim());
         if (cells.length > 1) {
           return (
@@ -139,7 +139,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
                   return (
                     <div
                       key={cellIndex}
-                      className={`px-4 py-2 text-sm ${cellIndex === 0 ? 'font-semibold bg-teal-50' : 'bg-gray-50'} rounded`}
+                      className={`px-4 py-2 text-sm ${cellIndex === 0 ? 'font-semibold bg-teal-50 dark:bg-teal-900/30' : 'bg-gray-50 dark:bg-slate-700'} rounded text-gray-800 dark:text-gray-200`}
                       dangerouslySetInnerHTML={{ __html: formattedCell }}
                     />
                   );
@@ -156,10 +156,10 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
         const text = paragraph.replace(/- \[[ x]\] /, '');
         return (
           <div key={index} className="flex items-center gap-2 ml-4 mb-2">
-            <span className={`w-4 h-4 rounded border-2 flex items-center justify-center ${isChecked ? 'bg-teal-500 border-teal-500' : 'border-gray-300'}`}>
+            <span className={`w-4 h-4 rounded border-2 flex items-center justify-center ${isChecked ? 'bg-teal-500 border-teal-500' : 'border-gray-300 dark:border-gray-600'}`}>
               {isChecked && <span className="text-white text-xs">✓</span>}
             </span>
-            <span className="text-gray-700">{text}</span>
+            <span className="text-gray-700 dark:text-gray-300">{text}</span>
           </div>
         );
       }
@@ -170,14 +170,14 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
       // Markdown links [text](#url) -> HTML <a> tags
       formattedText = formattedText.replace(
         /\[([^\]]+)\]\(([^)]+)\)/g,
-        '<a href="$2" class="text-teal-600 hover:text-teal-700 underline font-medium">$1</a>'
+        '<a href="$2" class="text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 underline font-medium">$1</a>'
       );
 
       // Regular paragraph
       return (
         <p
           key={index}
-          className="text-gray-700 leading-relaxed mb-4"
+          className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4"
           dangerouslySetInnerHTML={{ __html: formattedText }}
         />
       );
@@ -185,14 +185,14 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm">
       <div className="min-h-screen px-4 py-8">
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <div className="max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-2xl shadow-2xl overflow-hidden">
           {/* Header */}
-          <div className="sticky top-0 bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between z-10">
+          <div className="sticky top-0 bg-white dark:bg-slate-800 border-b border-gray-100 dark:border-slate-700 px-6 py-4 flex items-center justify-between z-10">
             <button
               onClick={onClose}
-              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+              className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
             >
               <ArrowLeft className="h-5 w-5" />
               <span className="font-medium">Back to Blog</span>
@@ -200,16 +200,16 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
             <div className="flex items-center gap-2">
               <button
                 onClick={handleShare}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-full transition-colors"
                 title="Share article"
               >
-                <Share2 className="h-5 w-5 text-gray-600" />
+                <Share2 className="h-5 w-5 text-gray-600 dark:text-gray-400" />
               </button>
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-full transition-colors"
               >
-                <X className="h-5 w-5 text-gray-600" />
+                <X className="h-5 w-5 text-gray-600 dark:text-gray-400" />
               </button>
             </div>
           </div>
@@ -233,7 +233,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
           <article className="px-6 md:px-12 py-8">
             {/* Meta */}
             <div className="flex flex-wrap items-center gap-4 mb-6">
-              <span className="flex items-center gap-1 text-sm text-gray-500">
+              <span className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
                 <Calendar className="h-4 w-4" />
                 {new Date(post.publishedDate).toLocaleDateString('en-GH', {
                   month: 'long',
@@ -241,21 +241,21 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
                   year: 'numeric'
                 })}
               </span>
-              <span className="flex items-center gap-1 text-sm text-gray-500">
+              <span className="flex items-center gap-1 text-sm text-gray-500 dark:text-gray-400">
                 <Clock className="h-4 w-4" />
                 {post.readTime}
               </span>
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
               {post.title}
             </h1>
 
             {/* Author */}
-            <div className="flex items-center gap-2 mb-8 pb-8 border-b border-gray-100">
-              <User className="h-5 w-5 text-teal-600" />
-              <span className="text-gray-600">By {post.author}</span>
+            <div className="flex items-center gap-2 mb-8 pb-8 border-b border-gray-100 dark:border-slate-700">
+              <User className="h-5 w-5 text-teal-600 dark:text-teal-400" />
+              <span className="text-gray-600 dark:text-gray-400">By {post.author}</span>
             </div>
 
             {/* Keywords */}
@@ -263,7 +263,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
               {post.keywords.map((keyword, idx) => (
                 <span
                   key={idx}
-                  className="bg-gray-100 text-gray-600 text-sm px-3 py-1 rounded-full"
+                  className="bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 text-sm px-3 py-1 rounded-full"
                 >
                   {keyword}
                 </span>
@@ -276,11 +276,11 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
             </div>
 
             {/* CTA Section */}
-            <div className="mt-12 bg-gradient-to-r from-teal-50 to-emerald-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="mt-12 bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-900/30 dark:to-emerald-900/30 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                 Ready to Apply These Strategies?
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
                 Our agronomy team is ready to help you implement these techniques on your farm. Get personalized advice and quality inputs delivered to your location.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -304,7 +304,7 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
             {/* Related Articles */}
             {relatedPosts.length > 0 && (
               <div className="mt-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
                   Related Articles
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -312,15 +312,15 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
                     <button
                       key={relatedPost.id}
                       onClick={() => onReadAnother(relatedPost.slug)}
-                      className="text-left bg-gray-50 hover:bg-gray-100 rounded-xl p-6 transition-all duration-300 group"
+                      className="text-left bg-gray-50 dark:bg-slate-700 hover:bg-gray-100 dark:hover:bg-slate-600 rounded-xl p-6 transition-all duration-300 group"
                     >
-                      <span className="text-sm text-teal-600 font-medium">
+                      <span className="text-sm text-teal-600 dark:text-teal-400 font-medium">
                         {relatedPost.category}
                       </span>
-                      <h4 className="text-lg font-bold text-gray-900 mt-2 mb-2 group-hover:text-teal-600 transition-colors">
+                      <h4 className="text-lg font-bold text-gray-900 dark:text-gray-100 mt-2 mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                         {relatedPost.title}
                       </h4>
-                      <p className="text-gray-600 text-sm line-clamp-2">
+                      <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
                         {relatedPost.excerpt}
                       </p>
                     </button>

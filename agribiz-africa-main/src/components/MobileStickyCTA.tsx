@@ -20,7 +20,7 @@ const MobileStickyCTA = () => {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-lg md:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-40 bg-white dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700 shadow-lg md:hidden">
       <div className="flex items-center justify-around py-2 px-2">
         {/* WhatsApp Button */}
         <button
@@ -43,10 +43,10 @@ const MobileStickyCTA = () => {
         {/* Get Quote Button */}
         <button
           onClick={scrollToQuote}
-          className="flex flex-col items-center gap-1 px-4 py-2 rounded-lg bg-gray-100 active:bg-gray-200 border border-gray-300 transition-colors"
+          className="flex flex-col items-center gap-1 px-4 py-2 rounded-lg bg-gray-100 dark:bg-slate-700 active:bg-gray-200 dark:active:bg-slate-600 border border-gray-300 dark:border-slate-600 transition-colors"
         >
-          <FileText className="h-5 w-5 text-gray-700" />
-          <span className="text-xs font-medium text-gray-700">Get Quote</span>
+          <FileText className="h-5 w-5 text-gray-700 dark:text-gray-300" />
+          <span className="text-xs font-medium text-gray-700 dark:text-gray-300">Get Quote</span>
         </button>
       </div>
     </div>

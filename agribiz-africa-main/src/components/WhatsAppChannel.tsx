@@ -5,9 +5,9 @@ const WhatsAppChannel = () => {
   const channelUrl = 'https://whatsapp.com/channel/0029VaF9ceT4IBhEZAVEsm12';
 
   return (
-    <section className="py-16 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+    <section className="py-16 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+        <div className="bg-white dark:bg-slate-700 rounded-3xl shadow-xl overflow-hidden">
           {/* Header with WhatsApp Branding */}
           <div className="bg-gradient-to-r from-green-500 to-green-600 px-8 py-6">
             <div className="flex items-center gap-3">
@@ -25,27 +25,27 @@ const WhatsAppChannel = () => {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               {/* Left: Channel Info */}
               <div className="flex-1">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">
                   Join QUALISEED
                 </h3>
-                <p className="text-gray-600 text-lg leading-relaxed mb-4">
-                  Redefining seed access for farmers across Ghana. Get trusted seed knowledge, 
-                  practical farming tips, crop production guides, and updates on high-performing 
+                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-4">
+                  Redefining seed access for farmers across Ghana. Get trusted seed knowledge,
+                  practical farming tips, crop production guides, and updates on high-performing
                   varieties to help you grow more and grow better.
                 </p>
 
                 {/* Features */}
                 <div className="flex flex-wrap gap-4 mt-4">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Sprout className="h-4 w-4 text-green-500" />
+                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <Sprout className="h-4 w-4 text-green-500 dark:text-green-400" />
                     <span>Seed Knowledge</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <BookOpen className="h-4 w-4 text-green-500" />
+                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <BookOpen className="h-4 w-4 text-green-500 dark:text-green-400" />
                     <span>Farming Tips</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Users className="h-4 w-4 text-green-500" />
+                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <Users className="h-4 w-4 text-green-500 dark:text-green-400" />
                     <span>Farmer Community</span>
                   </div>
                 </div>
@@ -63,7 +63,7 @@ const WhatsAppChannel = () => {
                   <span>Join Channel</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <p className="text-xs text-gray-400 mt-2 text-center">
+                <p className="text-xs text-gray-400 dark:text-gray-500 mt-2 text-center">
                   Free to join • Instant updates
                 </p>
               </div>
