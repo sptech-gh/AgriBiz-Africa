@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Phone, MapPin } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Track scroll position for sticky header styling
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -13,20 +23,23 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50 animate-slide-down">
-      {/* Top contact bar */}
-      <div className="bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-2">
+    <header className={`bg-white sticky top-0 z-50 transition-shadow duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
+      {/* Top contact bar - hide on scroll */}
+      <div className={`bg-teal-600 text-white py-2 transition-all duration-300 ${isScrolled ? 'hidden' : 'block'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center text-sm">
+          <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-1 hover:scale-105 transition-transform duration-300">
+              <a href="tel:+233242544549" className="flex items-center space-x-1 hover:text-teal-100">
                 <Phone className="h-3 w-3" />
                 <span>+233 24 254 4549</span>
-              </div>
-              <div className="hidden sm:flex items-center space-x-1 hover:scale-105 transition-transform duration-300">
+              </a>
+              <div className="hidden sm:flex items-center space-x-1">
                 <MapPin className="h-3 w-3" />
                 <span>Emmanuel Estate Junction, Accra</span>
               </div>
+            </div>
+            <div className="hidden md:block">
+              <span className="text-xs text-teal-100">Trusted by 1,000+ farmers</span>
             </div>
           </div>
         </div>
@@ -44,66 +57,70 @@ const Header = () => {
           </div>
           
           {/* Desktop menu */}
-          <div className="hidden md:flex items-center space-x-8 animate-fade-in-right">
-            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-teal-600 font-medium transition-all duration-300 hover:scale-105 relative group">
+          <div className="hidden md:flex items-center space-x-6">
+            <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-teal-600 font-medium transition-colors">
               Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-teal-600 font-medium transition-all duration-300 hover:scale-105 relative group">
-              About
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
-            </button>
-            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-teal-600 font-medium transition-all duration-300 hover:scale-105 relative group">
+            <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-teal-600 font-medium transition-colors">
               Services
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-teal-600 font-medium transition-all duration-300 hover:scale-105 relative group">
+            <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-teal-600 font-medium transition-colors">
               Products
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <a href="#blog" className="text-gray-700 hover:text-teal-600 font-medium transition-all duration-300 hover:scale-105 relative group">
+            <a href="#blog" className="text-gray-700 hover:text-teal-600 font-medium transition-colors">
               Blog
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-teal-600 font-medium transition-all duration-300 hover:scale-105 relative group">
-              Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 transition-all duration-300 group-hover:w-full"></span>
-            </button>
-            <button 
+            <button
               onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-teal-600 to-emerald-600 text-white px-6 py-2 rounded-full hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              className="bg-teal-600 hover:bg-teal-700 text-white px-5 py-2 rounded-lg font-medium transition-colors"
             >
-              Get in Touch
+              Get Quote
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-3">
+            <a
+              href="tel:+233242544549"
+              className="bg-teal-600 text-white p-2 rounded-lg"
+              aria-label="Call us"
+            >
+              <Phone className="h-5 w-5" />
+            </a>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-teal-600 transition-all duration-300 hover:scale-110"
+              className="text-gray-700 hover:text-teal-600 p-2"
+              aria-label="Toggle menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu - full screen overlay */}
         {isMenuOpen && (
-          <div className="md:hidden pb-4 animate-slide-down">
-            <div className="flex flex-col space-y-3">
-              <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">Home</button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">About</button>
-              <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">Services</button>
-              <button onClick={() => scrollToSection('products')} className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">Products</button>
-              <a href="#blog" className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">Blog</a>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-teal-600 font-medium py-2 text-left transition-all duration-300 hover:translate-x-2 transform">Contact</button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-teal-600 to-emerald-600 text-white px-6 py-2 rounded-full mt-2 w-full hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-              >
-                Get in Touch
-              </button>
+          <div className="md:hidden fixed inset-0 top-[60px] bg-white z-40 animate-fade-in-up">
+            <div className="flex flex-col p-6 space-y-1">
+              <button onClick={() => scrollToSection('home')} className="text-gray-900 font-medium py-3 text-left text-lg border-b border-gray-100">Home</button>
+              <button onClick={() => scrollToSection('services')} className="text-gray-900 font-medium py-3 text-left text-lg border-b border-gray-100">Services</button>
+              <button onClick={() => scrollToSection('products')} className="text-gray-900 font-medium py-3 text-left text-lg border-b border-gray-100">Products</button>
+              <a href="#blog" className="text-gray-900 font-medium py-3 text-left text-lg border-b border-gray-100">Blog</a>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-900 font-medium py-3 text-left text-lg border-b border-gray-100">Contact</button>
+
+              <div className="pt-6">
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-teal-600 text-white px-6 py-3 rounded-lg font-medium w-full"
+                >
+                  Get Free Quote
+                </button>
+              </div>
+
+              <div className="pt-6 text-center">
+                <a href="tel:+233242544549" className="text-teal-600 font-medium">
+                  Call: +233 24 254 4549
+                </a>
+              </div>
             </div>
           </div>
         )}
