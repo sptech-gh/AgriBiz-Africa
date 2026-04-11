@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Seeds & Planting',
     readTime: '5 min read',
     publishedDate: '2026-04-10',
-    image: '/images/product-seeds.webp',
+    image: '/images/blog-maize.webp',
     author: 'Agribiz Africa Agronomy Team',
     content: [
       '## Why Maize Seed Selection Matters in Ghana',
@@ -142,7 +142,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Fertilizers & Nutrients',
     readTime: '6 min read',
     publishedDate: '2026-04-09',
-    image: '/images/product-fertilizer.webp',
+    image: '/images/blog-fertilizer.webp',
     author: 'Agribiz Africa Agronomy Team',
     content: [
       '## Understanding Soil Nutrition in Ghana',
@@ -336,7 +336,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Farming Techniques',
     readTime: '7 min read',
     publishedDate: '2026-04-08',
-    image: '/images/product-equipment.webp',
+    image: '/images/blog-high-yield.webp',
     author: 'Agribiz Africa Agronomy Team',
     content: [
       '## The Yield Gap in Ghanaian Agriculture',
@@ -609,7 +609,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Farming Techniques',
     readTime: '8 min read',
     publishedDate: '2026-04-07',
-    image: '/images/product-pesticide.webp',
+    image: '/images/blog-tomato.webp',
     author: 'Agribiz Africa Agronomy Team',
     content: [
       '## Why Tomato Farming is Profitable in Ghana',
@@ -880,7 +880,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Pest Control',
     readTime: '6 min read',
     publishedDate: '2026-04-06',
-    image: '/images/product-pesticide.webp',
+    image: '/images/blog-pest-control.webp',
     author: 'Agribiz Africa Agronomy Team',
     content: [
       '## Understanding Fall Armyworm in Ghana',
@@ -1081,7 +1081,7 @@ export const blogPosts: BlogPost[] = [
     category: 'Seeds & Planting',
     readTime: '7 min read',
     publishedDate: '2026-04-05',
-    image: '/images/product-seeds.webp',
+    image: '/images/blog-vegetable-seeds.webp',
     author: 'Agribiz Africa Agronomy Team',
     content: [
       '## The Importance of Seed Selection in Vegetable Farming',
