@@ -7,6 +7,7 @@ import Products from './components/Products';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import WhatsAppChannel from './components/WhatsAppChannel';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <About />
       <Services />
       <Products />
+      <WhatsAppChannel />
       <Contact />
       <Footer />
       <WhatsAppFloat />
