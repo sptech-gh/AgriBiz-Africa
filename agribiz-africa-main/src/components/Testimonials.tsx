@@ -1,5 +1,4 @@
-import React from 'react';
-import { Star, Quote } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
@@ -34,17 +33,10 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
-            <Star className="h-4 w-4 fill-current" />
-            Verified Farmer Reviews
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            What Farmers Say{' '}
-            <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
-              About Us
-            </span>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            What Farmers Say
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Real stories from real farmers across Ghana who have transformed their farms with our products and services
           </p>
         </div>
@@ -54,33 +46,25 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 animate-fade-in-up"
+              className="bg-gray-50 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {/* Quote Icon */}
-              <div className="flex justify-between items-start mb-4">
-                <Quote className="h-8 w-8 text-teal-200" />
-                <span className="bg-teal-100 text-teal-700 text-xs font-medium px-3 py-1 rounded-full">
-                  {testimonial.crop}
-                </span>
-              </div>
-
               {/* Star Rating */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-0.5 mb-3">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                  <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
                 ))}
               </div>
 
               {/* Quote Text */}
-              <p className="text-gray-700 leading-relaxed mb-6 text-sm">
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm">
                 "{testimonial.quote}"
               </p>
 
               {/* Author Info */}
-              <div className="border-t border-gray-100 pt-4">
-                <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                <div className="text-sm text-teal-600">{testimonial.role}</div>
+              <div className="pt-3 border-t border-gray-200">
+                <div className="font-medium text-gray-900 text-sm">{testimonial.name}</div>
+                <div className="text-xs text-teal-600">{testimonial.role} • {testimonial.crop}</div>
                 <div className="text-xs text-gray-500">{testimonial.location}</div>
               </div>
             </div>

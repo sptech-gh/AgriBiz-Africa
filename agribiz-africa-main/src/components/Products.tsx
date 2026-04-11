@@ -1,5 +1,4 @@
-import React from 'react';
-import { Wheat, Droplets, Shield, Wrench, MessageCircle } from 'lucide-react';
+import { Wheat, Droplets, Shield, Wrench } from 'lucide-react';
 
 const Products = () => {
   const openWhatsApp = (productName: string) => {
@@ -44,7 +43,7 @@ const Products = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Products</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Premium agricultural inputs sourced from trusted suppliers worldwide to ensure optimal crop performance
           </p>
         </div>
@@ -72,16 +71,16 @@ const Products = () => {
                   </div>
                 </div>
                 
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-teal-600 transition-colors duration-300">{category.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{category.description}</p>
-                  
-                  <div className="space-y-3">
-                    <h4 className="font-semibold text-gray-900">Available Products:</h4>
-                    <div className="grid grid-cols-2 gap-2">
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{category.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">{category.description}</p>
+
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-medium text-gray-700">Available Products:</h4>
+                    <div className="grid grid-cols-2 gap-1.5">
                       {category.products.map((product, productIndex) => (
                         <div key={productIndex} className="flex items-center text-sm text-gray-600">
-                          <div className="w-2 h-2 bg-teal-600 rounded-full mr-2"></div>
+                          <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></div>
                           {product}
                         </div>
                       ))}
@@ -96,61 +95,58 @@ const Products = () => {
         {/* Featured Products */}
         <div className="mt-20">
           <div className="text-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Featured Products</h3>
-            <p className="text-lg text-gray-600">Our most popular and effective agricultural solutions</p>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-3">Featured Products</h3>
+            <p className="text-gray-600">Our most popular and effective agricultural solutions</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white border-2 border-teal-100 rounded-2xl p-6 hover:border-teal-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-              <div className="bg-teal-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
+            <div className="bg-white border border-teal-100 rounded-2xl p-6 hover:border-teal-300 hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+              <div className="bg-teal-100 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                 <Wheat className="h-6 w-6 text-teal-600" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Premium Maize Seeds</h4>
-              <p className="text-gray-600 mb-4">High-yielding hybrid varieties adapted to Ghanaian conditions</p>
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Premium Maize Seeds</h4>
+              <p className="text-gray-600 mb-4 text-sm">High-yielding hybrid varieties</p>
               <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold text-teal-600">GH₵ 45/kg</span>
-                <button 
+                <span className="text-xl font-bold text-teal-600">GH₵ 45/kg</span>
+                <button
                   onClick={() => openWhatsApp('Premium Maize Seeds')}
-                  className="text-teal-600 font-semibold hover:text-teal-700 transition-colors duration-300 hover:translate-x-1 transform flex items-center gap-1"
+                  className="text-teal-600 font-medium hover:text-teal-700 transition-colors text-sm"
                 >
-                  <MessageCircle className="h-4 w-4" />
-                  Order Now
+                  Order →
                 </button>
               </div>
             </div>
             
-            <div className="bg-white border-2 border-emerald-100 rounded-2xl p-6 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              <div className="bg-emerald-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
+            <div className="bg-white border border-emerald-100 rounded-2xl p-6 hover:border-emerald-300 hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+              <div className="bg-emerald-100 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                 <Droplets className="h-6 w-6 text-emerald-600" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">NPK 15-15-15</h4>
-              <p className="text-gray-600 mb-4">Balanced fertilizer for optimal plant growth and development</p>
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">NPK 15-15-15</h4>
+              <p className="text-gray-600 mb-4 text-sm">Balanced fertilizer formula</p>
               <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold text-emerald-600">GH₵ 120/bag</span>
-                <button 
+                <span className="text-xl font-bold text-emerald-600">GH₵ 120/bag</span>
+                <button
                   onClick={() => openWhatsApp('NPK 15-15-15 Fertilizer')}
-                  className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors duration-300 hover:translate-x-1 transform flex items-center gap-1"
+                  className="text-emerald-600 font-medium hover:text-emerald-700 transition-colors text-sm"
                 >
-                  <MessageCircle className="h-4 w-4" />
-                  Order Now
+                  Order →
                 </button>
               </div>
             </div>
             
-            <div className="bg-white border-2 border-lime-100 rounded-2xl p-6 hover:border-lime-300 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
-              <div className="bg-lime-100 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:rotate-12 transition-transform duration-300">
+            <div className="bg-white border border-lime-100 rounded-2xl p-6 hover:border-lime-300 hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+              <div className="bg-lime-100 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                 <Shield className="h-6 w-6 text-lime-600" />
               </div>
-              <h4 className="text-xl font-bold text-gray-900 mb-2">Organic Pesticide</h4>
-              <p className="text-gray-600 mb-4">Safe and effective crop protection for sustainable farming</p>
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Organic Pesticide</h4>
+              <p className="text-gray-600 mb-4 text-sm">Safe crop protection</p>
               <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold text-lime-600">GH₵ 85/liter</span>
-                <button 
+                <span className="text-xl font-bold text-lime-600">GH₵ 85/liter</span>
+                <button
                   onClick={() => openWhatsApp('Organic Pesticide')}
-                  className="text-lime-600 font-semibold hover:text-lime-700 transition-colors duration-300 hover:translate-x-1 transform flex items-center gap-1"
+                  className="text-lime-600 font-medium hover:text-lime-700 transition-colors text-sm"
                 >
-                  <MessageCircle className="h-4 w-4" />
-                  Order Now
+                  Order →
                 </button>
               </div>
             </div>

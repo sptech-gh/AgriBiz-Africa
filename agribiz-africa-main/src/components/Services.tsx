@@ -1,4 +1,3 @@
-import React from 'react';
 import { Sprout, DollarSign, BookOpen, Truck, Users, BarChart3 } from 'lucide-react';
 
 const Services = () => {
@@ -53,7 +52,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Comprehensive agricultural solutions designed to support farmers at every stage of their journey
           </p>
         </div>
@@ -71,24 +70,23 @@ const Services = () => {
                   <IconComponent className="h-8 w-8 text-teal-600" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                
-                <ul className="space-y-2">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+
+                <ul className="space-y-2 mb-4">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-teal-600 rounded-full mr-3"></div>
+                      <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
                 
-                <button 
+                <button
                   onClick={() => scrollToSection('contact')}
-                  className="mt-6 text-teal-600 font-semibold hover:text-teal-700 transition-all duration-300 group-hover:translate-x-2 transform flex items-center"
+                  className="text-teal-600 font-medium hover:text-teal-700 transition-colors inline-flex items-center gap-1"
                 >
-                  Learn More 
-                  <span className="ml-1 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                  Learn More →
                 </button>
               </div>
             );
