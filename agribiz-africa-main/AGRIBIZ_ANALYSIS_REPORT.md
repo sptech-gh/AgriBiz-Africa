@@ -22,7 +22,7 @@
 **Deployment Strategy:** Staging environment → Performance optimization → Migrate to production (agribiz.africa)
 
 **Staging Environment:** https://69da227ef2669f4453400e83--peppy-mousse-be15a9.netlify.app/  
-**GitHub Repository:** https://github.com/Kingsley8/agribiz.git  
+**GitHub Repository:** https://github.com/sptech-gh/AgriBiz-Africa.git  
 **Production Target:** https://agribiz.africa (post-optimization migration)
 
 ---
@@ -109,7 +109,7 @@ agribiz-africa-main/
 
 ### Current State
 - **Staging URL:** https://69da227ef2669f4453400e83--peppy-mousse-be15a9.netlify.app/
-- **GitHub Repository:** https://github.com/Kingsley8/agribiz.git
+- **GitHub Repository:** https://github.com/sptech-gh/AgriBiz-Africa.git
 - **Forms:** Netlify Forms (data-netlify="true" in Contact.tsx)
 - **Routing:** `_redirects` file present for SPA support
 - **Build:** Vite static site generation
@@ -135,7 +135,7 @@ Phase 2: Production Migration
 |-----------|--------|---------------|
 | SPA Redirects | ✅ | `public/_redirects` |
 | Form Detection | ✅ | `public/contact.html` |
-| GitHub Repo | ✅ | https://github.com/Kingsley8/agribiz.git |
+| GitHub Repo | ✅ | https://github.com/sptech-gh/AgriBiz-Africa.git |
 | Build Command | ⚠️ | Use `npm run build` |
 | Publish Directory | ⚠️ | Set to `dist` |
 
@@ -144,7 +144,7 @@ Phase 2: Production Migration
 **GitHub Repository Setup:**
 ```bash
 # Repository already configured:
-git remote add origin https://github.com/Kingsley8/agribiz.git
+git remote add origin https://github.com/sptech-gh/AgriBiz-Africa.git
 git branch -M main
 git push -u origin main
 
@@ -207,7 +207,7 @@ export default defineConfig({
 ### Staging Deployment Checklist
 | Task | Status | Notes |
 |------|--------|-------|
-| Connect GitHub repo | ✅ | https://github.com/Kingsley8/agribiz.git |
+| Connect GitHub repo | ✅ | https://github.com/sptech-gh/AgriBiz-Africa.git |
 | Configure build settings | ✅ | Build: `npm run build`, Publish: `dist` |
 | Staging URL live | ✅ | https://69da227ef2669f4453400e83--peppy-mousse-be15a9.netlify.app/ |
 | Enable form notifications | ⬜ | Set up email alerts in Netlify dashboard |
@@ -514,7 +514,7 @@ const WhatsAppFloat = () => (
 ## Final Recommendations
 
 ### Immediate Actions (Before Implementation)
-1. ✅ **GitHub repository connected** — https://github.com/Kingsley8/agribiz.git
+1. ✅ **GitHub repository connected** — https://github.com/sptech-gh/AgriBiz-Africa.git
 2. ✅ **Staging site deployed** — https://69da227ef2669f4453400e83--peppy-mousse-be15a9.netlify.app/
 3. **Configure form notifications** — Set email alerts in Netlify dashboard for staging
 4. **Download Pexels images** — Self-host for performance optimization
