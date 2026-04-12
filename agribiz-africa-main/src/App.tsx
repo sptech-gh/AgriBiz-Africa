@@ -186,7 +186,9 @@ function App() {
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <Header />
-        {renderContent()}
+        <main id="main-content">
+          {renderContent()}
+        </main>
         <Suspense fallback={null}>
           <MobileStickyCTA />
           <WhatsAppFloat />

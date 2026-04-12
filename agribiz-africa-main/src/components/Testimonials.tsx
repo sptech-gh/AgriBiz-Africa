@@ -55,6 +55,7 @@ const Testimonials = () => {
                   aria-label="Video testimonial from Kwame Asante, maize farmer from Ejura"
                 >
                   <source src="/videos/farmer-testimonial-kwame.mp4" type="video/mp4" />
+                  <track kind="captions" src="/videos/farmer-testimonial-kwame.vtt" srcLang="en" label="English" default />
                   <p className="text-white p-4">Your browser does not support video playback.</p>
                 </video>
                 {/* Play button overlay (shown before play) */}
@@ -68,8 +69,8 @@ const Testimonials = () => {
               {/* Content Side */}
               <div className="p-8 text-white flex flex-col justify-center">
                 <div className="flex items-center gap-2 mb-4">
-                  <Volume2 className="h-5 w-5 text-teal-200" />
-                  <span className="text-sm text-teal-200 font-medium">Featured Story</span>
+                  <Volume2 className="h-5 w-5 text-white" />
+                  <span className="text-sm text-white font-medium">Featured Story</span>
                 </div>
                 <blockquote className="text-lg md:text-xl leading-relaxed mb-6 italic">
                   "Agribiz Africa changed my life. I went from struggling with 2 bags of maize per acre to harvesting 15 bags. Their training and quality seeds made all the difference."
@@ -80,7 +81,7 @@ const Testimonials = () => {
                   </div>
                   <div>
                     <div className="font-semibold">Kwame Asante</div>
-                    <div className="text-sm text-teal-200">Maize Farmer • Ejura, Ashanti Region</div>
+                    <div className="text-sm text-white/90">Maize Farmer • Ejura, Ashanti Region</div>
                   </div>
                 </div>
                 <div className="mt-4 flex gap-1">

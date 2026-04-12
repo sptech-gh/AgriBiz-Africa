@@ -1,4 +1,3 @@
-import React from 'react';
 import { MessageCircle, Users, BookOpen, Sprout, ArrowRight } from 'lucide-react';
 
 const WhatsAppChannel = () => {
@@ -25,9 +24,9 @@ const WhatsAppChannel = () => {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               {/* Left: Channel Info */}
               <div className="flex-1">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">
                   Join QUALISEED
-                </h3>
+                </h2>
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-4">
                   Redefining seed access for farmers across Ghana. Get trusted seed knowledge,
                   practical farming tips, crop production guides, and updates on high-performing

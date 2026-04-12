@@ -136,7 +136,7 @@ const Services = () => {
         {/* CTA Section */}
         <div className="mt-16 bg-gradient-to-r from-teal-600 to-emerald-600 rounded-3xl p-12 text-center text-white animate-fade-in-up hover:shadow-2xl transition-shadow duration-500" style={{ animationDelay: '0.3s' }}>
           <h3 className="text-3xl font-bold mb-4 animate-slide-in-up">Ready to Transform Your Farm?</h3>
-          <p className="text-xl text-teal-100 mb-8 max-w-2xl mx-auto animate-slide-in-up" style={{ animationDelay: '0.1s' }}>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-in-up" style={{ animationDelay: '0.1s' }}>
             Join hundreds of successful farmers who trust Agribiz Africa for their agricultural needs
           </p>
           <div className="flex flex-wrap justify-center gap-4 animate-slide-in-up" style={{ animationDelay: '0.2s' }}>

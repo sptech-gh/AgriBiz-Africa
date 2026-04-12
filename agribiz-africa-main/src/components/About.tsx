@@ -69,7 +69,7 @@ const About = () => {
         <div className="bg-teal-600 rounded-2xl p-8 md:p-12 text-white animate-fade-in-up">
           <div className="text-center mb-10">
             <h3 className="text-3xl font-bold mb-3">Our Core Values</h3>
-            <p className="text-teal-100 max-w-2xl mx-auto">
+            <p className="text-white/90 max-w-2xl mx-auto">
               The fundamental principles that guide our mission and shape every interaction
             </p>
           </div>
@@ -80,7 +80,7 @@ const About = () => {
                 <Shield className="h-7 w-7 text-white" />
               </div>
               <h4 className="font-semibold mb-1">Integrity</h4>
-              <p className="text-sm text-teal-100">
+              <p className="text-sm text-white/90">
                 Honest and ethical business practices
               </p>
             </div>
@@ -90,7 +90,7 @@ const About = () => {
                 <Award className="h-7 w-7 text-white" />
               </div>
               <h4 className="font-semibold mb-1">Excellence</h4>
-              <p className="text-sm text-teal-100">
+              <p className="text-sm text-white/90">
                 Quality products and services
               </p>
             </div>
@@ -100,7 +100,7 @@ const About = () => {
                 <Lightbulb className="h-7 w-7 text-white" />
               </div>
               <h4 className="font-semibold mb-1">Innovation</h4>
-              <p className="text-sm text-teal-100">
+              <p className="text-sm text-white/90">
                 Embracing new technologies
               </p>
             </div>
@@ -110,7 +110,7 @@ const About = () => {
                 <Heart className="h-7 w-7 text-white" />
               </div>
               <h4 className="font-semibold mb-1">Community</h4>
-              <p className="text-sm text-teal-100">
+              <p className="text-sm text-white/90">
                 Supporting farmer growth
               </p>
             </div>

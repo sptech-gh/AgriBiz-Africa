@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Check, Phone, MessageCircle, Truck, Award, Users, Sprout } from 'lucide-react';
+import { Check, Phone, MessageCircle, Truck, Award, Users, Sprout } from 'lucide-react';
 
 // SEO Landing Page for Seeds
 export const SeedsPage: React.FC = () => {
@@ -21,7 +21,7 @@ export const SeedsPage: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Premium Seeds Ghana – High Yield Maize, Rice & Vegetable Seeds
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-teal-100">
+          <p className="text-xl md:text-2xl mb-8 text-white/90">
             Buy certified seeds in Ghana from trusted suppliers. Hybrid maize seeds, quality rice varieties, and vegetable seeds with nationwide delivery.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -160,7 +160,7 @@ export const FertilizerPage: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Best Fertilizers in Ghana – NPK, Urea & Organic Options
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-emerald-100">
+          <p className="text-xl md:text-2xl mb-8 text-white/90">
             Buy quality fertilizers for maximum crop yield. NPK 15-15-15, urea, sulfate of ammonia, and organic options with expert application advice and nationwide delivery.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -324,7 +324,7 @@ export const ConsultingPage: React.FC = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Farm Consulting Ghana – Expert Agricultural Advisory Services
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-teal-100">
+          <p className="text-xl md:text-2xl mb-8 text-white/90">
             Professional farm consulting services for Ghanaian farmers. Get expert advice on crop management, fertilizer programs, pest control, and maximizing your yields.
           </p>
           <div className="flex flex-wrap justify-center gap-4">

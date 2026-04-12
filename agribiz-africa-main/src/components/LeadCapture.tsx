@@ -127,12 +127,13 @@ Email: ${formData.email || 'Not provided'}`;
 
               {/* Farming Interest Dropdown */}
               <div className="relative">
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                <label htmlFor="farmingInterest" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Farming Interest <span className="text-red-500">*</span>
                 </label>
                 <div className="relative">
                   <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-500 pointer-events-none" />
                   <select
+                    id="farmingInterest"
                     name="farmingInterest"
                     value={formData.farmingInterest}
                     onChange={handleChange}
