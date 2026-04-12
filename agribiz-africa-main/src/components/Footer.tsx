@@ -12,10 +12,6 @@ const Footer = () => {
     }, 100);
   };
 
-  const navigateToBlogArticle = (slug: string) => {
-    window.location.hash = `blog/${slug}`;
-  };
-
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -52,16 +48,31 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Products & Resources */}
+          {/* Products & Resources - Matches Products Section */}
           <div>
             <h3 className="text-xl font-bold mb-6">Products & Resources</h3>
             <ul className="space-y-3">
-              <li><a href="#seeds-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Seeds Ghana</a></li>
-              <li><a href="#fertilizer-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Fertilizer Ghana</a></li>
-              <li><a href="#farm-consulting-ghana" className="text-gray-300 hover:text-teal-400 transition-colors">Farm Consulting</a></li>
-              <li><button onClick={() => navigateToBlogArticle('best-maize-seeds-high-yield-ghana')} className="text-gray-300 hover:text-teal-400 transition-colors">Maize Seeds Guide</button></li>
-              <li><button onClick={() => navigateToBlogArticle('top-fertilizers-maximum-crop-yield-ghana')} className="text-gray-300 hover:text-teal-400 transition-colors">Fertilizer Guide</button></li>
-              <li><button onClick={() => navigateToBlogArticle('how-farmers-ghana-increase-yield-2x')} className="text-gray-300 hover:text-teal-400 transition-colors">Yield Tips</button></li>
+              {/* Seeds & Planting Materials */}
+              <li className="text-teal-400 font-medium">Seeds & Planting</li>
+              <li className="pl-3"><button onClick={() => navigateToSection('products')} className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Hybrid Maize Seeds</button></li>
+              <li className="pl-3"><button onClick={() => navigateToSection('products')} className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Rice Varieties</button></li>
+              <li className="pl-3"><button onClick={() => navigateToSection('products')} className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Vegetable Seeds</button></li>
+              
+              {/* Fertilizers & Nutrients */}
+              <li className="text-teal-400 font-medium mt-3">Fertilizers</li>
+              <li className="pl-3"><button onClick={() => navigateToSection('products')} className="text-gray-400 hover:text-teal-400 transition-colors text-sm">NPK Fertilizers</button></li>
+              <li className="pl-3"><button onClick={() => navigateToSection('products')} className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Organic Compost</button></li>
+              <li className="pl-3"><button onClick={() => navigateToSection('products')} className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Liquid Fertilizers</button></li>
+              
+              {/* Crop Protection */}
+              <li className="text-teal-400 font-medium mt-3">Crop Protection</li>
+              <li className="pl-3"><button onClick={() => navigateToSection('products')} className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Insecticides</button></li>
+              <li className="pl-3"><button onClick={() => navigateToSection('products')} className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Herbicides</button></li>
+              
+              {/* Farm Equipment */}
+              <li className="text-teal-400 font-medium mt-3">Farm Equipment</li>
+              <li className="pl-3"><button onClick={() => navigateToSection('products')} className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Irrigation Systems</button></li>
+              <li className="pl-3"><button onClick={() => navigateToSection('products')} className="text-gray-400 hover:text-teal-400 transition-colors text-sm">Hand Tools</button></li>
             </ul>
           </div>
 
