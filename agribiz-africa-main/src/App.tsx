@@ -79,7 +79,7 @@ function App() {
     };
   }, []);
 
-  // Update document title based on current view
+  // Update document title and scroll to top when view changes
   useEffect(() => {
     const titles: Record<PageView, string> = {
       home: 'Agribiz Africa — Premium Seeds, Fertilizers & Farm Support Ghana',
@@ -89,6 +89,10 @@ function App() {
       blog: 'Farming Insights & Tips – Agribiz Africa Blog'
     };
     document.title = titles[currentView];
+    
+    // Scroll to top when navigating to any page view
+    window.scrollTo(0, 0);
+    console.log('Scrolled to top for view:', currentView);
   }, [currentView]);
 
   const handleArticleClick = (slug: string) => {
