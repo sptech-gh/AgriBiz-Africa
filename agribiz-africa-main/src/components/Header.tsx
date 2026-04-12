@@ -5,6 +5,7 @@ import ThemeToggle from './ThemeToggle';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showContactBar, setShowContactBar] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isBlogPage, setIsBlogPage] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -44,18 +45,20 @@ const Header = () => {
     return () => window.removeEventListener('hashchange', checkBlogPage);
   }, []);
 
-  // Stable scroll handler using CSS classes instead of state where possible
+  // Scroll handler — only fires state update when crossing threshold (minimises re-renders)
   useEffect(() => {
-    // Set initial state based on scroll position
-    setShowContactBar(window.scrollY <= 50);
+    const atTop = window.scrollY <= 50;
+    setShowContactBar(atTop);
+    setIsScrolled(!atTop);
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      // Only update state when crossing threshold to minimize re-renders
-      if (currentScrollY > 50 && lastScrollY.current <= 50) {
-        setShowContactBar(false);
-      } else if (currentScrollY <= 50 && lastScrollY.current > 50) {
-        setShowContactBar(true);
+      const wasAbove = lastScrollY.current <= 50;
+      const isAbove  = currentScrollY <= 50;
+
+      if (wasAbove !== isAbove) {
+        setShowContactBar(isAbove);
+        setIsScrolled(!isAbove);
       }
       lastScrollY.current = currentScrollY;
     };
@@ -85,15 +88,12 @@ const Header = () => {
   return (
     <header
       ref={headerRef}
-      className="bg-white dark:bg-slate-900 sticky top-0 z-50"
-      style={{
-        boxShadow: showContactBar ? 'none' : '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
-      }}
+      className={`bg-white dark:bg-slate-900 sticky top-0 z-50${isScrolled ? ' scrolled' : ''}`}
     >
-      {/* Top contact bar - no animation, instant toggle to prevent reflow */}
+      {/* Top contact bar — max-height collapse instead of display:none to avoid layout reflow */}
       <div
-        className={`bg-teal-600 text-white ${
-          showContactBar ? 'block py-2' : 'hidden'
+        className={`contact-bar bg-teal-600 text-white py-2${
+          showContactBar ? ' visible' : ' hidden-bar'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

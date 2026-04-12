@@ -145,37 +145,48 @@
   animation-play-state: paused;
 }
 
-/* Header stability - prevent vibration/shaking */
+/* Header stability — promote a single composited layer, no 3D conflicts */
 header {
-  /* Promote to composite layer for smoother rendering */
-  transform: translateZ(0);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  perspective: 1000px;
+  /* Prevent ANY child-triggered reflow from shifting the header */
+  isolation: isolate;
 }
 
-/* Ensure header children don't cause reflows */
-header * {
-  transform-style: preserve-3d;
-}
-
-/* Disable animations on header elements that could cause shaking */
+/* Only transition colour/shadow — never layout properties */
 header,
-header nav,
-header div {
-  transition-property: background-color, color, border-color;
-  transition-duration: 200ms;
+header nav {
+  transition-property: box-shadow, background-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
 }
 
-/* Logo stability - prevent filter-induced repaints */
+/* Logo: stable, no repaint cost */
 header img {
   will-change: auto;
-  transform: translateZ(0);
+  transform: none;
+  display: block;
 }
 
-/* Stable contact bar - no animations */
-header > div:first-child {
-  transition: none !important;
-  will-change: auto !important;
+/* Contact bar: collapse with max-height instead of display:none
+   display toggling forces a full layout reflow which causes the shake */
+.contact-bar {
+  overflow: hidden;
+  transition: max-height 200ms ease-out, opacity 200ms ease-out;
+}
+.contact-bar.visible {
+  max-height: 40px;
+  opacity: 1;
+}
+.contact-bar.hidden-bar {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Shadow class — lets browser transition box-shadow on GPU, not via inline style swap */
+header.scrolled {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Respect user motion preferences for accessibility */
