@@ -11,7 +11,10 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     
     <!-- Preload Critical Resources (LCP optimization) -->
-    <link rel="preload" href="/images/hero-ghana-farmers.webp" as="image" type="image/webp" fetchpriority="high" />
+    <!-- Mobile: preload 480w, Tablet: 768w, Desktop: 1024w+ -->
+    <link rel="preload" href="/images/optimized/hero-ghana-farmers-480w.avif" as="image" type="image/avif" media="(max-width: 480px)" fetchpriority="high" />
+    <link rel="preload" href="/images/optimized/hero-ghana-farmers-768w.avif" as="image" type="image/avif" media="(min-width: 481px) and (max-width: 768px)" fetchpriority="high" />
+    <link rel="preload" href="/images/optimized/hero-ghana-farmers-1024w.avif" as="image" type="image/avif" media="(min-width: 769px)" fetchpriority="high" />
     
     <!-- Preconnect to third-party origins -->
     <link rel="preconnect" href="https://wa.me" />

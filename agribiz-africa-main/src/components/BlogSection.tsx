@@ -40,14 +40,34 @@ const BlogSection = ({ onArticleClick }: BlogSectionProps) => {
               className="bg-white dark:bg-slate-800 rounded-2xl border border-gray-200 dark:border-slate-700 shadow-sm hover:shadow-md dark:shadow-slate-900/50 transition-all duration-300 overflow-hidden group animate-fade-in-up"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {/* Featured Image with Lazy Loading */}
+              {/* Featured Image with Lazy Loading and Responsive srcset */}
               <div className="relative h-48 overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  loading="lazy"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                />
+                {(() => {
+                  const imageName = post.image.split('/').pop()?.replace(/\.(webp|jpg|jpeg|png)$/i, '') || '';
+                  return (
+                    <picture>
+                      <source
+                        type="image/avif"
+                        srcSet={`/images/optimized/${imageName}-320w.avif 320w, /images/optimized/${imageName}-480w.avif 480w, /images/optimized/${imageName}-640w.avif 640w`}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <source
+                        type="image/webp"
+                        srcSet={`/images/optimized/${imageName}-320w.webp 320w, /images/optimized/${imageName}-480w.webp 480w, /images/optimized/${imageName}-640w.webp 640w`}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <img
+                        src={`/images/optimized/${imageName}.webp`}
+                        alt={post.title}
+                        loading="lazy"
+                        decoding="async"
+                        width={640}
+                        height={360}
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </picture>
+                  );
+                })()}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 <div className="absolute top-4 left-4">
                   <span className="bg-teal-600 text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg">

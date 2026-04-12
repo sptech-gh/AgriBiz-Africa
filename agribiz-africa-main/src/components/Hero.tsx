@@ -17,17 +17,29 @@ const Hero = () => {
   return (
     <section id="home" className="relative py-20 overflow-hidden min-h-[600px]">
       {/* Full farming background image - Ghanaian farmers in field */}
-      {/* Using img tag for better LCP tracking and fetchpriority */}
-      <img
-        src="/images/hero-ghana-farmers.webp"
-        alt=""
-        role="presentation"
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 w-full h-full object-cover"
-        width={1920}
-        height={1080}
-      />
+      {/* Using picture element with AVIF/WebP srcset for optimal loading */}
+      <picture>
+        <source
+          type="image/avif"
+          srcSet="/images/optimized/hero-ghana-farmers-480w.avif 480w, /images/optimized/hero-ghana-farmers-768w.avif 768w, /images/optimized/hero-ghana-farmers-1024w.avif 1024w, /images/optimized/hero-ghana-farmers-1440w.avif 1440w, /images/optimized/hero-ghana-farmers-1920w.avif 1920w"
+          sizes="100vw"
+        />
+        <source
+          type="image/webp"
+          srcSet="/images/optimized/hero-ghana-farmers-480w.webp 480w, /images/optimized/hero-ghana-farmers-768w.webp 768w, /images/optimized/hero-ghana-farmers-1024w.webp 1024w, /images/optimized/hero-ghana-farmers-1440w.webp 1440w, /images/optimized/hero-ghana-farmers-1920w.webp 1920w"
+          sizes="100vw"
+        />
+        <img
+          src="/images/optimized/hero-ghana-farmers.webp"
+          alt=""
+          role="presentation"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover"
+          width={1920}
+          height={1080}
+        />
+      </picture>
 
       {/* Light mode: Soft gradient for readability */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-teal-50/80 to-emerald-50/90 dark:from-slate-900/95 dark:via-slate-900/90 dark:to-slate-800/85"></div>

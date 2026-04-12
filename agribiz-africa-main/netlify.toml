@@ -60,6 +60,12 @@
   for = "/index.html"
   [headers.values]
     Link = '''
-      </images/hero-ghana-farmers.webp>; rel=preload; as=image; type=image/webp,
-      </assets/js/vendor-react-*.js>; rel=modulepreload
+      </images/optimized/hero-ghana-farmers-768w.avif>; rel=preload; as=image; type=image/avif,
+      </images/optimized/hero-ghana-farmers-768w.webp>; rel=preload; as=image; type=image/webp
     '''
+
+# Cache optimized images
+[[headers]]
+  for = "/images/optimized/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

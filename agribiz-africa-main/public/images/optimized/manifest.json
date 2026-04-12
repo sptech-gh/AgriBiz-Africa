@@ -1,0 +1,204 @@
+{
+  "hero-ghana-farmers": {
+    "sizes": [
+      480,
+      768,
+      1024,
+      1440,
+      1920
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/hero-ghana-farmers.webp"
+  },
+  "about-bg": {
+    "sizes": [
+      480,
+      768,
+      1024,
+      1440
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/about-bg.webp"
+  },
+  "product-seeds": {
+    "sizes": [
+      320,
+      480
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/product-seeds.webp"
+  },
+  "product-fertilizer": {
+    "sizes": [
+      320,
+      480
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/product-fertilizer.webp"
+  },
+  "product-pesticide": {
+    "sizes": [
+      320,
+      480
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/product-pesticide.webp"
+  },
+  "product-equipment": {
+    "sizes": [
+      320,
+      480
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/product-equipment.webp"
+  },
+  "blog-maize": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/blog-maize.webp"
+  },
+  "blog-fertilizer": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/blog-fertilizer.webp"
+  },
+  "blog-high-yield": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/blog-high-yield.webp"
+  },
+  "blog-tomato": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/blog-tomato.webp"
+  },
+  "blog-vegetable-seeds": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/blog-vegetable-seeds.webp"
+  },
+  "blog-pest-control": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/blog-pest-control.webp"
+  },
+  "farm-visit-1": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/farm-visit-1.webp"
+  },
+  "farm-visit-2": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/farm-visit-2.webp"
+  },
+  "farm-visit-3": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/farm-visit-3.webp"
+  },
+  "farm-visit-4": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/farm-visit-4.webp"
+  },
+  "testimonial-video-poster": {
+    "sizes": [
+      480,
+      768
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/testimonial-video-poster.webp"
+  }
+}
