@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Menu, X, Phone, MapPin } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
@@ -7,7 +7,31 @@ const Header = () => {
   const [showContactBar, setShowContactBar] = useState(true);
   const [isBlogPage, setIsBlogPage] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const lastScrollY = useRef(0);
+
+  // Close menu when clicking outside
+  const handleClickOutside = useCallback((e: MouseEvent) => {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(e.target as Node) &&
+      headerRef.current &&
+      !headerRef.current.contains(e.target as Node)
+    ) {
+      setIsMenuOpen(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside as EventListener);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside as EventListener);
+    };
+  }, [isMenuOpen, handleClickOutside]);
 
   // Check if we're on the blog page
   useEffect(() => {
@@ -63,9 +87,6 @@ const Header = () => {
       ref={headerRef}
       className="bg-white dark:bg-slate-900 sticky top-0 z-50"
       style={{
-        // CSS containment to isolate rendering
-        contain: 'layout style paint',
-        // Stable height to prevent layout shifts
         boxShadow: showContactBar ? 'none' : '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
       }}
     >
@@ -164,44 +185,67 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile menu - full screen overlay */}
-        {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[60px] bg-white dark:bg-slate-900 z-[100] shadow-2xl">
-            <div className="flex flex-col p-6 space-y-1">
-              <button onClick={() => isBlogPage ? navigateToHome() : scrollToSection('home')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Home</button>
-              <button onClick={() => scrollToSection('services')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Services</button>
-              <button onClick={() => scrollToSection('products')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Products</button>
-              <button
-                onClick={() => {
-                  if (!isBlogPage) {
-                    window.location.hash = 'blog';
-                  }
-                  setIsMenuOpen(false);
-                }}
-                className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors w-full text-left"
-              >
-                Blog
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Contact</button>
+      </nav>
 
-              <div className="pt-6 space-y-3">
-                <button
-                  onClick={() => scrollToSection('contact')}
-                  className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-4 rounded-lg font-medium w-full transition-colors"
-                >
-                  Get Free Quote
-                </button>
-                <a
-                  href="tel:+233242544549"
-                  className="block w-full text-center border-2 border-teal-600 text-teal-600 dark:text-teal-400 dark:border-teal-400 px-6 py-3 rounded-lg font-medium hover:bg-teal-50 dark:hover:bg-slate-800 transition-colors"
-                >
-                  Call: +233 24 254 4549
-                </a>
-              </div>
+      {/* Mobile menu — outside <nav> so CSS containment on header doesn't clip it */}
+      {isMenuOpen && (
+        <div
+          ref={menuRef}
+          className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-900 shadow-2xl z-50 border-t border-gray-100 dark:border-slate-700"
+        >
+          <div className="flex flex-col px-4 py-2 space-y-1">
+            <button
+              onClick={() => isBlogPage ? navigateToHome() : scrollToSection('home')}
+              className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-100 dark:border-slate-700 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => scrollToSection('services')}
+              className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-100 dark:border-slate-700 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection('products')}
+              className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-100 dark:border-slate-700 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >
+              Products
+            </button>
+            <button
+              onClick={() => {
+                if (!isBlogPage) window.location.hash = 'blog';
+                setIsMenuOpen(false);
+              }}
+              className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-100 dark:border-slate-700 hover:text-teal-600 dark:hover:text-teal-400 transition-colors w-full"
+            >
+              Blog
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-100 dark:border-slate-700 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+            >
+              Contact
+            </button>
+
+            <div className="py-4 space-y-3">
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-4 rounded-lg font-semibold w-full transition-colors"
+              >
+                Get Free Quote
+              </button>
+              <a
+                href="tel:+233242544549"
+                onClick={() => setIsMenuOpen(false)}
+                className="block w-full text-center border-2 border-teal-600 text-teal-600 dark:text-teal-400 dark:border-teal-400 px-6 py-3 rounded-lg font-medium hover:bg-teal-50 dark:hover:bg-slate-800 transition-colors"
+              >
+                Call: +233 24 254 4549
+              </a>
             </div>
           </div>
-        )}
-      </nav>
+        </div>
+      )}
     </header>
   );
 };
