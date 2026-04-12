@@ -52,7 +52,7 @@ const Testimonials = () => {
                   className="w-full h-full object-cover"
                   controls
                   preload="metadata"
-                  aria-label="Video testimonial from Kwame Asante, maize farmer from Ejura"
+                  aria-label="Video testimonial from Veggie Fada on Agribiz Africa's Pay Small Small farming opportunity"
                 >
                   <source src="/videos/farmer-testimonial-kwame.mp4" type="video/mp4" />
                   <track kind="captions" src="/videos/farmer-testimonial-kwame.vtt" srcLang="en" label="English" default />
@@ -73,15 +73,18 @@ const Testimonials = () => {
                   <span className="text-sm text-white font-medium">Featured Story</span>
                 </div>
                 <blockquote className="text-lg md:text-xl leading-relaxed mb-6 italic">
-                  "Agribiz Africa changed my life. I went from struggling with 2 bags of maize per acre to harvesting 15 bags. Their training and quality seeds made all the difference."
+                  "With Agribiz Africa and Qualiseed's Pay Small Small plan, I didn't need a huge upfront investment to access quality inputs. I pay gradually as I farm — and my harvests keep growing."
                 </blockquote>
+                <p className="text-sm text-white/80 mb-6 leading-relaxed">
+                  The <span className="font-semibold text-white">Pay Small Small</span> scheme lets farmers access certified seeds and fertilizers now and repay in affordable installments — no big capital needed to get started.
+                </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center text-lg font-bold">
-                    KA
+                    VF
                   </div>
                   <div>
-                    <div className="font-semibold">Kwame Asante</div>
-                    <div className="text-sm text-white/90">Maize Farmer • Ejura, Ashanti Region</div>
+                    <div className="font-semibold">Veggie Fada</div>
+                    <div className="text-sm text-white/90">Vegetable Farmer • Ghana</div>
                   </div>
                 </div>
                 <div className="mt-4 flex gap-1">
