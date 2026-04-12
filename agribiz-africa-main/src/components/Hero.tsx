@@ -15,14 +15,19 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative py-20 overflow-hidden">
+    <section id="home" className="relative py-20 overflow-hidden min-h-[600px]">
       {/* Full farming background image - Ghanaian farmers in field */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/images/hero-ghana-farmers.webp)',
-        }}
-      ></div>
+      {/* Using img tag for better LCP tracking and fetchpriority */}
+      <img
+        src="/images/hero-ghana-farmers.webp"
+        alt=""
+        role="presentation"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 w-full h-full object-cover"
+        width={1920}
+        height={1080}
+      />
 
       {/* Light mode: Soft gradient for readability */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-teal-50/80 to-emerald-50/90 dark:from-slate-900/95 dark:via-slate-900/90 dark:to-slate-800/85"></div>

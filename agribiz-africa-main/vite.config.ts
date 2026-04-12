@@ -7,6 +7,10 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    // Target modern browsers for smaller bundle
+    target: 'es2020',
+    // Use esbuild for minification (faster, no additional deps)
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -29,6 +33,8 @@ export default defineConfig({
     },
     cssCodeSplit: true,
     sourcemap: false,
+    // Inline small assets
+    assetsInlineLimit: 4096,
   },
   optimizeDeps: {
     exclude: ['lucide-react'],

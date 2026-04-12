@@ -1,24 +1,37 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import TrustSection from './components/TrustSection';
-import Services from './components/Services';
-import Products from './components/Products';
-import Testimonials from './components/Testimonials';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import WhatsAppFloat from './components/WhatsAppFloat';
-import WhatsAppChannel from './components/WhatsAppChannel';
-import LeadCapture from './components/LeadCapture';
-import MobileStickyCTA from './components/MobileStickyCTA';
-import BlogSection from './components/BlogSection';
-import BlogArticle from './components/BlogArticle';
-import About from './components/About';
-import OurWork from './components/OurWork';
-import { SeedsPage, FertilizerPage, ConsultingPage } from './components/SEOPages';
 import { getBlogPostBySlug, BlogPost } from './data/blogData';
 import { ThemeProvider } from './context/ThemeContext';
+
+// Lazy load below-the-fold components for better initial load performance
+const Services = lazy(() => import('./components/Services'));
+const Products = lazy(() => import('./components/Products'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const FAQ = lazy(() => import('./components/FAQ'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+const WhatsAppFloat = lazy(() => import('./components/WhatsAppFloat'));
+const WhatsAppChannel = lazy(() => import('./components/WhatsAppChannel'));
+const LeadCapture = lazy(() => import('./components/LeadCapture'));
+const MobileStickyCTA = lazy(() => import('./components/MobileStickyCTA'));
+const BlogSection = lazy(() => import('./components/BlogSection'));
+const BlogArticle = lazy(() => import('./components/BlogArticle'));
+const About = lazy(() => import('./components/About'));
+const OurWork = lazy(() => import('./components/OurWork'));
+
+// Lazy load SEO pages (rarely accessed on initial visit)
+const SeedsPage = lazy(() => import('./components/SEOPages').then(m => ({ default: m.SeedsPage })));
+const FertilizerPage = lazy(() => import('./components/SEOPages').then(m => ({ default: m.FertilizerPage })));
+const ConsultingPage = lazy(() => import('./components/SEOPages').then(m => ({ default: m.ConsultingPage })));
+
+// Loading fallback for lazy components
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center py-12">
+    <div className="animate-pulse text-teal-600 dark:text-teal-400">Loading...</div>
+  </div>
+);
 
 type PageView = 'home' | 'seeds' | 'fertilizer' | 'consulting' | 'blog';
 
@@ -29,7 +42,6 @@ function App() {
   // Handle URL hash changes for SEO pages and blog articles
   useEffect(() => {
     const handleHashChange = () => {
-      console.log('Hash changed to:', window.location.hash);
       const hash = window.location.hash.replace('#', '');
 
       if (hash === 'seeds-ghana' || hash === 'seeds') {
@@ -63,7 +75,6 @@ function App() {
 
     // Handle popstate (back/forward buttons) since we use pushState
     const handlePopState = () => {
-      console.log('PopState triggered, hash:', window.location.hash);
       handleHashChange();
     };
 
@@ -92,30 +103,23 @@ function App() {
     
     // Scroll to top when navigating to any page view
     window.scrollTo(0, 0);
-    console.log('Scrolled to top for view:', currentView);
   }, [currentView]);
 
   const handleArticleClick = (slug: string) => {
-    console.log('Opening article:', slug);
     const article = getBlogPostBySlug(slug);
     if (article) {
       setSelectedArticle(article);
       // Update URL without triggering hashchange
       window.history.pushState(null, '', `#blog/${slug}`);
-      console.log('Article modal should open for:', article.title);
-    } else {
-      console.error('Article not found:', slug);
     }
   };
 
   const handleCloseArticle = () => {
-    console.log('Closing article modal');
     setSelectedArticle(null);
     window.history.pushState(null, '', '#blog');
   };
 
   const handleReadAnother = (slug: string) => {
-    console.log('Reading another article:', slug);
     const article = getBlogPostBySlug(slug);
     if (article) {
       setSelectedArticle(article);
@@ -124,23 +128,35 @@ function App() {
     }
   };
 
-  // Render appropriate view
+  // Render appropriate view with Suspense for lazy-loaded components
   const renderContent = () => {
     switch (currentView) {
       case 'seeds':
-        return <SeedsPage />;
+        return (
+          <Suspense fallback={<LoadingFallback />}>
+            <SeedsPage />
+          </Suspense>
+        );
       case 'fertilizer':
-        return <FertilizerPage />;
+        return (
+          <Suspense fallback={<LoadingFallback />}>
+            <FertilizerPage />
+          </Suspense>
+        );
       case 'consulting':
-        return <ConsultingPage />;
+        return (
+          <Suspense fallback={<LoadingFallback />}>
+            <ConsultingPage />
+          </Suspense>
+        );
       case 'blog':
         return (
-          <>
+          <Suspense fallback={<LoadingFallback />}>
             <BlogSection onArticleClick={handleArticleClick} />
             <WhatsAppChannel />
             <Contact />
             <Footer />
-          </>
+          </Suspense>
         );
       case 'home':
       default:
@@ -148,17 +164,19 @@ function App() {
           <>
             <Hero />
             <TrustSection />
-            <About />
-            <Services />
-            <Products />
-            <Testimonials />
-            <LeadCapture />
-            <FAQ />
-            <BlogSection onArticleClick={handleArticleClick} />
-            <OurWork />
-            <WhatsAppChannel />
-            <Contact />
-            <Footer />
+            <Suspense fallback={<LoadingFallback />}>
+              <About />
+              <Services />
+              <Products />
+              <Testimonials />
+              <LeadCapture />
+              <FAQ />
+              <BlogSection onArticleClick={handleArticleClick} />
+              <OurWork />
+              <WhatsAppChannel />
+              <Contact />
+              <Footer />
+            </Suspense>
           </>
         );
     }
@@ -169,19 +187,20 @@ function App() {
       <div className="min-h-screen bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <Header />
         {renderContent()}
-        <MobileStickyCTA />
-        <WhatsAppFloat />
+        <Suspense fallback={null}>
+          <MobileStickyCTA />
+          <WhatsAppFloat />
+        </Suspense>
         
         {/* Blog Article Modal */}
         {selectedArticle && (
-          <>
-            {console.log('Rendering BlogArticle modal for:', selectedArticle.title)}
+          <Suspense fallback={<LoadingFallback />}>
             <BlogArticle
               post={selectedArticle}
               onClose={handleCloseArticle}
               onReadAnother={handleReadAnother}
             />
-          </>
+          </Suspense>
         )}
       </div>
     </ThemeProvider>

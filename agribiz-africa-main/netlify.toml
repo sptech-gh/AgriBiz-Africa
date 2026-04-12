@@ -3,10 +3,63 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  NODE_VERSION = "18"
+
+# SPA Redirect
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-[build.environment]
-  NODE_VERSION = "18"
+# ============================================
+# PERFORMANCE OPTIMIZATION HEADERS
+# ============================================
+
+# Immutable caching for hashed assets (JS, CSS)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Long cache for images (1 year)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Short cache for HTML (revalidate on each visit)
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ============================================
+# SECURITY HEADERS
+# ============================================
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# ============================================
+# PRELOAD HINTS (Link Headers)
+# ============================================
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Link = '''
+      </images/hero-ghana-farmers.webp>; rel=preload; as=image; type=image/webp,
+      </assets/js/vendor-react-*.js>; rel=modulepreload
+    '''

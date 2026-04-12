@@ -7,8 +7,6 @@ interface BlogSectionProps {
 
 const BlogSection = ({ onArticleClick }: BlogSectionProps) => {
   const handleReadMore = (slug: string) => {
-    console.log('BlogSection: Read More clicked for slug:', slug);
-    console.log('BlogSection: onArticleClick prop exists:', !!onArticleClick);
     if (onArticleClick) {
       onArticleClick(slug);
     } else {

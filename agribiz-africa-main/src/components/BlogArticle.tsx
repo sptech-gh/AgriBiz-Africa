@@ -12,11 +12,8 @@ interface BlogArticleProps {
 const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother }) => {
   const relatedPosts = getRelatedPosts(post.slug, 2);
 
-  console.log('BlogArticle: Component mounted for:', post.title);
-
   // Track blog view
   useEffect(() => {
-    console.log('BlogArticle: useEffect running, tracking view for:', post.title);
     // @ts-ignore - Analytics tracking
     if (trackConversion.blogView) {
       // @ts-ignore
@@ -51,8 +48,8 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
     if (navigator.share) {
       try {
         await navigator.share(shareData);
-      } catch (err) {
-        console.log('Share cancelled');
+      } catch {
+        // Share cancelled by user
       }
     } else {
       // Fallback: copy to clipboard
@@ -195,12 +192,9 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
   // Handle click outside to close
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
-      console.log('BlogArticle: Backdrop clicked, closing modal');
       onClose();
     }
   };
-
-  console.log('BlogArticle: Rendering modal UI');
 
   return (
     <div 

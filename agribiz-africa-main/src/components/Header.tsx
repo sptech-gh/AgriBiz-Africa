@@ -155,10 +155,7 @@ const Header = () => {
               <Phone className="h-5 w-5" />
             </a>
             <button
-              onClick={() => {
-                console.log('Mobile menu toggle clicked, current state:', isMenuOpen);
-                setIsMenuOpen(!isMenuOpen);
-              }}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 p-2 bg-gray-100 dark:bg-slate-800 rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
@@ -168,7 +165,6 @@ const Header = () => {
         </div>
 
         {/* Mobile menu - full screen overlay */}
-        {console.log('Mobile menu render check - isMenuOpen:', isMenuOpen)}
         {isMenuOpen && (
           <div className="md:hidden fixed inset-0 top-[60px] bg-white dark:bg-slate-900 z-[100] shadow-2xl">
             <div className="flex flex-col p-6 space-y-1">
