@@ -1,11 +1,8 @@
-import React from 'react';
-import { MessageCircle, Phone, FileText } from 'lucide-react';
+import { Phone, FileText, Users } from 'lucide-react';
 
 const MobileStickyCTA = () => {
-  const openWhatsApp = () => {
-    const phone = '233242544549';
-    const message = 'Hi Agribiz Africa, I want to learn more about your products and services.';
-    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+  const openWhatsAppChannel = () => {
+    window.open('https://whatsapp.com/channel/0029VaF9ceT4IBhEZAVEsm12', '_blank');
   };
 
   const makeCall = () => {
@@ -22,13 +19,15 @@ const MobileStickyCTA = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 bg-white dark:bg-slate-800 border-t border-gray-200 dark:border-slate-700 shadow-lg md:hidden">
       <div className="flex items-center justify-around py-2 px-2">
-        {/* WhatsApp Button */}
+        {/* WhatsApp Channel Button */}
         <button
-          onClick={openWhatsApp}
-          className="flex flex-col items-center gap-1 px-4 py-2 rounded-lg bg-green-500 active:bg-green-600 transition-colors"
+          onClick={openWhatsAppChannel}
+          className="flex flex-col items-center gap-1 px-3 py-2 rounded-lg bg-green-600 active:bg-green-700 transition-colors"
+          aria-label="Join our WhatsApp Channel"
+          title="Join our WhatsApp Channel for updates"
         >
-          <MessageCircle className="h-5 w-5 text-white" />
-          <span className="text-xs font-medium text-white">WhatsApp</span>
+          <Users className="h-5 w-5 text-white" />
+          <span className="text-xs font-medium text-white">Channel</span>
         </button>
 
         {/* Call Now Button */}

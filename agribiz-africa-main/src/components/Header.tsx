@@ -155,7 +155,10 @@ const Header = () => {
               <Phone className="h-5 w-5" />
             </a>
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => {
+                console.log('Mobile menu toggle clicked, current state:', isMenuOpen);
+                setIsMenuOpen(!isMenuOpen);
+              }}
               className="text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 p-2 bg-gray-100 dark:bg-slate-800 rounded-lg transition-colors"
               aria-label="Toggle menu"
             >
@@ -165,8 +168,9 @@ const Header = () => {
         </div>
 
         {/* Mobile menu - full screen overlay */}
+        {console.log('Mobile menu render check - isMenuOpen:', isMenuOpen)}
         {isMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[60px] bg-white dark:bg-slate-900 z-40 animate-fade-in-up shadow-2xl">
+          <div className="md:hidden fixed inset-0 top-[60px] bg-white dark:bg-slate-900 z-[100] shadow-2xl">
             <div className="flex flex-col p-6 space-y-1">
               <button onClick={() => isBlogPage ? navigateToHome() : scrollToSection('home')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Home</button>
               <button onClick={() => scrollToSection('services')} className="text-gray-900 dark:text-gray-100 font-medium py-4 text-left text-lg border-b border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-800 px-2 rounded transition-colors">Services</button>
