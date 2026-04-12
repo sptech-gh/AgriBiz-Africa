@@ -231,11 +231,32 @@ const BlogArticle: React.FC<BlogArticleProps> = ({ post, onClose, onReadAnother 
 
           {/* Hero Image */}
           <div className="relative h-64 md:h-80 overflow-hidden">
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
+            {(() => {
+              const imageName = post.image.split('/').pop()?.replace(/\.(webp|jpg|jpeg|png)$/i, '') || '';
+              return (
+                <picture>
+                  <source
+                    type="image/avif"
+                    srcSet={`/images/optimized/${imageName}-320w.avif 320w, /images/optimized/${imageName}-480w.avif 480w, /images/optimized/${imageName}-640w.avif 640w`}
+                    sizes="100vw"
+                  />
+                  <source
+                    type="image/webp"
+                    srcSet={`/images/optimized/${imageName}-320w.webp 320w, /images/optimized/${imageName}-480w.webp 480w, /images/optimized/${imageName}-640w.webp 640w`}
+                    sizes="100vw"
+                  />
+                  <img
+                    src={`/images/optimized/${imageName}.webp`}
+                    alt={post.title}
+                    loading="lazy"
+                    decoding="async"
+                    width={640}
+                    height={360}
+                    className="w-full h-full object-cover"
+                  />
+                </picture>
+              );
+            })()}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
               <span className="bg-teal-600 text-white text-sm font-medium px-4 py-1 rounded-full">

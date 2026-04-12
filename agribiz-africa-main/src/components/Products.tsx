@@ -58,11 +58,32 @@ const Products = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={category.image} 
-                    alt={category.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
+                  {(() => {
+                    const imageName = category.image.split('/').pop()?.replace(/\.(webp|jpg|jpeg|png)$/i, '') || '';
+                    return (
+                      <picture>
+                        <source
+                          type="image/avif"
+                          srcSet={`/images/optimized/${imageName}-320w.avif 320w, /images/optimized/${imageName}-480w.avif 480w`}
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                        />
+                        <source
+                          type="image/webp"
+                          srcSet={`/images/optimized/${imageName}-320w.webp 320w, /images/optimized/${imageName}-480w.webp 480w`}
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                        />
+                        <img
+                          src={`/images/optimized/${imageName}.webp`}
+                          alt={category.title}
+                          loading="lazy"
+                          decoding="async"
+                          width={640}
+                          height={360}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </picture>
+                    );
+                  })()}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
                     <div className="bg-white bg-opacity-20 backdrop-blur-sm w-12 h-12 rounded-full flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">

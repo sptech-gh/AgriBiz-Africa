@@ -58,12 +58,32 @@ const OurWork = () => {
               >
                 {/* Image Container */}
                 <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                  {(() => {
+                    const imageName = image.src.split('/').pop()?.replace(/\.(webp|jpg|jpeg|png)$/i, '') || '';
+                    return (
+                      <picture>
+                        <source
+                          type="image/avif"
+                          srcSet={`/images/optimized/${imageName}-320w.avif 320w, /images/optimized/${imageName}-480w.avif 480w, /images/optimized/${imageName}-640w.avif 640w`}
+                          sizes="(max-width: 768px) 50vw, 25vw"
+                        />
+                        <source
+                          type="image/webp"
+                          srcSet={`/images/optimized/${imageName}-320w.webp 320w, /images/optimized/${imageName}-480w.webp 480w, /images/optimized/${imageName}-640w.webp 640w`}
+                          sizes="(max-width: 768px) 50vw, 25vw"
+                        />
+                        <img
+                          src={`/images/optimized/${imageName}.webp`}
+                          alt={image.alt}
+                          loading="lazy"
+                          decoding="async"
+                          width={640}
+                          height={360}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </picture>
+                    );
+                  })()}
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 

@@ -48,7 +48,7 @@ const Testimonials = () => {
               {/* Video Side */}
               <div className="relative bg-gray-900 aspect-video md:aspect-auto">
                 <video
-                  poster="/images/testimonial-video-poster.webp"
+                  poster="/images/optimized/testimonial-video-poster.webp"
                   className="w-full h-full object-cover"
                   controls
                   preload="metadata"
