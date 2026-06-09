@@ -22,7 +22,7 @@ const Footer = () => {
               <img 
                 src="/Agribiz logo.jpg" 
                 alt="Agribiz Africa" 
-                className="h-10 w-auto"
+                className="h-14 md:h-16 w-auto transition-all duration-300"
               />
             </div>
             <p className="text-gray-300 leading-relaxed">
