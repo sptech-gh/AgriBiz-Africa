@@ -119,13 +119,10 @@ const BlogSection = ({ onArticleClick }: BlogSectionProps) => {
         {/* View All CTA */}
         <div className="mt-12 text-center">
           <p className="text-gray-600 dark:text-gray-400 mb-3">
-            Want more farming tips? Join our QUALISEED community
+            Want more farming tips? Join our Agribiz Hub community
           </p>
           <button
-            onClick={() => {
-              const element = document.getElementById('whatsapp-channel');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={() => window.open('https://whatsapp.com/channel/0029Vb7GjUw6LwHqyuALcO2P', '_blank')}
             className="text-teal-600 dark:text-teal-400 font-medium hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
           >
             Get Weekly Farming Tips →

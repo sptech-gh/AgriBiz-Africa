@@ -431,10 +431,10 @@ export const ConsultingPage: React.FC = () => {
           </p>
 
           <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 mt-8">
-            Ongoing Support Through QUALISEED
+            Ongoing Support Through Agribiz Hub
           </h3>
           <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-            Beyond one-on-one consulting, we offer ongoing support through our QUALISEED WhatsApp channel. Farmers receive weekly tips, market price updates, weather advisories, and early warnings about pest outbreaks. This community of 1000+ farmers shares knowledge and experiences, creating a supportive network for agricultural success in Ghana.
+            Beyond one-on-one consulting, we offer ongoing support through our Agribiz Hub WhatsApp channel. Farmers receive weekly tips, market price updates, weather advisories, and early warnings about pest outbreaks. This community of 1000+ farmers shares knowledge and experiences, creating a supportive network for agricultural success in Ghana.
           </p>
         </div>
 

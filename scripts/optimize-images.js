@@ -41,6 +41,9 @@ const IMAGES_TO_OPTIMIZE = [
   { name: 'product-fertilizer', category: 'product', ext: 'jpg' },
   { name: 'product-pesticide', category: 'product', ext: 'jpg' },
   { name: 'product-equipment', category: 'product', ext: 'jpg' },
+  { name: 'Seeds & Planting Materials', category: 'product', ext: 'jpg' },
+  { name: 'Sonagro Fertilizer NPK', category: 'product', ext: 'png' },
+  { name: 'Supreme Teemeer 02 fertilizer', category: 'blog', ext: 'png' },
   { name: 'blog-maize', category: 'blog', ext: 'webp' },
   { name: 'blog-fertilizer', category: 'blog', ext: 'webp' },
   { name: 'blog-high-yield', category: 'blog', ext: 'webp' },
@@ -51,6 +54,10 @@ const IMAGES_TO_OPTIMIZE = [
   { name: 'farm-visit-2', category: 'farm', ext: 'webp' },
   { name: 'farm-visit-3', category: 'farm', ext: 'webp' },
   { name: 'farm-visit-4', category: 'farm', ext: 'webp' },
+  { name: 'farmer-training-program', category: 'farm', ext: 'png' },
+  { name: 'field-demonstrations', category: 'farm', ext: 'png' },
+  { name: 'community-outreach', category: 'farm', ext: 'png' },
+  { name: 'why-choose-us-poster', category: 'testimonial', ext: 'jpg' },
   { name: 'testimonial-video-poster', category: 'testimonial', ext: 'webp' }
 ];
 

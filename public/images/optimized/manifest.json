@@ -70,6 +70,42 @@
     ],
     "fallback": "/images/optimized/product-equipment.webp"
   },
+  "Seeds & Planting Materials": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/Seeds & Planting Materials.webp"
+  },
+  "Sonagro Fertilizer NPK": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/Sonagro Fertilizer NPK.webp"
+  },
+  "Supreme Teemeer 02 fertilizer": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/Supreme Teemeer 02 fertilizer.webp"
+  },
   "blog-maize": {
     "sizes": [
       320,
@@ -189,6 +225,53 @@
       "webp"
     ],
     "fallback": "/images/optimized/farm-visit-4.webp"
+  },
+  "farmer-training-program": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/farmer-training-program.webp"
+  },
+  "field-demonstrations": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/field-demonstrations.webp"
+  },
+  "community-outreach": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/community-outreach.webp"
+  },
+  "why-choose-us-poster": {
+    "sizes": [
+      480,
+      768
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/why-choose-us-poster.webp"
   },
   "testimonial-video-poster": {
     "sizes": [

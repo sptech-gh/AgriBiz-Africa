@@ -2,7 +2,7 @@ import { Phone, MessageCircle, Users } from 'lucide-react';
 
 const MobileStickyCTA = () => {
   const openWhatsAppChannel = () => {
-    window.open('https://whatsapp.com/channel/0029VaF9ceT4IBhEZAVEsm12', '_blank');
+    window.open('https://whatsapp.com/channel/0029Vb7GjUw6LwHqyuALcO2P', '_blank');
   };
 
   const makeCall = () => {

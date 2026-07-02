@@ -30,6 +30,9 @@ const IMAGE_CONFIGS: Record<string, number[]> = {
   'farm-visit-2': [320, 480, 640],
   'farm-visit-3': [320, 480, 640],
   'farm-visit-4': [320, 480, 640],
+  'farmer-training-program': [320, 480, 640],
+  'field-demonstrations': [320, 480, 640],
+  'community-outreach': [320, 480, 640],
   'testimonial-video-poster': [480, 768]
 };
 

@@ -13,14 +13,14 @@ const Products = () => {
       title: "Seeds & Planting Materials",
       description: "High-quality seeds for various crops including maize, rice, vegetables, and cash crops.",
       products: ["Hybrid Maize Seeds", "Rice Varieties", "Vegetable Seeds", "Legume Seeds", "Tree Seedlings"],
-      image: "/images/product-seeds.webp"
+      image: "/images/Seeds & Planting Materials.jpg"
     },
     {
       icon: Droplets,
       title: "Fertilizers & Nutrients",
       description: "Complete range of organic and inorganic fertilizers to boost soil fertility and crop yields.",
       products: ["NPK Fertilizers", "Organic Compost", "Liquid Fertilizers", "Micronutrients", "Soil Conditioners"],
-      image: "/images/product-fertilizer.webp"
+      image: "/images/Sonagro Fertilizer NPK.png"
     },
     {
       icon: Shield,

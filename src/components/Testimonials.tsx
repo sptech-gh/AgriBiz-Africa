@@ -1,4 +1,4 @@
-import { Star, Play, Volume2 } from 'lucide-react';
+import { Star, Play } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
@@ -48,14 +48,13 @@ const Testimonials = () => {
               {/* Video Side */}
               <div className="relative bg-gray-900 aspect-video md:aspect-auto">
                 <video
-                  poster="/images/optimized/testimonial-video-poster.webp"
+                  poster="/images/optimized/why-choose-us-poster.webp"
                   className="w-full h-full object-cover"
                   controls
                   preload="metadata"
-                  aria-label="Video testimonial from Veggie Fada on Agribiz Africa's Pay Small Small farming opportunity"
+                  aria-label="Why choose Agribiz Africa - Direct from Port to Farm quality assurance"
                 >
-                  <source src="/videos/farmer-testimonial-kwame.mp4" type="video/mp4" />
-                  <track kind="captions" src="/videos/farmer-testimonial-kwame.vtt" srcLang="en" label="English" default />
+                  <source src="/videos/Why Choose Us.mp4" type="video/mp4" />
                   <p className="text-white p-4">Your browser does not support video playback.</p>
                 </video>
                 {/* Play button overlay (shown before play) */}
@@ -67,31 +66,16 @@ const Testimonials = () => {
               </div>
 
               {/* Content Side */}
-              <div className="p-8 text-white flex flex-col justify-center">
-                <div className="flex items-center gap-2 mb-4">
-                  <Volume2 className="h-5 w-5 text-white" />
-                  <span className="text-sm text-white font-medium">Featured Story</span>
-                </div>
-                <blockquote className="text-lg md:text-xl leading-relaxed mb-6 italic">
-                  "With Agribiz Africa and Qualiseed's Pay Small Small plan, I didn't need a huge upfront investment to access quality inputs. I pay gradually as I farm — and my harvests keep growing."
-                </blockquote>
-                <p className="text-sm text-white/80 mb-6 leading-relaxed">
-                  The <span className="font-semibold text-white">Pay Small Small</span> scheme lets farmers access certified seeds and fertilizers now and repay in affordable installments — no big capital needed to get started.
+              <div className="p-8 md:p-12 text-white flex flex-col justify-center">
+                <h3 className="text-3xl md:text-4xl font-bold mb-8 leading-relaxed text-white">
+                  Direct From Port to Farm: Uncompromising Quality, Unmatched Yields.
+                </h3>
+                <p className="text-base md:text-lg text-gray-100 mb-5 leading-relaxed font-medium">
+                  At Agribiz Africa, we cut out the middlemen to bring the world's finest agricultural inputs straight to the Ghanaian soil. Witness our dedicated team at the Port of Tema, precision-bagging premium, high-grade fertilizer imports directly from the vessel.
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center text-lg font-bold">
-                    VF
-                  </div>
-                  <div>
-                    <div className="font-semibold">Veggie Fada</div>
-                    <div className="text-sm text-white/90">Vegetable Farmer • Ghana</div>
-                  </div>
-                </div>
-                <div className="mt-4 flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
+                <p className="text-base md:text-lg text-gray-100 leading-relaxed">
+                  We ensure that what arrives on your farm is pure, fresh, and packed with the exact nutrient profile required to maximize your crop potential. When you choose Agribiz Africa, you are partnering with direct-importers committed to lower costs, full supply chain transparency, and ultimate agricultural growth.
+                </p>
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import { MessageCircle, Users, BookOpen, Sprout, ArrowRight } from 'lucide-react';
 
 const WhatsAppChannel = () => {
-  const channelUrl = 'https://whatsapp.com/channel/0029VaF9ceT4IBhEZAVEsm12';
+  const channelUrl = 'https://whatsapp.com/channel/0029Vb7GjUw6LwHqyuALcO2P';
 
   return (
     <section className="py-16 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-slate-800 dark:via-slate-800 dark:to-slate-800">
@@ -25,7 +25,7 @@ const WhatsAppChannel = () => {
               {/* Left: Channel Info */}
               <div className="flex-1">
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-                  Join QUALISEED
+                  Join Agribiz Hub
                 </h2>
                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-4">
                   Redefining seed access for farmers across Ghana. Get trusted seed knowledge,

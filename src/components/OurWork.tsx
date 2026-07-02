@@ -3,21 +3,21 @@ import { Camera, Users, Sprout, Award } from 'lucide-react';
 const OurWork = () => {
   const workImages = [
     {
-      src: '/images/farm-visit-1.webp',
+      src: '/images/farmer-training-program.png',
       alt: 'Agribiz team training farmers on seed selection in Ejura',
       title: 'Farmer Training Program',
       location: 'Ejura, Ashanti Region',
       icon: Users
     },
     {
-      src: '/images/farm-visit-2.webp',
+      src: '/images/field-demonstrations.png',
       alt: 'Field demonstration of fertilizer application techniques',
       title: 'Field Demonstrations',
       location: 'Techiman, Bono Region',
       icon: Sprout
     },
     {
-      src: '/images/farm-visit-3.webp',
+      src: '/images/community-outreach.png',
       alt: 'Community outreach program with local farmers',
       title: 'Community Outreach',
       location: 'Tamale, Northern Region',

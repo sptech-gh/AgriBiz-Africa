@@ -19,7 +19,7 @@ const FAQ = () => {
     },
     {
       question: 'Do you provide farming advice?',
-      answer: 'Absolutely! Our expert agronomists provide free advisory services with every purchase. We offer guidance on seed selection, fertilizer application, pest management, and best farming practices. Join our QUALISEED WhatsApp channel for regular farming tips and updates.'
+      answer: 'Absolutely! Our expert agronomists provide free advisory services with every purchase. We offer guidance on seed selection, fertilizer application, pest management, and best farming practices. Join our Agribiz Hub WhatsApp channel for regular farming tips and updates.'
     },
     {
       question: 'Do you supply in bulk?',

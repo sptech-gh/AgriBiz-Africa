@@ -131,7 +131,7 @@ const Header = () => {
             <img
               src="/Agribiz logo.jpg"
               alt="Agribiz Africa"
-              className="h-14 md:h-16 w-auto transition-all duration-300"
+              className="h-16 md:h-20 w-auto transition-all duration-300"
             />
           </a>
           

@@ -22,7 +22,7 @@ const Footer = () => {
               <img 
                 src="/Agribiz logo.jpg" 
                 alt="Agribiz Africa" 
-                className="h-14 md:h-16 w-auto transition-all duration-300"
+                className="h-16 md:h-20 w-auto transition-all duration-300"
               />
             </div>
             <p className="text-gray-300 leading-relaxed">
@@ -117,7 +117,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2025 Agribiz Africa Ltd. All rights reserved.
+              © 2025 Agribiz Africa Ltd. All rights reserved. Powered by SPtech Solutions.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-teal-400 text-sm transition-colors">Privacy Policy</a>
