@@ -83,7 +83,7 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-teal-400 mt-1 flex-shrink-0" />
                 <span className="text-gray-300 text-sm">
-                  Emmanuel Estate Junction, Adjacent to the White, off the Akosombo Road, Accra, Ghana
+                  Lucy Plaza, Ghana Post GPS GN-1106-4626, Mataheko, Afienya, Ghana
                 </span>
               </div>
               <div className="flex items-center space-x-3">

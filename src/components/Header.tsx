@@ -105,7 +105,7 @@ const Header = () => {
               </a>
               <div className="hidden sm:flex items-center space-x-1">
                 <MapPin className="h-3 w-3" />
-                <span>Emmanuel Estate Junction, Accra</span>
+                <span>Lucy Plaza, GN-1106-4626</span>
               </div>
             </div>
             <div className="hidden md:block">

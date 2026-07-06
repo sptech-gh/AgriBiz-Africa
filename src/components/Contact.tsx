@@ -80,9 +80,9 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Address</h4>
                     <p className="text-gray-700 dark:text-gray-400">
-                      Emmanuel Estate Junction<br />
-                      Adjacent to the White, off the Akosombo Road<br />
-                      Accra, Ghana
+                      Lucy Plaza<br />
+                      Ghana Post GPS GN-1106-4626<br />
+                      Mataheko, Afienya, Ghana
                     </p>
                   </div>
                 </div>
@@ -297,21 +297,21 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 text-center">Visit Our Location</h3>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7267890234567!2d-0.1234567890123456!3d5.6234567890123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzcnMjQuNCJOIDDCsDA3JzI0LjQiVw!5e0!3m2!1sen!2sgh!4v1234567890123"
+                src="https://maps.google.com/maps?q=5.77088,-0.00255+(Lucy+Plaza)&z=16&output=embed"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Agribiz Africa Location - Emmanuel Estate Junction, Accra"
+                title="Agribiz Africa Location - Lucy Plaza, Afienya"
                 className="w-full h-96"
               ></iframe>
             </div>
             <div className="mt-6 text-center">
               <div className="inline-flex items-center space-x-2 text-gray-700 dark:text-gray-400">
                 <MapPin className="h-5 w-5 text-teal-600 dark:text-teal-400" />
-                <span>Emmanuel Estate Junction, Adjacent to the White, off the Akosombo Road, Accra, Ghana</span>
+                <span>Lucy Plaza, Ghana Post GPS GN-1106-4626, Mataheko, Afienya, Ghana</span>
               </div>
             </div>
           </div>
