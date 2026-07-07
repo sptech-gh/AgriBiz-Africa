@@ -128,11 +128,28 @@ const Header = () => {
             }}
             className="flex items-center cursor-pointer"
           >
-            <img
-              src="/Agribiz logo.jpg"
-              alt="Agribiz Africa"
-              className="h-16 md:h-20 w-auto transition-all duration-300"
-            />
+            {/* Light mode logo (with black background) */}
+            <picture className="block dark:hidden">
+              <source srcSet="/images/logo-black-bg.webp" type="image/webp" />
+              <img
+                src="/images/logo-black-bg.png"
+                alt="Agribiz Africa"
+                className="h-16 md:h-20 w-auto transition-all duration-300 object-contain"
+                width={80}
+                height={80}
+              />
+            </picture>
+            {/* Dark mode logo (transparent white) */}
+            <picture className="hidden dark:block">
+              <source srcSet="/images/logo-transparent.webp" type="image/webp" />
+              <img
+                src="/images/logo-transparent.png"
+                alt="Agribiz Africa"
+                className="h-16 md:h-20 w-auto transition-all duration-300 object-contain"
+                width={80}
+                height={80}
+              />
+            </picture>
           </a>
           
           {/* Desktop menu */}

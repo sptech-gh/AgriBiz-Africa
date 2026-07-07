@@ -19,11 +19,16 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <img 
-                src="/Agribiz logo.jpg" 
-                alt="Agribiz Africa" 
-                className="h-16 md:h-20 w-auto transition-all duration-300"
-              />
+              <picture>
+                <source srcSet="/images/logo-transparent.webp" type="image/webp" />
+                <img
+                  src="/images/logo-transparent.png"
+                  alt="Agribiz Africa"
+                  className="h-16 md:h-20 w-auto transition-all duration-300 object-contain"
+                  width={80}
+                  height={80}
+                />
+              </picture>
             </div>
             <p className="text-gray-300 leading-relaxed">
               Empowering Ghanaian farmers with quality agricultural inputs and expert financing advisory services. 

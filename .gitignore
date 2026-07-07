@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Raw unoptimized logo assets
+public/images/agriz logo new.png
+public/images/black logo.png
