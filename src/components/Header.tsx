@@ -128,15 +128,15 @@ const Header = () => {
             }}
             className="flex items-center cursor-pointer"
           >
-            {/* Light mode logo (with black background) */}
+            {/* Light mode logo (circular badge) */}
             <picture className="block dark:hidden">
               <source srcSet="/images/logo-black-bg.webp" type="image/webp" />
               <img
                 src="/images/logo-black-bg.png"
                 alt="Agribiz Africa"
-                className="h-16 md:h-20 w-auto transition-all duration-300 object-contain"
-                width={80}
-                height={80}
+                className="h-12 w-12 md:h-14 md:w-14 rounded-full object-cover border border-gray-200/80 shadow-sm transition-all duration-300 hover:scale-105"
+                width={56}
+                height={56}
               />
             </picture>
             {/* Dark mode logo (transparent white) */}
@@ -145,9 +145,9 @@ const Header = () => {
               <img
                 src="/images/logo-transparent.png"
                 alt="Agribiz Africa"
-                className="h-16 md:h-20 w-auto transition-all duration-300 object-contain"
-                width={80}
-                height={80}
+                className="h-12 w-12 md:h-14 md:w-14 object-contain transition-all duration-300 hover:scale-105"
+                width={56}
+                height={56}
               />
             </picture>
           </a>
