@@ -97,11 +97,12 @@ const Footer = () => {
               </div>
               <div className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-teal-400 mt-1 flex-shrink-0" />
-                <div className="space-y-1">
-                  <div className="text-gray-300 text-sm">info@agribiz.africa</div>
-                  <div className="text-gray-300 text-sm">sales@agribiz.africa</div>
-                  <div className="text-gray-300 text-sm">support@agribiz.africa</div>
-                </div>
+                <a
+                  href="mailto:info@agribiz.africa"
+                  className="text-gray-300 text-sm hover:text-teal-400 transition-colors"
+                >
+                  info@agribiz.africa
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Facebook className="h-5 w-5 text-teal-400" />

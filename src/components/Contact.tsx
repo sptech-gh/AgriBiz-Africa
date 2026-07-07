@@ -103,17 +103,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Email</h4>
-                    <div className="space-y-1">
-                      <p className="text-gray-700 dark:text-gray-400">
-                        <span className="font-medium">General:</span> info@agribiz.africa
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-400">
-                        <span className="font-medium">Sales:</span> sales@agribiz.africa
-                      </p>
-                      <p className="text-gray-700 dark:text-gray-400">
-                        <span className="font-medium">Support:</span> support@agribiz.africa
-                      </p>
-                    </div>
+                    <a
+                      href="mailto:info@agribiz.africa"
+                      className="text-gray-700 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+                    >
+                      info@agribiz.africa
+                    </a>
                   </div>
                 </div>
 
