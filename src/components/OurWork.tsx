@@ -3,21 +3,21 @@ import { Camera, Users, Sprout, Award } from 'lucide-react';
 const OurWork = () => {
   const workImages = [
     {
-      src: '/images/farmer-training-new.jpg',
+      src: '/images/farmer-training-program.jpg',
       alt: 'Agribiz Africa agronomist conducting hands-on farmer training at a rice farm in Ghana',
       title: 'Farmer Training Program',
       location: 'Ejura, Ashanti Region',
       icon: Users
     },
     {
-      src: '/images/field-demonstrations-new.jpeg',
+      src: '/images/field-demonstrations.jpg',
       alt: 'Field demonstration of high-yield rice seedlings grown using Agribiz Africa fertilizers',
       title: 'Field Demonstrations',
       location: 'Techiman, Bono Region',
       icon: Sprout
     },
     {
-      src: '/images/community-outreach-new.jpg',
+      src: '/images/community-outreach.jpg',
       alt: 'Agribiz Africa community outreach program engaging local farmers across Ghana',
       title: 'Community Outreach',
       location: 'Tamale, Northern Region',
