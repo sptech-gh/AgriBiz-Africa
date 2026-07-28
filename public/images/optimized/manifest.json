@@ -238,6 +238,39 @@
     ],
     "fallback": "/images/optimized/farm-visit-4.webp"
   },
+  "farmer-training-new": {
+    "sizes": [
+      320
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/farmer-training-new.webp"
+  },
+  "field-demonstrations-new": {
+    "sizes": [
+      320,
+      480
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/field-demonstrations-new.webp"
+  },
+  "community-outreach-new": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/community-outreach-new.webp"
+  },
   "farmer-training-program": {
     "sizes": [
       320,
@@ -273,6 +306,18 @@
       "webp"
     ],
     "fallback": "/images/optimized/community-outreach.webp"
+  },
+  "fertilizers-and-nutrients": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/fertilizers-and-nutrients.webp"
   },
   "why-choose-us-poster": {
     "sizes": [

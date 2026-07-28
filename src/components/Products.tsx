@@ -20,7 +20,7 @@ const Products = () => {
       title: "Fertilizers & Nutrients",
       description: "Complete range of organic and inorganic fertilizers to boost soil fertility and crop yields.",
       products: ["NPK Fertilizers", "Organic Compost", "Liquid Fertilizers", "Micronutrients", "Soil Conditioners"],
-      image: "/images/Sonagro Fertilizer NPK.png"
+      image: "/images/fertilizers-and-nutrients.jpg"
     },
     {
       icon: Shield,

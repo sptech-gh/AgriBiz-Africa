@@ -55,9 +55,13 @@ const IMAGES_TO_OPTIMIZE = [
   { name: 'farm-visit-2', category: 'farm', ext: 'webp' },
   { name: 'farm-visit-3', category: 'farm', ext: 'webp' },
   { name: 'farm-visit-4', category: 'farm', ext: 'webp' },
+  { name: 'farmer-training-new', category: 'farm', ext: 'jpg' },
+  { name: 'field-demonstrations-new', category: 'farm', ext: 'jpeg' },
+  { name: 'community-outreach-new', category: 'farm', ext: 'jpg' },
   { name: 'farmer-training-program', category: 'farm', ext: 'jpeg' },
   { name: 'field-demonstrations', category: 'farm', ext: 'jpg' },
   { name: 'community-outreach', category: 'farm', ext: 'jpg' },
+  { name: 'fertilizers-and-nutrients', category: 'product', ext: 'jpg' },
   { name: 'why-choose-us-poster', category: 'testimonial', ext: 'jpg' },
   { name: 'testimonial-video-poster', category: 'testimonial', ext: 'webp' },
   { name: 'trucks-at-port-poster', category: 'testimonial', ext: 'jpg' }
