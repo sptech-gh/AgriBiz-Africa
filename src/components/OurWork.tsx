@@ -22,13 +22,6 @@ const OurWork = () => {
       title: 'Community Outreach',
       location: 'Tamale, Northern Region',
       icon: Award
-    },
-    {
-      src: '/images/farm-visit-4.webp',
-      alt: 'Harvest season support and quality assessment',
-      title: 'Harvest Support',
-      location: 'Kumasi, Ashanti Region',
-      icon: Camera
     }
   ];
 
@@ -47,7 +40,7 @@ const OurWork = () => {
         </div>
 
         {/* Image Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {workImages.map((image, index) => {
             const Icon = image.icon;
             return (
@@ -59,19 +52,19 @@ const OurWork = () => {
                 {/* Image Container */}
                 <div className="relative h-56 overflow-hidden">
                   {(() => {
-                    const imageName = image.src.split('/').pop()?.replace(/\.(webp|jpg|jpeg|png)$/i, '') || '';
-                    return (
-                      <picture>
-                        <source
-                          type="image/avif"
-                          srcSet={`/images/optimized/${imageName}-320w.avif 320w, /images/optimized/${imageName}-480w.avif 480w, /images/optimized/${imageName}-640w.avif 640w`}
-                          sizes="(max-width: 768px) 50vw, 25vw"
-                        />
-                        <source
-                          type="image/webp"
-                          srcSet={`/images/optimized/${imageName}-320w.webp 320w, /images/optimized/${imageName}-480w.webp 480w, /images/optimized/${imageName}-640w.webp 640w`}
-                          sizes="(max-width: 768px) 50vw, 25vw"
-                        />
+                     const imageName = image.src.split('/').pop()?.replace(/\.(webp|jpg|jpeg|png)$/i, '') || '';
+                     return (
+                       <picture>
+                         <source
+                           type="image/avif"
+                           srcSet={`/images/optimized/${imageName}-320w.avif 320w, /images/optimized/${imageName}-480w.avif 480w, /images/optimized/${imageName}-640w.avif 640w`}
+                           sizes="(max-width: 768px) 100vw, 33vw"
+                         />
+                         <source
+                           type="image/webp"
+                           srcSet={`/images/optimized/${imageName}-320w.webp 320w, /images/optimized/${imageName}-480w.webp 480w, /images/optimized/${imageName}-640w.webp 640w`}
+                           sizes="(max-width: 768px) 100vw, 33vw"
+                         />
                         <img
                           src={`/images/optimized/${imageName}.webp`}
                           alt={image.alt}
