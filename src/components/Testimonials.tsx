@@ -48,13 +48,13 @@ const Testimonials = () => {
               {/* Video Side */}
               <div className="relative bg-gray-900 aspect-video md:aspect-auto">
                 <video
-                  poster="/images/optimized/why-choose-us-poster.webp"
+                  poster="/images/optimized/trucks-at-port-poster.webp"
                   className="w-full h-full object-cover"
                   controls
                   preload="metadata"
-                  aria-label="Why choose Agribiz Africa - Direct from Port to Farm quality assurance"
+                  aria-label="Trucks at Tema Port - Direct importing and quality assurance from vessel to farm"
                 >
-                  <source src="/videos/Why Choose Us.mp4" type="video/mp4" />
+                  <source src="/videos/trucks-at-port-optimized.mp4" type="video/mp4" />
                   <p className="text-white p-4">Your browser does not support video playback.</p>
                 </video>
                 {/* Play button overlay (shown before play) */}

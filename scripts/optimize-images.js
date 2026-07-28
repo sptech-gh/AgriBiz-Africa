@@ -54,11 +54,12 @@ const IMAGES_TO_OPTIMIZE = [
   { name: 'farm-visit-2', category: 'farm', ext: 'webp' },
   { name: 'farm-visit-3', category: 'farm', ext: 'webp' },
   { name: 'farm-visit-4', category: 'farm', ext: 'webp' },
-  { name: 'farmer-training-program', category: 'farm', ext: 'png' },
-  { name: 'field-demonstrations', category: 'farm', ext: 'png' },
-  { name: 'community-outreach', category: 'farm', ext: 'png' },
+  { name: 'farmer-training-program', category: 'farm', ext: 'jpeg' },
+  { name: 'field-demonstrations', category: 'farm', ext: 'jpg' },
+  { name: 'community-outreach', category: 'farm', ext: 'jpg' },
   { name: 'why-choose-us-poster', category: 'testimonial', ext: 'jpg' },
-  { name: 'testimonial-video-poster', category: 'testimonial', ext: 'webp' }
+  { name: 'testimonial-video-poster', category: 'testimonial', ext: 'webp' },
+  { name: 'trucks-at-port-poster', category: 'testimonial', ext: 'jpg' }
 ];
 
 async function ensureOutputDir() {

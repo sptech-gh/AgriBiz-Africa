@@ -1,4 +1,4 @@
-import { Wheat, Droplets, Shield, Wrench } from 'lucide-react';
+import { Wheat, Droplets, Shield, Wrench, Sprout, MessageCircle } from 'lucide-react';
 
 const Products = () => {
   const openWhatsApp = (productName: string) => {
@@ -120,56 +120,77 @@ const Products = () => {
             <p className="text-gray-600 dark:text-gray-400">Our most popular and effective agricultural solutions</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-slate-800 border border-teal-100 dark:border-slate-700 rounded-2xl p-6 hover:border-teal-300 dark:hover:border-teal-700 hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-              <div className="bg-teal-100 dark:bg-teal-900/50 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                <Wheat className="h-6 w-6 text-teal-600 dark:text-teal-400" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Product 1 */}
+            <div className="flex flex-col justify-between bg-white dark:bg-slate-800 border border-teal-100 dark:border-slate-700 rounded-2xl p-6 hover:border-teal-300 dark:hover:border-teal-600 hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+              <div>
+                <div className="bg-teal-100 dark:bg-teal-900/50 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Droplets className="h-6 w-6 text-teal-600 dark:text-teal-400" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Agfert NPK 20-10-10+TE</h4>
+                <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">Premium fertilizer enriched with trace elements for balanced crop nutrition.</p>
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Premium Maize Seeds</h4>
-              <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">High-yielding hybrid varieties</p>
-              <div className="flex justify-between items-center">
-                <span className="text-xl font-bold text-teal-600 dark:text-teal-400">GH₵ 45/kg</span>
-                <button
-                  onClick={() => openWhatsApp('Premium Maize Seeds')}
-                  className="text-teal-600 dark:text-teal-400 font-medium hover:text-teal-700 dark:hover:text-teal-300 transition-colors text-sm"
-                >
-                  Order →
-                </button>
-              </div>
+              <button
+                onClick={() => openWhatsApp('Agfert NPK 20-10-10+TE')}
+                className="w-full flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 dark:bg-teal-600 dark:hover:bg-teal-500 text-white font-medium py-2.5 px-4 rounded-xl transition-colors duration-300 text-sm shadow-sm hover:shadow"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Order via WhatsApp
+              </button>
             </div>
             
-            <div className="bg-white dark:bg-slate-800 border border-emerald-100 dark:border-slate-700 rounded-2xl p-6 hover:border-emerald-300 dark:hover:border-emerald-700 hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              <div className="bg-emerald-100 dark:bg-emerald-900/50 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                <Droplets className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+            {/* Product 2 */}
+            <div className="flex flex-col justify-between bg-white dark:bg-slate-800 border border-emerald-100 dark:border-slate-700 rounded-2xl p-6 hover:border-emerald-300 dark:hover:border-emerald-600 hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+              <div>
+                <div className="bg-emerald-100 dark:bg-emerald-900/50 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Wheat className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Agfert Ammonia Sulphate</h4>
+                <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">High-quality nitrogen & sulphur fertilizer for soil conditioning and boosting protein.</p>
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">NPK 15-15-15</h4>
-              <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">Balanced fertilizer formula</p>
-              <div className="flex justify-between items-center">
-                <span className="text-xl font-bold text-emerald-600 dark:text-emerald-400">GH₵ 120/bag</span>
-                <button
-                  onClick={() => openWhatsApp('NPK 15-15-15 Fertilizer')}
-                  className="text-emerald-600 dark:text-emerald-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors text-sm"
-                >
-                  Order →
-                </button>
-              </div>
+              <button
+                onClick={() => openWhatsApp('Agfert Ammonia Sulphate')}
+                className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-medium py-2.5 px-4 rounded-xl transition-colors duration-300 text-sm shadow-sm hover:shadow"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Order via WhatsApp
+              </button>
             </div>
             
-            <div className="bg-white dark:bg-slate-800 border border-lime-100 dark:border-slate-700 rounded-2xl p-6 hover:border-lime-300 dark:hover:border-lime-700 hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
-              <div className="bg-lime-100 dark:bg-lime-900/50 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                <Shield className="h-6 w-6 text-lime-600 dark:text-lime-400" />
+            {/* Product 3 */}
+            <div className="flex flex-col justify-between bg-white dark:bg-slate-800 border border-lime-100 dark:border-slate-700 rounded-2xl p-6 hover:border-lime-300 dark:hover:border-lime-600 hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.7s' }}>
+              <div>
+                <div className="bg-lime-100 dark:bg-lime-900/50 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Sprout className="h-6 w-6 text-lime-600 dark:text-lime-400" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Agfert Urea 46% N</h4>
+                <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">Concentrated nitrogen fertilizer to promote rapid vegetative growth and high yields.</p>
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Organic Pesticide</h4>
-              <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm">Safe crop protection</p>
-              <div className="flex justify-between items-center">
-                <span className="text-xl font-bold text-lime-600 dark:text-lime-400">GH₵ 85/liter</span>
-                <button
-                  onClick={() => openWhatsApp('Organic Pesticide')}
-                  className="text-lime-600 dark:text-lime-400 font-medium hover:text-lime-700 dark:hover:text-lime-300 transition-colors text-sm"
-                >
-                  Order →
-                </button>
+              <button
+                onClick={() => openWhatsApp('Agfert Urea 46% N')}
+                className="w-full flex items-center justify-center gap-2 bg-lime-600 hover:bg-lime-700 dark:bg-lime-600 dark:hover:bg-lime-500 text-white font-medium py-2.5 px-4 rounded-xl transition-colors duration-300 text-sm shadow-sm hover:shadow"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Order via WhatsApp
+              </button>
+            </div>
+            
+            {/* Product 4 */}
+            <div className="flex flex-col justify-between bg-white dark:bg-slate-800 border border-sky-100 dark:border-slate-700 rounded-2xl p-6 hover:border-sky-300 dark:hover:border-sky-600 hover:shadow-md transition-all duration-300 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+              <div>
+                <div className="bg-sky-100 dark:bg-sky-900/50 w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Shield className="h-6 w-6 text-sky-600 dark:text-sky-400" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Agfert NPK 15-15-15+7S</h4>
+                <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">Balanced multi-nutrient fertilizer formula with added sulphur for optimal development.</p>
               </div>
+              <button
+                onClick={() => openWhatsApp('Agfert NPK 15-15-15+7S')}
+                className="w-full flex items-center justify-center gap-2 bg-sky-600 hover:bg-sky-700 dark:bg-sky-600 dark:hover:bg-sky-500 text-white font-medium py-2.5 px-4 rounded-xl transition-colors duration-300 text-sm shadow-sm hover:shadow"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Order via WhatsApp
+              </button>
             </div>
           </div>
         </div>

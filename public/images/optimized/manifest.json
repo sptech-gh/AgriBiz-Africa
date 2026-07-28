@@ -283,5 +283,15 @@
       "webp"
     ],
     "fallback": "/images/optimized/testimonial-video-poster.webp"
+  },
+  "trucks-at-port-poster": {
+    "sizes": [
+      480
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/trucks-at-port-poster.webp"
   }
 }
