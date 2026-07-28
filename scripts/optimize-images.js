@@ -41,6 +41,7 @@ const IMAGES_TO_OPTIMIZE = [
   { name: 'product-fertilizer', category: 'product', ext: 'jpg' },
   { name: 'product-pesticide', category: 'product', ext: 'jpg' },
   { name: 'product-equipment', category: 'product', ext: 'jpg' },
+  { name: 'machinary', category: 'product', ext: 'jpg' },
   { name: 'Seeds & Planting Materials', category: 'product', ext: 'jpg' },
   { name: 'Sonagro Fertilizer NPK', category: 'product', ext: 'png' },
   { name: 'Supreme Teemeer 02 fertilizer', category: 'blog', ext: 'png' },

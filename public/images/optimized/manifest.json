@@ -70,6 +70,18 @@
     ],
     "fallback": "/images/optimized/product-equipment.webp"
   },
+  "machinary": {
+    "sizes": [
+      320,
+      480,
+      640
+    ],
+    "formats": [
+      "avif",
+      "webp"
+    ],
+    "fallback": "/images/optimized/machinary.webp"
+  },
   "Seeds & Planting Materials": {
     "sizes": [
       320,

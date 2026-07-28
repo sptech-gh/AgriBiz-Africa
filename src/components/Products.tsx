@@ -34,7 +34,7 @@ const Products = () => {
       title: "Farm Equipment",
       description: "Modern farming tools and equipment to improve efficiency and productivity.",
       products: ["Hand Tools", "Irrigation Systems", "Spraying Equipment", "Harvesting Tools", "Storage Solutions"],
-      image: "/images/product-equipment.webp"
+      image: "/images/machinary.jpg"
     }
   ];
 
