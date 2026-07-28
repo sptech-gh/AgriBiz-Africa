@@ -287,10 +287,7 @@
     "fallback": "/images/optimized/fertilizers-and-nutrients.webp"
   },
   "why-choose-us-poster": {
-    "sizes": [
-      480,
-      768
-    ],
+    "sizes": [],
     "formats": [
       "avif",
       "webp"
@@ -298,10 +295,7 @@
     "fallback": "/images/optimized/why-choose-us-poster.webp"
   },
   "testimonial-video-poster": {
-    "sizes": [
-      480,
-      768
-    ],
+    "sizes": [],
     "formats": [
       "avif",
       "webp"
