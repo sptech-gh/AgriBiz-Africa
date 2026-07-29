@@ -27,3 +27,19 @@ dist-ssr
 # Raw unoptimized logo assets
 public/images/agriz logo new.png
 public/images/black logo.png
+
+# AI Generated Reports and Guides
+AGRIBIZ_ANALYSIS_REPORT.md
+BLOG_ADMIN_GUIDE.md
+DOMAIN_MIGRATION_GUIDE.md
+IMPLEMENTATION_PROGRESS_REPORT.md
+PAGESPEED_OPTIMIZATION_REPORT.md
+SEO_BASELINE_REPORT.md
+UX_AUDIT_REPORT.md
+
+# Raw unoptimized videos (not used in production)
+public/videos/VID-*
+public/videos/trucks at port.mp4
+public/videos/Why Choose Us.mp4
+public/images/rice farm 2.mp4
+public/images/field1.jpeg
