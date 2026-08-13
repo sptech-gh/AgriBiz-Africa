@@ -27,6 +27,15 @@
     <meta name="author" content="Agribiz Africa Ltd">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0d9488">
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('agribiz-theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch {}
+      })();
+    </script>
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://agribiz.africa/">

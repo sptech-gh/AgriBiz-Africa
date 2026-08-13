@@ -12,15 +12,11 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
-    // Check localStorage first
+    // Respect a previously saved choice; otherwise default first-time visitors to light mode.
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('agribiz-theme') as Theme;
       if (stored === 'light' || stored === 'dark') {
         return stored;
-      }
-      // Check system preference
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
       }
     }
     return 'light';
@@ -36,20 +32,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     // Persist to localStorage
     localStorage.setItem('agribiz-theme', theme);
   }, [theme]);
-
-  // Listen for system preference changes
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e: MediaQueryListEvent) => {
-      // Only auto-switch if user hasn't manually set preference
-      const stored = localStorage.getItem('agribiz-theme');
-      if (!stored) {
-        setThemeState(e.matches ? 'dark' : 'light');
-      }
-    };
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
 
   const toggleTheme = () => {
     setThemeState(prev => prev === 'light' ? 'dark' : 'light');
