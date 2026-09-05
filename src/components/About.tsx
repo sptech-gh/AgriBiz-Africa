@@ -1,4 +1,4 @@
-import { Target, Eye, Award, Users, Shield, Lightbulb, Heart } from 'lucide-react';
+import { Target, Eye, Award, Users, Shield, Lightbulb, Heart, Play } from 'lucide-react';
 
 const About = () => {
   return (
@@ -12,55 +12,90 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        {/* Story and Video Section */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+          {/* Our Story Text */}
           <div className="space-y-6 animate-slide-in-left">
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Our Story</h3>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 text-xs font-semibold tracking-wide uppercase">
+              <Play className="w-3.5 h-3.5 fill-teal-600 dark:fill-teal-400 text-teal-600 dark:text-teal-400" />
+              Who We Are
+            </div>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
+              Our Story
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base md:text-lg">
               Founded with a vision to revolutionize agriculture in Ghana, Agribiz Africa has grown
               from a small agricultural inputs dealer to a comprehensive agricultural solutions provider.
               We understand the challenges facing Ghanaian farmers and are committed to providing
               innovative solutions that drive productivity and profitability.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base md:text-lg">
               Our team combines deep agricultural expertise with modern business practices to deliver
               exceptional value to our clients. From smallholder farmers to large agricultural enterprises,
               we provide tailored solutions that meet diverse needs and drive sustainable growth.
             </p>
           </div>
 
-          <div className="bg-gray-50 dark:bg-slate-800 rounded-2xl p-8 animate-fade-in-up">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                <div className="bg-teal-100 dark:bg-teal-900/50 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Target className="h-7 w-7 text-teal-600 dark:text-teal-400" />
-                </div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1 text-sm">Our Mission</h4>
-                <p className="text-xs text-gray-600 dark:text-gray-400">Empowering farmers with quality inputs</p>
+          {/* Video Showcase Beside Our Story */}
+          <div className="animate-fade-in-up">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border border-teal-500/20 group">
+              <div className="relative aspect-video w-full">
+                <video
+                  poster="/images/agribiz-profile-poster.webp"
+                  className="w-full h-full object-cover rounded-2xl"
+                  controls
+                  preload="metadata"
+                  playsInline
+                  aria-label="Agribiz Africa Corporate Profile Video - Our Journey & Agricultural Solutions"
+                >
+                  <source src="/videos/agribiz-profile-video.mp4" type="video/mp4" />
+                  <p className="text-white p-4">Your browser does not support video playback.</p>
+                </video>
               </div>
+              <div className="p-4 bg-gradient-to-r from-teal-900/90 to-slate-900/90 backdrop-blur-md flex items-center justify-between text-white text-xs sm:text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="font-semibold text-emerald-300">Agribiz Africa Profile</span>
+                </div>
+                <span className="text-gray-300 text-xs">Transforming Ghana's Agriculture</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                <div className="bg-emerald-100 dark:bg-emerald-900/50 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Eye className="h-7 w-7 text-emerald-600 dark:text-emerald-400" />
-                </div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1 text-sm">Our Vision</h4>
-                <p className="text-xs text-gray-600 dark:text-gray-400">Leading agricultural transformation</p>
+        {/* Pillars / Key Highlights (Mission, Vision, Quality, Community) */}
+        <div className="bg-gray-50 dark:bg-slate-800 rounded-2xl p-8 md:p-10 mb-16 animate-fade-in-up border border-gray-100 dark:border-slate-700">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <div className="bg-teal-100 dark:bg-teal-900/50 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Target className="h-7 w-7 text-teal-600 dark:text-teal-400" />
               </div>
+              <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1 text-sm">Our Mission</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400">Empowering farmers with quality inputs</p>
+            </div>
 
-              <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                <div className="bg-lime-100 dark:bg-lime-900/50 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Award className="h-7 w-7 text-lime-600 dark:text-lime-400" />
-                </div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1 text-sm">Quality Assured</h4>
-                <p className="text-xs text-gray-600 dark:text-gray-400">Premium products from trusted suppliers</p>
+            <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <div className="bg-emerald-100 dark:bg-emerald-900/50 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Eye className="h-7 w-7 text-emerald-600 dark:text-emerald-400" />
               </div>
+              <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1 text-sm">Our Vision</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400">Leading agricultural transformation</p>
+            </div>
 
-              <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                <div className="bg-yellow-100 dark:bg-yellow-900/50 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Users className="h-7 w-7 text-yellow-600 dark:text-yellow-400" />
-                </div>
-                <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1 text-sm">Community First</h4>
-                <p className="text-xs text-gray-600 dark:text-gray-400">Supporting local farming communities</p>
+            <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <div className="bg-lime-100 dark:bg-lime-900/50 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Award className="h-7 w-7 text-lime-600 dark:text-lime-400" />
               </div>
+              <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1 text-sm">Quality Assured</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400">Premium products from trusted suppliers</p>
+            </div>
+
+            <div className="text-center animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-yellow-100 dark:bg-yellow-900/50 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Users className="h-7 w-7 text-yellow-600 dark:text-yellow-400" />
+              </div>
+              <h4 className="font-semibold text-gray-900 dark:text-gray-100 mb-1 text-sm">Community First</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400">Supporting local farming communities</p>
             </div>
           </div>
         </div>
