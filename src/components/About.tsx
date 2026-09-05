@@ -1,4 +1,4 @@
-import { Target, Eye, Award, Users, Shield, Lightbulb, Heart, Play } from 'lucide-react';
+import { Target, Eye, Award, Users, Shield, Lightbulb, Heart } from 'lucide-react';
 
 const About = () => {
   return (
@@ -16,10 +16,6 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
           {/* Our Story Text */}
           <div className="space-y-6 animate-slide-in-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-300 text-xs font-semibold tracking-wide uppercase">
-              <Play className="w-3.5 h-3.5 fill-teal-600 dark:fill-teal-400 text-teal-600 dark:text-teal-400" />
-              Who We Are
-            </div>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
               Our Story
             </h3>
